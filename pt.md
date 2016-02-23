@@ -79,31 +79,49 @@ Faz a gestão de URLs onde é direcionado ao repositório remoto:
 
 # HTML
 	
-+ O que é HTML e qual sua utilidade?
+### O que é HTML(HyperText Markup Language) e qual sua utilidade?
 		
-HTML é uma linguagem de marcação utilizada na construção de páginas Web. HTML é uma abreviação de HyperText Markup Language. Documentos HTML podem ser interpretados por navegadores, ou seja, código escrito em HTML é entendido por browsers.
-O HTML é o foco de tudo que se faz em desenvolvimento web. Seus dois pilares são o hipertexto e a marcação. O hipertexto é um texto ao qual se agregam outros conjuntos de informação. Hipertexto é uma ligação que facilita a navegação dos internautas. Um texto pode ter diversas palavras que, ao serem clicados, são remetidos para outra página onde se esclarece com mais precisão o assunto do link anterior. Marcação 
+O HTML é uma linguagem de marcação utilizada na construção de páginas Web. Ele é a responsável por definir a estrutura das suas páginas. Para que as páginas possam ser exibidas, é necessário que tenhamos algum software capaz de ler esses arquivos HTML e interpretá-los gerando um output visual para o usuário. É ai que entram os Web Browsers.
+
+O HTML pode ser estruturado a partir de dois pilares, o __hipertexto__ e a __marcação__. 
+
+##### Hipertexto
+
+É um texto ao qual se agregam outros conjuntos de informações. Ele facilita a navegação dos internautas. Na web, um texto pode ter diversas palavras que, ao serem clicadas, são remetidos para outra página onde se esclarece com mais precisão o assunto do link anterior.
+
+##### Marcação
 	
-+ Web Browsers
+Não adianta nada linkar e relacionar informações na web se essas informações não tiverem significado. Os browsers precisam de ajuda para diferenciar um parágrafo de um título Marcação 
+	
+### Web Browsers
 		
 Para entender como browsers funcionam é preciso que saibamos alguns conceitos básicos:
 	
-+ Servidor Web
+##### Servidor Web
 				
 Um servidor nada mais é do que um programa que fornece serviços. Um dos serviços que um servidor Web provê é aceitar pedidos, geralmente de navegadores, e servi-los com respostas. O servidor mais popular e mais utilizado é o servidor Apache.
 			
-+ Protocolo
+##### Protocolo
 				
-Um protocolo pode ser definido como um conjunto de regras que governam a sintaxe e a semântica envolvidas na comunicação entre duas ou mais entidades.
+Um protocolo pode ser definido como um conjunto de regras que governam a sintaxe e a semântica envolvidas na comunicação entre duas ou mais entidades. Dentre os protocolos famosos temos os seguintes:
 
-+ E como funcionam os web browsers? 
++ HTTP (Hypertext Transfer Protocol)
+
+	É um protocolo de comunicação utilizado na troca ou transferencia de hipertexto.Esse protocolo utiliza o modelo cliente-servidor, como a maioria dos protocolos de rede, baseando-se no paradigma de requisição e resposta. Um programa requisitante (cliente) estabelece uma conexão com um outro programa receptor (servidor) e envia-lhe uma requisição.
+
++ FTP (File Transfer Protocol)
+
+	Seu uso possibilita uma forma rápido e versátil de tranferir arquivos sendo uma das mais usadas na Internet. A transferência de arquivos dá-se entre um computador chamado "cliente" (aquele que solicita a conexão para a transferência de dados) e um servidor (aquele que recebe a solicitação de transferência). O utilizador, através de software específico, pode selecionar quais arquivos enviar ou receber do servidor. Para existir uma conexão ao servidor,caso o servidor exija, o utilizador informa um nome de utilizador e uma senha password, bem como o nome correcto do servidor ou seu endereço IP. Se os dados foram informados corretamente, a conexão pode ser estabelecida.
+
+##### Como os Web Browsers funcionam?
 
 Web browsers comunicam-se com servidores Web usando, geralmente, o protocolo de transferência de hiper-texto HTTP. Qualquer aplicação que se comunica com um web server pode ser chamada de web client.
 
-+ HTTP
 			
-+ FTP
-			
+
+
+
+
 + WebSockets
 
 http:// www.blabla.com / blublublu.html
