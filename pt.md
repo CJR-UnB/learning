@@ -115,31 +115,9 @@ Um protocolo pode ser definido como um conjunto de regras que governam a sintaxe
 
 ##### Como os Web Browsers funcionam?
 
-Web browsers comunicam-se com servidores Web usando, geralmente, o protocolo de transferência de hiper-texto HTTP. Qualquer aplicação que se comunica com um web server pode ser chamada de web client.
+Os navegadores apresentam conteúdo escolhido pelos desenvolvedores por meio de uma solicitação ao servidor. Um dos conteúdos mais comuns escolhido é um documento HTML. A forma como o navegador interpreta e exibe arquivos HTML é apresentadas nas especificações de HTML e CSS. Essas especificações são mantidas pelo W3C (Consórcio World Wide Web), a organização que controla os padrões para a web. Por muitos anos, os navegadores mantiveram-se parcialmente de acordo com as especificações e desenvolveram as próprias extensões. Isso causou sérios problemas de compatibilidade para autores da web. Hoje a maioria dos navegadores está relativamente de acordo com as especificações.
 
-			
-
-
-
-
-+ WebSockets
-
-http:// www.blabla.com / blublublu.html
-			
-+ directory tree
-
-web client sends request
-web server sends response
-
-+ plain-text vs hiper-text
-
-o hiper-texto funcionava da seguinte forma: se vc clicar em uma palavra, são mostrador detalhes sobre aquela palavra.
-send http request get http response
-url -> uniform resource locator
-http é um protocolo que usa TCP
-
-A forma como o navegador interpreta e exibe arquivos HTML é apresentadas nas especificações de HTML e CSS. Essas especificações são mantidas pelo W3C (Consórcio World Wide Web), a organização que controla os padrões para a web. 
-Por muitos anos, os navegadores mantiveram-se parcialmente de acordo com as especificações e desenvolveram as próprias extensões. Isso causou sérios problemas de compatibilidade para autores da web. Hoje a maioria dos navegadores está relativamente de acordo com as especificações
+<!-- Web browsers comunicam-se com servidores Web usando, geralmente, o protocolo de transferência de hiper-texto HTTP. Qualquer aplicação que se comunica com um web server pode ser chamada de web client. -->
 
 + Histórico
 
@@ -201,15 +179,79 @@ Diferentes versões
 
 
 
-	Tags HTML5
-		<header></header>
-		<footer></footer>
-		<main></main>
-		<nav></nav>
-		<section></section>
-		<article></article>
-		<figure></figure>
-		<figcaption></figcaption>
+### Tags HTML5
+
+##### Header
+
+Essa tag é usada para marcar o cabeçalho de uma página. Justamente por isso ela costuma ser escrita junto da tag `<h1>` que indica um título. 
+
+```
+<header>
+	<h1>Titulo</h1>
+</header>
+```
+
+##### Footer
+
+Essa tag geralmente destina-se a marcar o rodapé de uma seção ou da página como um todo. É bastante comum colocarmos nome do autor, links relacionados ao tema, direitos autorais, e outros. Uma página pode ter diversos redapés. Seguem exemplos do footer como rodapé da uma seção e de uma página, respectivamente.
+	
+```
+	<section>
+		<article>
+			<!-- ... -->
+			<footer>
+			</footer>
+		</article>
+	</section>
+```
+
+```
+	<section>
+		<article>
+		</article>
+	</section>
+	<footer>
+	</footer>
+```
+
+##### Main
+
+Essa tag define o main content do documento. Dentro dela não deve-se colocar conteúdo que será reutilizado durante o desenvolvimento, como por exemplo: sidebars, navigation links, logos, e outros.
+
+```
+<main>
+	<h1> Titulo </h1>
+	<article>
+		<!-- ... -->
+	</article>
+	<article>
+		<!-- ... -->
+	</article>
+</main>
+```
+
+##### Nav
+
+<nav></nav>
+
+##### Section
+
+<section></section>
+
+##### Article
+
+<article></article>
+
+##### Figure
+
+<figure></figure>
+
+##### Figcaption
+
+<figcaption></figcaption>
+
+
+
 	Atributos
 
 
