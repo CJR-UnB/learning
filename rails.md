@@ -7,7 +7,7 @@ system responsible for representing business **data** and **logic**. Active
 Record facilitates the creation and use of **business objects** whose data 
 requires persistent storage to a database.
 
-> O que é ORM?
+##### O que é ORM?
 
 Object-relational mapping is a programming technique for converting data between
 incompatible type systems in object-oriented programming languages. This 
@@ -20,7 +20,7 @@ the programming language.
 + Validate models before they get persisted to the database.
 + Perform database operations in an object-oriented fashion.
 
-> Naming Conventions
+##### Naming Conventions
 
 For example, a class Book, you should have a database table called books. The 
 Rails pluralization mechanisms are very powerful, being capable to pluralize 
@@ -34,6 +34,43 @@ words separated by underscores.
 (e.g., BookClub).
 
 ![Naming Conventions](images/table1.png)
+
+##### Schema Conventions
+
++ **Foreign keys** - These fields should be named following the pattern 
+`singularized_table_name_id` (e.g., item_id, order_id). These are the fields 
+that Active Record will look for when you create associations between your 
+models.
+
++ **Primary keys** - By default, Active Record will use an integer column named 
+id  as the table's primary key. When using Active Record Migrations to create 
+your tables, this column will be automatically created.
+
++ created_at` - Automatically gets set to the current date and time when the 
+record is first created.
+
++ updated_at` - Automatically gets set to the current date and time whenever 
+the record is updated.
+
+##### Creating Active Record Models
+
+It is very easy to create Active Record models. All you have to do is to 
+subclass the ActiveRecord::Base class and you're good to go:
+
+```console
+$ rails generate model Product
+```
+
+That command will create:
+
+```console
+invoke  active_record
+      create    db/migrate/20160223194525_create_products.rb
+      create    app/models/product.rb
+      invoke    test_unit
+      create      test/models/product_test.rb
+      create      test/fixtures/products.yml
+```
 
 ### Active Record Migrations
 ### Action Controller Overview
