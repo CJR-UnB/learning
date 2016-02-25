@@ -234,6 +234,10 @@ RSpec.describe "Using an array as a stack" do
 end
 ```
 
+## Homework
+
++ [1](http://tutorials.jumpstartlab.com/projects/contact_manager.html)
+
 ## Referências
 
 + [How to setup a Rails app for Test-Driven- and Behavior-Driven Development with Rspec and Capybara-Webkit](https://articles.startuprocket.com/how-to-setup-a-rails-app-for-test-driven-and-behavior-driven-development-with-rspec-and-capybara-28e879b67cb8#.ce8ofwemp)
