@@ -32,11 +32,23 @@ selector::pseudo-element {
 
 ### Classes
 
+```
+.nomeDaClasse {
+  
+}
+```
+
 ### Tags
+
+```
+.nomeDaTag {
+  
+}
+```
 
 ### Não use ID's como seletor
 
-### Propriedades básicas
+### Propriedades
 
 ##### Color
 
@@ -64,6 +76,8 @@ p {
 
 + Background Color
 
+  + Como o próprio nome diz, essa propriedade define a cor do background daquele elemento. Assim  como na propriedade `color` podemos especificar a cor usando um nome válido, um valor hexadecimal, ou o RGB correspondente.
+
 ```
 body {
 	background-color: pink;
@@ -71,6 +85,8 @@ body {
 ```
 
 + Background Image
+
+  + Essa propriedade define uma imagem para ser usada como plano de fundo do elemento selecionado.
 
 ```
 body {
@@ -125,43 +141,237 @@ img {
 
 ##### Margin
 
-`margin`
+Essa propriedade é usada para definir o espaço ocupado pelo elemento fora de sua borda. Não confunda ela com a propriedade `padding` que define o espaço ocupado pelo elemento dentro de sua borda. Ambos os exemplos abaixo causam o mesmo efeito ao documento.
 
+```
+p {
+  margin: 10px 20px 30px 40px;
+}
+```
 
-##### Background Color
-
-`background-color`
-
-
-##### Text Decoration
-
-`text-decoration`
+```
+p {
+  margin-top: 10px; 
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+```
 
 ##### Padding
 
-`padding`
+Essa propriedade gera um espaço entre o conteúdo do elemento e sua borda. Assim como na `margin` podemos utiliza-la de diferentes formas.
+
+```
+p {
+  padding: 10px 20px 30px 40px;
+}
+```
+
+```
+p {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+```
 
 ##### Border
 
-`border`
+A propriedade da borda permite que seja especificado o estilo, o tamanho e a cor da borda do elemento
+
+```
+p {
+  border: 2px solid green;
+}
+```
+
+```
+p {
+  border-width: 2px;
+  border-style: solid;
+  border-color: green;
+}
+```
+
+##### Text 
+
++ Text Color
+
+  + Define a cor de um elemento.
+
+```
+body {
+  color: green;
+}
+```
+
++ Text Align
+  
+  + Um texto pode estar alinhado com o centro (center), com as bordas (right/left), ou pode estar definido para que suas linhas ocupem exatamente o mesmo tamanho (justified).
+
+```
+h3 {
+  text-align: justify;
+}
+```
+
++ Text Decoration
+
+  + Vários elementos HTML vem com estilos predefinidos. Dentre eles, um dos mais irritantes para desenvolvedores novatos é o text-decoration de elementos como por exemplo links. Aqueles underlines raramente são necessários e por isso é possível se livrar deles da seguinte forma:
+
+```
+a {
+  text-decoration: none;
+}
+```
+
+  Além de tirá-lo é possível substituí-lo por outros estilos que se adequam `a situação. Seguem exemplos uteis:
+
+```
+h1 {
+  text-decoration: overline;
+  text-decoration: underline;
+  text-decoration: line-through;
+}
+```
+
+##### Fonts
+
+Podemos serparar os tipos de fontes basedo nas generic families das fontes. As usadas são as Serifs, as Monospace, e as Sans-serifs. As propriedades que cuidam das fontes do css se chamam `font-family` e `font-style` e elas pode ser usadas da seguinte forma:
+
+```
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+```
+
+Obs: Existem outras propriedades que não cobrimos aqui.
+
+##### Position
+
+A propriedade `position` indica que tipo de posicionamento foi usado para ajustar o elemento. Existem quatro tipos de posicionamento. O primeiro é o posicionamento estático, ou seja, dizemos exatamente onde queremos que o elemento apareça na tela. Existe também o posicionamento relativo cujo elemento será posicionado de acordo com sua posição natural. Quando posicionamos um elemento usando posicionamento fixo o mesmo é posicionado em relação ao viewport, ou seja, independente se o usuário planeja dar scroll na página aquele elemento será mostrado sempre no mesmo local do viewport. Um exemplo de situação em que esse tipo de posicionamento é usado é em navigations fixas. Por ultimo temos o posicionamento absoluto. Nele o elemento com posicionamento absoluto é posicionado relativo ao elemento pai.
+
+```
+div {
+  position: static;
+  position: relative;
+  position: fixed;
+  position: absolute;
+}
+```
+
+##### Float
+
+A propriedade float permite que um elemento flutue para uma determinada posição. Quando usamos `float: left;` o elemento flutua para esquerda da página. O oposto ocorre ao usarmos `float: right;`. Muitas vezes é interessante o uso do `clear:` para corrigir comportamentos de alguns elementos que flutuam. Essa propriedade define qual lado daquele elemento não permite que outros elementos flutuem. Outra tática que é usada para solucionar problemas relacionados a floats é  usar a propriedade `overflow: auto` para impedir que elementos maiores do que aqueles que os contém saiam das bordas do elemento pai. A seguir são mostrados exemplos de todas essas propriedades faladas:
+
+```
+div {
+  float: right;
+}
+
+div {
+  clear: left;
+}
+
+.clearfix {
+  overflow: auto;
+}
+```
 
 ##### Display
 
-`display`
+O Display de um elemento especifica como aquele elemento será mostrado na página. Elementos a nível de bloco começam no inicio da um linha e ocupam todo o width possível até o final daquela mesma linha. Elementos a nível de bloco não começam no início da linha e tomam apenas o espaço necessário.
+
+```
+li {
+  display: inline;
+}
+
+img {
+  display: block;
+}
+
+p {
+  display: none;
+}
+```
+
++ Inline-block
+
+  + É essecial que seja entendido o conceito dessa propriedade. Elementos que utilizar ela são como elementos inline mas eles possuem width e height. Essa propriedade soluciona um dos mais comuns problemas no desenvolvimento web, a falta de grids por padrão.
+
+```
+.float-elem {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+}
+```
+
+### Pseudo-class
+
+As pseudo-classes são usadas para estilizar os elementos baseados em ações que foram realizadas naquele mesmo elemento. A sintaxe segue o seguinte padrão:
+
+```
+selector:pseudo-class {
+    property:value;
+}
+```
+
+É comum usamos as pseudo-classes em elementos como links, veja o exemplo:
+
+```
+a:visited {
+  ... aqui colocamos o estilo do link 
+  depois que ele foi visitado ...
+}
+
+a:link {
+  ... aqui colocamos o estilo do link 
+  antes dele ser visitado ...
+}
+
+a:hover {
+  ... aqui colocamos o estilo do link 
+  quando o mouse estiver em cima dele ...
+}
+```
+
+### Pseudo-element
+
+Os pseudo-elementos são usados com menos frequência que as pseudo-classes, mas podem ser muito úteis. A sintaxe deles é semelhante a sintaxe das pseudo-classes. Segue um exemplo:
+
+```
+selector::pseudo-element {
+    property:value;
+}
+```
+
+Note que entre o seletor e o pseudo-elemento temos `::` diferente das pseudo-classes onde temos `:`. Os próximos exemplos mostram alguns pseudo-elementos úteis:
+
+```
+p::before {
+  
+}
+
+p::after {
+  
+}
+
+p:first-child { 
+
+}
+
+p:nth-child(2) {
+
+}
+```
 
 # CSS3
-
-
-Selectors
-Box Model
-Backgrounds and Borders
-Image Values and Replaced Content
-Text Effects
-2D/3D Transformations
-Animations
-Multiple Column Layout
-User Interface
-
 
 ##### Borders
 
@@ -213,7 +423,7 @@ RGBA color values are an extension of RGB color values with an alpha channel - w
 
 An RGBA color value is specified with: rgba(red, green, blue, alpha). The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
 
-#p1 {background-color: rgba(255, 0, 0, 0.3);}  /* red with opacity */
+ #p1 {background-color: rgba(255, 0, 0, 0.3);}  /* red with opacity */
 
 ##### Gradients
 
@@ -233,7 +443,7 @@ Syntax
 background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 Linear Gradient - Top to Bottom (this is default)
-#grad {
+ #grad {
     background: red; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
@@ -242,7 +452,7 @@ Linear Gradient - Top to Bottom (this is default)
 }
 
 Linear Gradient - Left to Right
-#grad {
+ #grad {
   background: red; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
