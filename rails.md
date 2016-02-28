@@ -72,6 +72,33 @@ invoke  active_record
       create      test/fixtures/products.yml
 ```
 
+Isso irá criar tanto uma migração, um model e os testes correspondentes a esse model.
+
+Quanto a migração, teremos no final, em SQL: 
+
+```sql
+CREATE TABLE products (
+   id int(11) NOT NULL auto_increment,
+   name varchar(255),
+   PRIMARY KEY  (id)
+);
+```
+
+"CRUD is an acronym for the four verbs we use to operate on data: Create, Read, Update and Delete. Active Record automatically creates methods to allow an application to read and manipulate data stored within its tables."
+
+##### Métodos:
+
++ `Model.create`
+
+> `user = User.create(name: "David", occupation: "Code Artist")`
+
++ `Model.save`
+
+```ruby
+
+```
++ `Model.find(:id)`
+
 ### Active Record Migrations
 ### Action Controller Overview
 ### Rails routing from the outside In
@@ -102,3 +129,4 @@ invoke  active_record
 
 https://en.wikipedia.org/wiki/Object-relational_mapping
 http://guides.rubyonrails.org/
+http://guides.rubyonrails.org/active_record_basics.html
