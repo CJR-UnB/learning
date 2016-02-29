@@ -28,7 +28,3 @@
 ##### Capybara
 
 ### Reference
-
-https://en.wikipedia.org/wiki/Object-relational_mapping
-http://guides.rubyonrails.org/
-http://guides.rubyonrails.org/active_record_basics.html

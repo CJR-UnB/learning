@@ -1,11 +1,11 @@
-### Active Record Basics
+# Active Record Basics
 
 Active Record is the **M** in **MVC** - the model - which is the layer of the
 system responsible for representing business **data** and **logic**. Active 
 Record facilitates the creation and use of **business objects** whose data 
 requires persistent storage to a database.
 
-##### O que é ORM?
+### O que é ORM?
 
 Object-relational mapping is a programming technique for converting data between
 incompatible type systems in object-oriented programming languages. This 
@@ -18,7 +18,7 @@ the programming language.
 + Validate models before they get persisted to the database.
 + Perform database operations in an object-oriented fashion.
 
-##### Naming Conventions
+### Naming Conventions
 
 For example, a class Book, you should have a database table called books. The 
 Rails pluralization mechanisms are very powerful, being capable to pluralize 
@@ -33,7 +33,7 @@ words separated by underscores.
 
 ![Naming Conventions](images/table1.png)
 
-##### Schema Conventions
+### Schema Conventions
 
 + **Foreign keys** - These fields should be named following the pattern 
 `singularized_table_name_id` (e.g., item_id, order_id). These are the fields 
@@ -50,7 +50,7 @@ record is first created.
 + updated_at` - Automatically gets set to the current date and time whenever 
 the record is updated.
 
-##### Creating Active Record Models
+### Creating Active Record Models
 
 It is very easy to create Active Record models. All you have to do is to 
 subclass the ActiveRecord::Base class and you're good to go:
@@ -82,9 +82,9 @@ CREATE TABLE products (
 );
 ```
 
-"CRUD is an acronym for the four verbs we use to operate on data: Create, Read, Update and Delete. Active Record automatically creates methods to allow an application to read and manipulate data stored within its tables."
+### CRUD's Operations
 
-##### Métodos:
+"CRUD is an acronym for the four verbs we use to operate on data: Create, Read, Update and Delete. Active Record automatically creates methods to allow an application to read and manipulate data stored within its tables."
 
 Criando usuários:
 
@@ -154,3 +154,47 @@ Apagando um registro:
 user = User.find_by(name: 'David')
 user.destroy
 ```
+
+### Validations
+
+Active Record allows you to validate the state of a model before it gets written into the database. There are several methods that you can use to check your models and validate that an attribute value is not empty, is unique and not already in the database, follows a specific format and many more.
+
+```ruby
+class User < ActiveRecord::Base
+  validates :name, presence: true
+end
+ 
+user = User.new
+user.save  # => false
+user.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
+```
+
+### Migrations
+
+"Rails provides a domain-specific language for managing a database schema called migrations. Migrations are stored in files which are executed against any database that Active Record supports using rake. Here's a migration that creates a table:"
+
+```ruby
+class CreatePublications < ActiveRecord::Migration
+  def change
+    create_table :publications do |t|
+      t.string :title
+      t.text :description
+      t.references :publication_type
+      t.integer :publisher_id
+      t.string :publisher_type
+      t.boolean :single_issue
+ 
+      t.timestamps null: false
+    end
+    add_index :publications, :publication_type_id
+  end
+end
+
+```
+
+### Referências
+
+http://apidock.com/rails/ActiveRecord/Base/save!
+https://en.wikipedia.org/wiki/Object-relational_mapping
+http://guides.rubyonrails.org/
+http://guides.rubyonrails.org/active_record_basics.html
