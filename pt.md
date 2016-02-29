@@ -58,7 +58,7 @@ Adiciona os arquivos não monitorados:
 Salva as alterações que foram monitoradas e identifica esse número:
 `git commit`
 
-Pega todas as auterações locais commitadas e coloca no repositório remoto:
+Pega todas as alterações locais commitadas e coloca no repositório remoto:
 `git push`
 
 Pega os arquivos ainda não atualizados no repositório local:
@@ -67,10 +67,10 @@ Pega os arquivos ainda não atualizados no repositório local:
 Muda da branch atual para a branch de destino:
 `git checkout <nome_da_branch_de_destino>`
 
-Cria um novo branch e muda pra ele:
+Cria uma nova branch e muda pra ela:
 `git checkout -b <nome_da_branch_nova>`
 
-Faz uma requisição de merge com o branch selecionada:
+Faz uma requisição de merge com a branch selecionada:
 `pull request`
 
 Problemas identificados no repositório. Lá é criado um fórum para discussão:
