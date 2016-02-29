@@ -144,54 +144,6 @@ Atributos
 https://www.youtube.com/watch?v=aor29pGhlFE
 https://www.youtube.com/watch?v=RsQ1tFLwldY
 
-# CSS
-
-### Especificidade
-
-### O que são seletores?
-
-### Como seletores são interpretados?
-
-### Seletores CSS
-
-### O que são Id's?
-
-### Classes
-
-### Tags
-
-### Não use ID's como seletor
-
-### Propriedades básicas
-
-`width`
-`max-width`
-`min-width`
-`height`
-`max-height`
-`min-height`
-`margin`
-`background`
-`color`
-`text-decoration`
-`padding`
-`border`
-`display`
-
-### Media Query
-
-### OOCSS
-
-	Separar estrutura e skin
-		Repetir caracteristica visual como skin que pode ser combinada em uma variada gama de objetos por exemplo background e estilos de borda
-	Separar container de conteúdo
-		Um objeto deve permanecer igual independente da sua localizacao na pagina, ou seja, nao queremos que as classes pai do css influenciem as classes filho
-
-### SMACSS
-
-### BEM
-
-### Flex-box
 
 # JavaScript
 
