@@ -55,7 +55,7 @@ Clona o repositório remoto para sua máquina:
 Adiciona os arquivos não monitorados:
 `git add`
 
-Salva as auterações que foram monitoradas e identifica esse número:
+Salva as alterações que foram monitoradas e identifica esse número:
 `git commit`
 
 Pega todas as auterações locais commitadas e coloca no repositório remoto:
@@ -64,11 +64,11 @@ Pega todas as auterações locais commitadas e coloca no repositório remoto:
 Pega os arquivos ainda não atualizados no repositório local:
 `git pull`
 
-Muda de branch:
-`git checkout`
+Muda da branch atual para a branch de destino:
+`git checkout <nome_da_branch_de_destino>`
 
 Cria um novo branch e muda pra ele:
-`git checkout -b <nome_do_branch>`
+`git checkout -b <nome_da_branch_nova>`
 
 Faz uma requisição de merge com o branch selecionada:
 `pull request`
