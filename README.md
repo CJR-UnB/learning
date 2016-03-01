@@ -1,6 +1,6 @@
 # Introdução
 
-Esse é o mais novo livro da CJR.
+Esse é o mais novo livro da CJR. Aqui é o banco de conhecimento.
 
 # Escala de Conhecimento
 
