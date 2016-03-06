@@ -14,23 +14,65 @@ Tres dias antes desse acontecimento Håkon publicou um artigo sobre [Cascading H
 
 [história do CSS](http://www.w3.org/Style/LieBos2e/history/)
 
+### Sintaxe 
+
+Uma regra no CSS consiste em um seletor e sua respectiva declaração. Um bloco de declaração é composto por propriedades e valores, segue um exemplo:
+
+| Seletor |   | Propriedade  |    | Valor |    |    |
+| --------|:-:| :-----------:| :-:| :---: | -- | -: |
+| h1      | { | color        | :  | green | ;  | }  |
+
 ### O que são seletores?
 
-Seletores são usados para separar partes do markup que serão estilizadas. Estilos serão aplicados quando as tags e atrubutos escritos no CSS existirem no HTML. Os seletores podem ser aplicados em:
+Seletores são usados para achar elementos HTML baseado em nome, id, classe, atributo, e outros. Os estilos declarados no CSS serão aplicados quando as tags e atributos existirem no HTML. Os seletores podem ser:
 
 + Elementos de um tipo específico
 + Atributos
-  ++ IDS
-  ++ Class
+  ++ IDs
+  ++ Classes
 + Elementos relativos a outros elementos
+
+##### Elementos de um tipo específico
+
+O seletor por elemento seleciona elementos baseado no nome daquele elemento.
+
+```
+h1 {
+}
+```
+
+##### Atributos -> IDs
+
+O seletor por ID usa o atributo id do HTML para selecionar um elemento específico. Ele deve ser único, ou seja, não podemos ter 2 ids com mesmo valor.
+
+```
+#id_qqr {
+}
+```
+
+##### Atributos -> Classes
+
+O seletor por classe seleciona um elemento cujo atributo class corresponda ao nome da classe usada no CSS. Diferente dos IDs, não tem problema repetir nome de classes pelo arquivo HTML. 
+
+```
+.classe_qqr {
+}
+```
+
+##### Elementos relativos a outros elementos
+
+```
+ul:first-child {
+}
+```
+
+##### Observações Importantes
 
 Classes podem ser aplicadas em diversos elementos, sem restrição. Já os IDs só podem ser aplicados em um único elemento. O objetivo deles é poder identificar um elemento unicamente para que mudanças naquele elemento não afetem outros elementos. Seletores podem ser combinados de diversas formas para alcançar um grande nível de especificidade. Multiplos seletores podem ser juntados para especificar elementos baseado em sua localização, em seu tipo, em seu id, em sua classe, ou em qualquer combinação destes. A ordem dos seletores é extremamente importante. Escrever `div .nomeDaClasse {color:red;}` corresponde a customizar a cor do texto dos elementos da classe `nomeDaClasse` que estão contidos dentro de uma div, ou seja, elementos que usam a classe `nomeDaClasse` mas não estão dentro de uma div não são estilizados. Ao escrever `.nomeDaClasse div {color:red;}` os elementos afetados serão as `divs` que estão dentro de classes `nomeDaClasse`. 
 
 ### Como seletores são interpretados?
 
-selector::pseudo-element {
-    property:value;
-}
+> Seletores são lidos da direita para a esquerda pelos navegadores. É mais eficiente para um navegador começar sua procura por combinações a partir do elemento mais a direita (o que ele sabe que receberá o estilo) e trabalhar o seu caminho de volta através da árvore de DOM, do que comçar no alto dessa árvore e percorrer o caminho para baixo, pois poderia nem mesmo acabar no seletor que precisa receber a estilização (também conhecido como seletor-chave).g
 
 ### Especificidade
 
@@ -68,25 +110,9 @@ No seletor `#id_qqr article ul` temos 1 ID e 2 elementos. Já no `#id_qqr .list`
 
 Quando acontecer um empate, ou seja, duas regras terem mesmo peso, temos que usar `!important` naquela que deve ser priorizada. Havendo conflito entre `!important`, entra em ação o efeito cascata, com precedência das CSS de usuário `as de autor.
 
-### O que são Id's?
-
-### Classes
-
-```
-.nomeDaClasse {
-  
-}
-```
-
-### Tags
-
-```
-.nomeDaTag {
-  
-}
-```
-
 ### Não use ID's como seletor
+
+Um dos motivos pelo qual desenvolvedores Web usam IDs como seletores é a performace. É provado que IDs são mais rápidos que classes, porém a diferença é absurdamente minuscula, ou seja, este critério não deve ser usado para priorizar o uso de IDs sobre classes. Outra coisa que muitas vezes as pessoas esquecem é que ao acessarmos `#id a {}` a ordem que o browser busca o elemento é a seguinte: ele pega todos os elementos `a` e verifica se são descendentes imediatos de `#id`, caso não seja vai checando os ascendentes até chegar a `<html>`. Agora que sabemos como os seletores são interpretados é lógico pensar que IDs são os seletores mais rápidos somente se forem os seletores-chave, ou seja, `#id` é mais rápido que `.cls` que é mais rápido que `#id a`. É interessante usarmos classes como seletores pois o conteúdo daquela classe pode ser reutilizado sem precisar replicar o código CSS, basta adicionar aquela classe ao elemento HTML. Isso garante maior manutenibilidade e flexibilidade ao nosso código. É indicado que os desenvolvedores usem IDs para como identificadores que serão usados pelo JavaScript.
 
 ### Propriedades
 
@@ -391,6 +417,10 @@ selector::pseudo-element {
 }
 ```
 
+Eles permitem que o desenvolvedor especifique um estilo em certa parte de um elemento que não está presente no documento, ou seja, permite que elementos lógicos sejam definidos sem que estes estejam no Document Element Tree.
+
+### Pseudo-class vs Pseudo-element
+
 Note que entre o seletor e o pseudo-elemento temos `::` diferente das pseudo-classes onde temos `:`. Os próximos exemplos mostram alguns pseudo-elementos úteis:
 
 ```
@@ -410,6 +440,18 @@ p:nth-child(2) {
 
 }
 ```
+
+selector:pseudo-class {
+    property:value;
+}
+
+selector::pseudo-element {
+    property:value;
+}
+
+##### Links Complementares
+
+[pseudo-class vs pseudo-element](http://www.d.umn.edu/~lcarlson/csswork/selectors/pseudo_dif.html)
 
 # CSS3
 
