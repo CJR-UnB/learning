@@ -1,24 +1,30 @@
 # CSS
 
-### O que é CSS(Cascading Style Sheets) e qual sua utilidade?
+### O que é CSS (Cascading Style Sheets) e qual sua utilidade?
 
-O CSS, assim como o HTML, é uma linguagem. Ele difere das demais por definir a forma como os dados escritos em uma linguagem de marcação serão apresentados. No decorrer dos anos muitas mudanças foram feitas no CSS para suprir a necessidade crescente dos desenvolvedores web. Ela foi feita com o objetivo de separar o ceunteúdo de uma página da forma como este conteúdo será apresentada para os visitantes. Por meio do CSS é possível customizar cores, fontes, posições, e outros. Antes do CSS, para customizar uma página web era comum utilizar o atributo `style=""` do HTML, mas logo foi possível notar que esse atributo não era o suficiente. Ao separar os arquivos CSS aumentamos a flexibilidade e o controle das páginas além de permitir compartilhamento do estilos para diferentes partes do seu site.
+O CSS, assim como o HTML, é uma linguagem. Ele difere das demais por definir a forma como os dados escritos em uma linguagem de marcação serão apresentados. No decorrer dos anos muitas mudanças foram feitas no CSS para suprir a necessidade crescente dos desenvolvedores web. Ela foi feita com o objetivo de separar o ceunteúdo de uma página da forma como este conteúdo era apresentado para os visitantes. Por meio do CSS é possível customizar cores, fontes, posições, e outros. Antes do CSS, era possível customizar fontes e cores usando o atributo `style=""` do HTML, mas foi notado que esse atributo não era o suficiente para suprir as necessidades dos desenvolvedores pois eles teriam que repetir muito código para customizar uma página. Se quiséssemos 2 títulos com cor vermelha teríamos que entrar no HTML e adicionar o mesmo código para cada um dos títulos. O atributo surgiu na versão 3.2 do HTML juntamente com o termo Web Designer. Ao separar os arquivos CSS aumentamos a flexibilidade e o controle das páginas além de permitir compartilhamento do estilos para diferentes partes do seu site.
 
 ### Histórico
 
-A primeira versão do CSS foi lançada em 1994. Como não havia nenhuma forma de estilizar documentos Håkon Wium Lie achou que seria útil criar um linguagem capaz de solucionar o problema. Na época, a idéia de separar conteúdo de estrutura não era uma idéia tão inovadora. Tim Berners-Lee escreveu seu navegador NeXT de forma que ele poderia determinar os estilos pelo style Sheets. Um fato curioso é que o mesmo não publicou a sintaxe e deixou que cada browser apresentasse a estrutura da forma que o desenvolvedor daquele browser achasse melhor. Todos os browsers daquela época limitavam a estilização das páginas. Em 1993 quando o Mosaic foi lançado ele só permitia a mudaça de cor e alguns aspectos das fontes. Em 1994 Marc Andreessen anunciou que o primeiro beta do Mozila (que acabou se tornando o NetScape) estava aberto para teste. Esse navegador veio com tags que até então não eram conhecidas.
+A primeira versão do CSS foi lançada em 1994. Como não havia nenhuma forma de estilizar documentos Håkon Wium Lie achou que seria útil criar um linguagem capaz de solucionar o problema. Na época, a idéia de separar conteúdo de estrutura não era uma idéia tão inovadora. Tim Berners-Lee escreveu seu navegador NeXT de forma que ele poderia determinar os estilos pelo Style Sheets. Um fato curioso é que Tim não publicou a sintaxe e deixou que cada browser apresentasse a estrutura da forma que o desenvolvedor daquele browser achasse melhor. Todos os browsers daquela época limitavam a estilização das páginas. Em 1993 quando o Mosaic foi lançado ele só permitia a mudaça de cor e alguns aspectos das fontes. Em 1994 Marc Andreessen anunciou que o primeiro beta do Mozila (que acabou se tornando o NetScape) estava aberto para teste. Esse navegador veio com tags que até então não eram conhecidas.
 
-Tres dias antes desse acontecimento Håkon publicou um artigo sobre [Cascading HTML Style Sheets](http://www.w3.org/People/howcome/p/cascade.html). O CSS se destacava em relação aos demais concorrentes pois ele levava em conta tanto aquilo que o autor queria fazer quanto as capacidades to dispositivo e do browser que estavam sendo utilizados para "rodar" o CSS. Ao fim de 1995 a W3C aprovou o HTML Editorial Review Board (HTML ERB) para ratificar o futuro das especificações HTML. Na mesma época, como o interesse no CSS por parte dos membros do grupo cresceu, a especificação do CSS foi trabalhada para se tornar uma recomendação. Quando a microsoft sinalizou que iria adicionar supotre ao CSS em seu browser IE3(Internet Explorer 3) o sucesso do CSS aumentou consideravelmente. Foi ai que a Netscape começou a pensar em aceitar o CSS em seus navegadores. Ela implementou seu o CSS internamente transformando regras CSS em pedaços de código Javascript que depois seriam executado juntamente a scripts. Além disso ela deicidiu deixar desenvolvedores escreverem [JSSS](http://www.w3.org/Submission/1996/1/WD-jsss-960822) como forma de evitar que os desenvolvedores escrevessem CSS. Em 1996 foi lançada a primeira recomendação do CSS 1. 
+Tres dias antes desse acontecimento Håkon publicou um artigo sobre [Cascading HTML Style Sheets](http://www.w3.org/People/howcome/p/cascade.html). O CSS se destacava em relação aos demais concorrentes pois ele levava em conta tanto aquilo que o autor queria fazer quanto as capacidades do dispositivo e do browser que estavam sendo utilizados para "rodar" o CSS. Ao fim de 1995 a W3C aprovou o HTML Editorial Review Board (HTML ERB) para ratificar o futuro das especificações HTML. Na mesma época, como o interesse no CSS por parte dos membros do grupo cresceu, a especificação do CSS foi trabalhada para se tornar uma recomendação. Quando a microsoft sinalizou que iria adicionar suporte ao CSS em seu browser IE3(Internet Explorer 3) o sucesso do CSS aumentou consideravelmente. Foi ai que a Netscape começou a pensar em aceitar o CSS em seus navegadores. Ela implementou seu o CSS internamente transformando regras CSS em pedaços de código Javascript que depois seriam executado juntamente a scripts. Além disso ela deicidiu deixar desenvolvedores escreverem [JSSS](http://www.w3.org/Submission/1996/1/WD-jsss-960822) como forma de evitar que os desenvolvedores escrevessem CSS. Em 1996 foi lançada a primeira recomendação do CSS 1. 
 
-https://en.wikipedia.org/wiki/Cascading_Style_Sheets
-http://www.w3.org/People/howcome/p/cascade.html
-http://www.w3.org/Style/LieBos2e/history/
-http://www.w3.org/Submission/1996/1/WD-jsss-960822
-http://www.w3schools.com/css/
+##### Links Complementares
 
-### Especificidade
+[história do CSS](http://www.w3.org/Style/LieBos2e/history/)
 
 ### O que são seletores?
+
+Seletores são usados para separar partes do markup que serão estilizadas. Estilos serão aplicados quando as tags e atrubutos escritos no CSS existirem no HTML. Os seletores podem ser aplicados em:
+
++ Elementos de um tipo específico
++ Atributos
+  ++ IDS
+  ++ Class
++ Elementos relativos a outros elementos
+
+Classes podem ser aplicadas em diversos elementos, sem restrição. Já os IDs só podem ser aplicados em um único elemento. O objetivo deles é poder identificar um elemento unicamente para que mudanças naquele elemento não afetem outros elementos. Seletores podem ser combinados de diversas formas para alcançar um grande nível de especificidade. Multiplos seletores podem ser juntados para especificar elementos baseado em sua localização, em seu tipo, em seu id, em sua classe, ou em qualquer combinação destes. A ordem dos seletores é extremamente importante. Escrever `div .nomeDaClasse {color:red;}` corresponde a customizar a cor do texto dos elementos da classe `nomeDaClasse` que estão contidos dentro de uma div, ou seja, elementos que usam a classe `nomeDaClasse` mas não estão dentro de uma div não são estilizados. Ao escrever `.nomeDaClasse div {color:red;}` os elementos afetados serão as `divs` que estão dentro de classes `nomeDaClasse`. 
 
 ### Como seletores são interpretados?
 
@@ -26,7 +32,41 @@ selector::pseudo-element {
     property:value;
 }
 
-### Seletores CSS
+### Especificidade
+
+A especificadade é o que determina qual regra CSS tem precedência quando várias podem ser aplicadas ao mesmo elemento. Existem 4 categorias que definem o nível de especificidade de um seletor, seguem:
+
++ Estilos inline
++ IDs
++ Classes, pseudoclasses e atributos
++ Elementos e pseudoelementos
+
+___
+
+Quando pensamos na especificidade de um elemento `div` temos:
+
+div = (Estilos inline = 0), (IDs = 0), (Classes, pseudoclasses e atributos = 0), (Elementos e pseudoelementos = 1)
+div = 0, 0, 0, 1
+div = 0001
+
+Se o seletor fosse #id_qualquer div teríamos:
+
+\#id_qqr div = 0, 1, 0, 1
+\#id_qqr div = 0101
+
+Imaginando que ambas as regras estivessem sendo usadas para estilizar uma página `#id_qqr div` teria precedência em relação a `div` pois 0101 > 0001. Essa matemática só serve para mostrar a lógica que é usada para interpretar seu arquivo CSS.
+
+___
+
+Pensando em outro exemplo para fixar o conteúdo pense qual das regras CSS tem maior peso, `#id_qqr article ul` ou `#id_qqr .list`?
+
+Fazendo os cálculos temos:
+`#id_qqr article ul` = 0102  
+`#id_qqr .list` = 0110
+
+No seletor `#id_qqr article ul` temos 1 ID e 2 elementos. Já no `#id_qqr .list` temos 1 ID e 1 classe. Como 0110 > 0102 a regra com seletor `#id_qqr .list` teria precedência sobre `#id_qqr article ul`. Além disso, a regra `#id_qqr .list` será mais eficiente em questão de performace.
+
+Quando acontecer um empate, ou seja, duas regras terem mesmo peso, temos que usar `!important` naquela que deve ser priorizada. Havendo conflito entre `!important`, entra em ação o efeito cascata, com precedência das CSS de usuário `as de autor.
 
 ### O que são Id's?
 
@@ -477,6 +517,38 @@ Linear Gradient - Left to Right
 ##### Resizing
 
 ### Media Query
+
+As media queries são capazes de extrair dados sobre o dispositivo no qual o usuário está acessando a página. Um dos dados é o tamanho e largura do dispositivo. Além desse é possível descobrir a orientação de um telefone ou tablet, sua resolução, e outros. A sintaxe das media queries se assemelha a seguinte:
+
+```
+@media not|only mediatype and (media feature) {
+  CSS-Code;
+}
+```
+
+Elas são extremamente importantes pois elas além de muitas coisas, também permitem a mudança de estilos da página quando o usuário acessa em um ambiente mobile. O próximo exemplo mostra essa mudança de estilo aplicada sobre um classe.
+
+```
+.nomeDaClasse {
+  float: left;
+  width: 25%;
+}
+
+@media (max-width: 400px) {
+  .nomeDaClasse {
+    float: none;
+    width: 100%;
+  }
+}
+```
+
+No exemplo anterior usamos o valor `400px` para definir o ponto em que nosso layout iria se adaptar `aquela resolução. Esse ponto é chamado __breakpoint__ . É possível adicionarmos diversos breakpoints para tornar o site adaptavel não só para desktop e mobile, mas para ipads e outros. Optamos também por usar max-width, mas existe uma outra media feature chamda min-width que costuma ser usada.
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
 
 ### Flex-box
 
