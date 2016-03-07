@@ -1,3 +1,7 @@
+# Introdução
+
+Esse é o mais novo livro da CJR. Aqui é o banco de conhecimento.
+
 # Escala de Conhecimento
 
 + 1) Novato
@@ -26,7 +30,7 @@
 + [Rails Guide](http://guides.rubyonrails.org/)
 + [Rails Girls Guide](http://guides.railsgirls.com/)
 + [Thinkful Rails Guide](http://www.thinkful.com/learn/ruby-on-rails-tutorial/)
-+ [People can code](http://www.peoplecancode.com/en)
++ [People can code](http://ww..peoplecancode.com/en)
 + [Dive into HTML5](http://diveintohtml5.info/)
 + [Learn jQuery by jQuery](http://learn.jquery.com/about-jquery/)
 + [Eloquent Javascript](http://eloquentjavascript.net/)
