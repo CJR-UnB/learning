@@ -68,6 +68,12 @@ end
 
 **Rails uses this timestamp to determine which migration should be run and in what order, so if you're copying a migration from another application or generate a file yourself, be aware of its position in the order.**
 
+To create a migration, use this command:
+
+```bash
+$ rails generate migration AddPartNumberToProducts
+```
+
 ### References
 
 http://guides.rubyonrails.org/active_record_migrations.html
