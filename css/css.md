@@ -459,29 +459,18 @@ selector::pseudo-element {
 
 + Border Radius
 
-If you specify only one value for the border-radius property, this radius will be applied to all 4 corners.
+Essa propriedade adiciona bordas aredondadas ao elemento. Quando especificamos apenas um valor, esse valor será aplicado para cada borda do elemento. Quando usamos quatro valores, estes serão aplicados para o topo esquerdo, topo direito, canto inferior direito, e canto inferior esquerdo daquele elemento.
 
-Four values: first value applies to top-left, second value applies to top-right, third value applies to bottom-right, and fourth value applies to bottom-left corner
-Three values: first value applies to top-left, second value applies to top-right and bottom-left, and third value applies to bottom-right
-Two values: first value applies to top-left and bottom-right corner, and the second value applies to top-right and bottom-left corner
-One value: all four corners are rounded equally
-
+```
 border-radius: 10px 10px 10px 10px;
 border-radius: 10px 10px 10px;
 border-radius: 10px 10px;
 border-radius: 10px;
+```
 
 + Border Image
 
-With the CSS3 border-image property, you can set an image to be used as the border around an element.
-
-The CSS3 border-image property allows you to specify an image to be used instead of the normal border around an element.
-
-The property has three parts:
-
-The image to use as the border
-Where to slice the image
-Define whether the middle sections should be repeated or stretched
+A propriedade Border Image permite a utilização de uma imagem como borda de um elemento. A propriedade permite uma imagem que será usada como borda, um argumento dizendo onde aquela imagem será cortada, e um argumento dizendo se aquela imagem deve se repetir ou se deve ser alongada para caber dentro do espaço delimitado.
 
 ```
 #borderimg {
@@ -608,6 +597,203 @@ For many applications, the flexible box model provides an improvement over the b
 	Separar container de conteúdo
 		Um objeto deve permanecer igual independente da sua localizacao na pagina, ou seja, nao queremos que as classes pai do css influenciem as classes filho
 
+  ___
+
+  #weather h3 {
+    font-size: 1.2em;
+  }
+  #tweets h3 {
+    font-size: 1.2em;
+  }
+
+  ___
+
+  #weather h3,
+  #tweets h3,
+  #comments h3 {
+    font-size: 1.2em;
+  }
+
+  ___
+
+  h1, .h1 {
+    font-size: 1.6em;
+  }
+  h2, .h2 {
+    font-size: 1.4em;
+  }
+  h3, .h3 {
+    font-size: 1.2em;
+  }
+
+  ___
+
+  HTML
+    <div id="box">
+      <h3>Oi</h3>
+    </div>
+
+  CSS
+    #box h3 {
+
+    }
+
+  ___
+
+  NAO USE IDS
+
+  HTML
+
+
+  CSS
+
+  ___
+
+  A desenvolvedora Nicole Sullivan teve a ideia de trazer o site para o front-end para que o objetivo principal tambem pudesse ser almejado em CSS. Assim surgiu o CSS orientado a objetos.
+  Ele foi criado para diminuir a repeticao desnecessaria de propriedades css
+  O css orientado a objeto é uma metafora para indicar que e possivel escrever um CSS mais eficiente, sem repeticoes, que enseje a projetos mais profissionais
+
+  ___
+
+  Dois principios importantes 
+    Separar estrutura e skin
+      repetir caracteristicas visuais como skins separadas que podem ser combinadas em varios objetos para conseguir-se uma extensa gama de variacoes visuais sem muito codigo. por exemplo, backgrounds e estilos de borda
+      A diretriz tambem pode isgnificar o uso de classes para nomar objetose componentes, em vez de confiar somente na semantica HTML. por eemplos, um objeto de midia com class="media" e seus componentes com class="img" (para componentes de imagem e video) e class="bd" (para componentes de texto).
+    Separar container e conteudo
+      raramente use estilos que dependam de localizacao. idealmente, um objeto deve parecer0se igual, independentemente de onde estiver na pagina, ou mesmo se trocar de pagina
+      Em vez de estilizar um titulo secundario especifico com .myObject h2 {}, crie e aplique uma classe que descreva o elemento em questao, como <h2 class="category-title">. Isso garante que:
+        todos os h2 sem a classe nao sejam afetados inadvertidamente
+        todos os g2 com a classe tenham o mesmo estilo
+        nao e preciso criar estilos extras para os casos em que seja preciso que um .myObject se pareca com um h2 nao estilizado.
+
+
+  ___
+
+  ___
+
 ### SMACSS
 
+style guide that help organize and structure CSS for projects on any scale
+
+identify repeating pattern that are going to combine into modular code
+
+  ___
+
+Cateories
+  Base
+  Layout
+  Modules
+  States
+  Themes
+
+  ___
+
+Base
+  what elements look by default
+
+Layout
+  define layout for major parts of the page
+  header
+  footer
+  sidebar
+  grid
+
+Modules
+  majority of the project
+
+States
+  element states
+  hidden
+  active
+  collapsed
+
+Theme
+  define diferent color to give our project diferent colors
+
+  ___
+
+scss
+  application.scss  -> import all indexes
+  base
+    _base.scss      -> styles for base element selectors (ex: h1, h2, body, *, ...)
+    _index.scss     -> import others
+    _normalize.scss -> reset styles
+  layout
+    _container.scss   -> 
+    _extends.scss     -> 
+    _index.scss       -> import others
+    _panel.scss       -> 
+  modules
+    _buttons.scss
+    _extends.scss
+    _forms.scss
+    _headlines.scss
+    _icons.scss
+    _img.scss
+    _index.scss
+    _nav.scss
+    _navbar.scss
+  states
+    _index.scss
+  theme
+  utilities
+    _config.scss
+    _functions.scss
+    _helpers.scss
+    _index.scss
+    _mixins.scss
+
+  ___
+
+application
+  @import utilities
+  @import base
+  @import layout
+  @import module
+  @import state
+  @import theme
+
 ### BEM
+
+Block Element Modifier
+
+.bloq__element--modifier
+
+Block Classes
+  Root
+  Highest level of abstraction
+  Contain child elements that help form a block
+
+Element Classes
+  Form a Block
+
+Modifier Classes
+  Variation of the existing classes
+
+.list__item {
+  padding: 5px;
+  border-bottom: 1px solid;
+}
+
+.list__item--end {
+  border-bottom: nome;
+}
+
+.list__item--highlight {
+  color: white;
+  background: yellow;
+}
+
+<ul class="list">
+  <li class="list__item">Item 1</li>
+  <li class="list__item list__item--highlight">Item 2</li>
+  <li class="list__item list__item--end">Item 3</li>
+</ul>
+
+Obs: O problema de usar o bem é que ele é subjetivo. Sua definição de um Modulo pode ser diferente da definicao de outros. O importante é pensar que o bloco é o maior nivel de abstracao. Qualquer bloco definido pode ser usado livremente em diversas paginas ou ate mesmo projetos sem dependencias extras. 
+
+Devemos dividir as partes em bloco apenas se aquela parte puder ser reutilizada entre projetos.
+
+Um dos pontos negativos do BEM é aumentar consideravelmente o tamanho das suas classes usadas no html tornando o codigo um pouco mais "sujo", podem garantindo maior manutenibilidade.
+
+One of the big advantages of using the BEM convention is: We communicate what a block of HTML does just front its naming convention, and selectors are easier to understand because we provide the context directly into the selector
