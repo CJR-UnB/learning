@@ -31,7 +31,7 @@ words separated by underscores.
 + Model Class - Singular with the first letter of each word capitalized 
 (e.g., BookClub).
 
-![Naming Conventions](images/table1.png)
+![Naming Conventions](../images/table1.png)
 
 ### Schema Conventions
 
@@ -44,10 +44,10 @@ models.
 id  as the table's primary key. When using Active Record Migrations to create 
 your tables, this column will be automatically created.
 
-+ created_at` - Automatically gets set to the current date and time when the 
++ `created_at` - Automatically gets set to the current date and time when the 
 record is first created.
 
-+ updated_at` - Automatically gets set to the current date and time whenever 
++ `updated_at` - Automatically gets set to the current date and time whenever 
 the record is updated.
 
 ### Creating Active Record Models

@@ -2,7 +2,7 @@
 
 ### O que é CSS (Cascading Style Sheets) e qual sua utilidade?
 
-O CSS, assim como o HTML, é uma linguagem. Ele difere das demais por definir a forma como os dados escritos em uma linguagem de marcação serão apresentados. No decorrer dos anos muitas mudanças foram feitas no CSS para suprir a necessidade crescente dos desenvolvedores web. Ela foi feita com o objetivo de separar o ceunteúdo de uma página da forma como este conteúdo era apresentado para os visitantes. Por meio do CSS é possível customizar cores, fontes, posições, e outros. Antes do CSS, era possível customizar fontes e cores usando o atributo `style=""` do HTML, mas foi notado que esse atributo não era o suficiente para suprir as necessidades dos desenvolvedores pois eles teriam que repetir muito código para customizar uma página. Se quiséssemos 2 títulos com cor vermelha teríamos que entrar no HTML e adicionar o mesmo código para cada um dos títulos. O atributo surgiu na versão 3.2 do HTML juntamente com o termo Web Designer. Ao separar os arquivos CSS aumentamos a flexibilidade e o controle das páginas além de permitir compartilhamento do estilos para diferentes partes do seu site.
+O CSS, assim como o HTML, é uma linguagem. Ele difere das demais por definir a forma como os dados escritos em uma linguagem de marcação serão apresentados. No decorrer dos anos muitas mudanças foram feitas no CSS para suprir a necessidade crescente dos desenvolvedores web. Ela foi feita com o objetivo de separar o conteúdo de uma página da forma como este conteúdo era apresentado para os visitantes. Por meio do CSS é possível customizar cores, fontes, posições, e outros. Antes do CSS, era possível customizar fontes e cores usando o atributo `style=""` do HTML, mas foi notado que esse atributo não era o suficiente para suprir as necessidades dos desenvolvedores pois eles teriam que repetir muito código para customizar uma página. Se quiséssemos 2 títulos com cor vermelha teríamos que entrar no HTML e adicionar o mesmo código para cada um dos títulos. O atributo surgiu na versão 3.2 do HTML juntamente com o termo Web Designer. Ao separar os arquivos CSS aumentamos a flexibilidade e o controle das páginas além de permitir compartilhamento do estilos para diferentes partes do seu site.
 
 ### Histórico
 
@@ -72,7 +72,7 @@ Classes podem ser aplicadas em diversos elementos, sem restrição. Já os IDs s
 
 ### Como seletores são interpretados?
 
-> Seletores são lidos da direita para a esquerda pelos navegadores. É mais eficiente para um navegador começar sua procura por combinações a partir do elemento mais a direita (o que ele sabe que receberá o estilo) e trabalhar o seu caminho de volta através da árvore de DOM, do que comçar no alto dessa árvore e percorrer o caminho para baixo, pois poderia nem mesmo acabar no seletor que precisa receber a estilização (também conhecido como seletor-chave).g
+> Seletores são lidos da direita para a esquerda pelos navegadores. É mais eficiente para um navegador começar sua procura por combinações a partir do elemento mais a direita (o que ele sabe que receberá o estilo) e trabalhar o seu caminho de volta através da árvore de DOM, do que comçar no alto dessa árvore e percorrer o caminho para baixo, pois poderia nem mesmo acabar no seletor que precisa receber a estilização (também conhecido como seletor-chave).
 
 ### Especificidade
 

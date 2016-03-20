@@ -1,7 +1,6 @@
 # Rails
 
 
-### Active Record Migrations
 ### Action Controller Overview
 ### Rails routing from the outside In
 ### Action View form helpers
