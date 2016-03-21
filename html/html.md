@@ -32,7 +32,7 @@ Um protocolo pode ser definido como um conjunto de regras que governam a sintaxe
 
 + HTTP (Hypertext Transfer Protocol)
 
-	É um protocolo de comunicação utilizado na troca ou transferencia de hipertexto.Esse protocolo utiliza o modelo cliente-servidor, como a maioria dos protocolos de rede, baseando-se no paradigma de requisição e resposta. Um programa requisitante (cliente) estabelece uma conexão com um outro programa receptor (servidor) e envia-lhe uma requisição.
+	É um protocolo de comunicação utilizado na troca ou transferencia de hipertexto. Esse protocolo utiliza o modelo cliente-servidor, como a maioria dos protocolos de rede, baseando-se no paradigma de requisição e resposta. Um programa requisitante (cliente) estabelece uma conexão com um outro programa receptor (servidor) e envia-lhe uma requisição.
 
 + FTP (File Transfer Protocol)
 
@@ -79,6 +79,8 @@ Diferentes versões
 	HTML / HTML 2.0 / HTML 3.2 / HTML 4.01 / XHTML / HTML5 
 
 ### Primeira linha
+
+Para começar é recomendado um editor de texto. Alguns editores recomendados são: Sublime Text, Atom, Brakets, etc. Você deve salvar seu arquivo como .html. Ao adicionar essa extensão ao seu arquivo passará a ser possível clicar em cima do mesmo para abrir aquele arquivo. Aquele arquivo clicado será aberto em seu navegador default e será mostrado para o usuário o resultado daquilo que foi adicionado ao seu arquivo HTML pelo editor.
 		
 `<!DOCTYPE html>`
 	
