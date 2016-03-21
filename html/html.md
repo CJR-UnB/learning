@@ -16,7 +16,7 @@ O HTML pode ser estruturado a partir de dois pilares, o __hipertexto__ e a __mar
 
 ##### Marcação
 	
-Não adianta nada linkar e relacionar informações na web se essas informações não tiverem significado. Os browsers precisam de ajuda para diferenciar um parágrafo de um título Marcação 
+Não adianta nada linkar e relacionar informações na web se essas informações não tiverem significado. Os browsers precisam de ajuda para diferenciar um parágrafo de um título, e é ai que vem a marcação. Ela inclui tags que possibilitam a diferenciação dos elementos da página.
 	
 ### Web Browsers
 		
@@ -36,38 +36,42 @@ Um protocolo pode ser definido como um conjunto de regras que governam a sintaxe
 
 + FTP (File Transfer Protocol)
 
-	Seu uso possibilita uma forma rápido e versátil de tranferir arquivos sendo uma das mais usadas na Internet. A transferência de arquivos dá-se entre um computador chamado "cliente" (aquele que solicita a conexão para a transferência de dados) e um servidor (aquele que recebe a solicitação de transferência). O utilizador, através de software específico, pode selecionar quais arquivos enviar ou receber do servidor. Para existir uma conexão ao servidor,caso o servidor exija, o utilizador informa um nome de utilizador e uma senha password, bem como o nome correcto do servidor ou seu endereço IP. Se os dados foram informados corretamente, a conexão pode ser estabelecida.
+	Seu uso possibilita uma forma rápido e versátil de tranferir arquivos sendo uma das mais usadas na Internet. A transferência de arquivos dá-se entre um computador chamado "cliente" (aquele que solicita a conexão para a transferência de dados) e um servidor (aquele que recebe a solicitação de transferência). O utilizador, através de software específico, pode selecionar quais arquivos enviar ou receber do servidor. Para existir uma conexão ao servidor, caso o servidor exija, o utilizador informa um nome de utilizador e uma senha password, bem como o nome correto do servidor ou seu endereço IP. Se os dados foram informados corretamente, a conexão pode ser estabelecida.
 
 ##### Como os Web Browsers funcionam?
 
-Os navegadores apresentam conteúdo escolhido pelos desenvolvedores por meio de uma solicitação ao servidor. Um dos conteúdos mais comuns escolhido é um documento HTML. A forma como o navegador interpreta e exibe arquivos HTML é apresentadas nas especificações de HTML e CSS. Essas especificações são mantidas pelo W3C (Consórcio World Wide Web), a organização que controla os padrões para a web. Por muitos anos, os navegadores mantiveram-se parcialmente de acordo com as especificações e desenvolveram as próprias extensões. Isso causou sérios problemas de compatibilidade para autores da web. Hoje a maioria dos navegadores está relativamente de acordo com as especificações.
-
-<!-- Web browsers comunicam-se com servidores Web usando, geralmente, o protocolo de transferência de hiper-texto HTTP. Qualquer aplicação que se comunica com um web server pode ser chamada de web client. -->
+Os navegadores apresentam conteúdo escolhido pelos desenvolvedores por meio de uma solicitação ao servidor. Um dos conteúdos mais comuns escolhido é um documento HTML. A forma como o navegador interpreta e exibe arquivos HTML é apresentadas nas especificações do HTML e do CSS. Essas especificações são mantidas pelo W3C (Consórcio World Wide Web), a organização que controla os padrões para a web. Por muitos anos, os navegadores mantiveram-se parcialmente de acordo com as especificações e desenvolveram as próprias extensões. Isso causou sérios problemas de compatibilidade para autores da web. Hoje a maioria dos navegadores está relativamente de acordo com as especificações.
 			
-+ WebSockets
-
-http:// www.blabla.com / blublublu.html
-			
-+ directory tree
-
-web client sends request
-web server sends response
-
-+ plain-text vs hiper-text
-
-o hiper-texto funcionava da seguinte forma: se vc clicar em uma palavra, são mostrador detalhes sobre aquela palavra.
-send http request get http response
-url -> uniform resource locator
-http é um protocolo que usa TCP
-
-A forma como o navegador interpreta e exibe arquivos HTML é apresentadas nas especificações de HTML e CSS. Essas especificações são mantidas pelo W3C (Consórcio World Wide Web), a organização que controla os padrões para a web. 
-Por muitos anos, os navegadores mantiveram-se parcialmente de acordo com as especificações e desenvolveram as próprias extensões. Isso causou sérios problemas de compatibilidade para autores da web. Hoje a maioria dos navegadores está relativamente de acordo com as especificações
-
 ### Histórico
 
-Guerra dos Navegadores
+##### Guerra dos Navegadores
 
-	
+O primeiro navegador criado foi o WorldWideWeb em 1990. Tal navegador mostrava os dados de forma textual, ou seja, as interfaces daquela época eram completamente diferente daquilo que vemos hoje. Esse navegador rodava em cima da sistema NeXTSTEP (sistema operacional que foi criado por Stave Jobs). Um fato curioso é que este sistema foi comprado pela Apple e foi usado como base para seu nome sistema operacional, o famoso Mac OS X.
+
+A Web, entretanto, só explodiu realmente em com a introdução do NCSA Mosaic, que era um navegador gráfico (em oposição a navegadores de modo texto). Esse navegador foi o primeiro navegador a rodar no sistema operacional Windows. Marc Andreessen, o líder do time que desenvolveu o Mosaic, saiu da NCSA e, com Jim Clark, um dos fundadores da Silicon Graphics, Inc. (SGI) e outros quatro estudantes formados e nomeados da Universidade de Illinois, iniciaram o Mosaic Communications Corporation. Mosaic Communications finalmente se tornou a Netscape Communications Corporation, produzindo o Netscape Navigator.
+
+A Netscape lançou o seu produto líder Navigator em Outubro de 1994, e este tornou-se o mais popular navegador no ano seguinte. A Microsoft, que até então havia ignorado a Internet, entrou na briga com o seu Internet Explorer, comprado às pressas da Splyglass Inc. Isso marca o início da Guerra dos Browsers, que foi a luta pelo mercado dessas aplicações entre a gigante Microsoft e a companhia menor largamente responsável pela popularização da Web, a Netscape.
+
+A microsoft estava acabando com a netscape até que a netscape disponibilizou o codigo fonte do seu navegador e nomeou o produto mozilla. Quando Bill Gater e a Microsoft viram que aquela era uma possível ameaça decidiram deixar seu navegador gratuito. Por essa e outras atitudes a Microsoft foi acusada de práticas ilegais para iludir usuários a usar seu navegador.
+
+Enquanto isso, o time do mozila sofria porque os desenvolvedores nao tinham tempo de reler todas as linhas do codigo para garantir que não haviam bugs no código. Além disso nem todo os membros da empresa estavam familiarizados como todo o código, logo, não tinham conhecimento para consertar possíveis bugs de funcionalidades que eles não dominavas. Daí a manutenção ficou dificultada.
+
+Quando o o código estava quase pronto para ser disponibilizado para o público a netscape teve de explicar a importância daquele projeto para a emprensa. O sonho era que aquele projeto fosse visto da mesma forma e com o mesmo entusiasmo de quando a empresa entrou no mercado.
+
+Outro fator que dificultou o lançamento do mozilla para o público foi o fato de que um pequeno pedaço de código da Apple foi utilizado, e esse pedaço nao havia sido liberado para public license. Os programadores tiveram que substituir aquela parte do código da Apple pelo seu proprio código para poder disponibilizar o navegador ao público. No fim a Apple até permitiu que usassem o código regular.
+
+Em 95 os stocks da netscape subiram para 108% do valor inicial. Mas mesmo assim os problemas continuaram. A netscape não tinha um framework para escrever o software, eles apensar escreviam tudo sem muito planejamento. Quando o source foi finalmente liberado um rapaz de 16 anos olhou o código e ficou apavorado com o quão confuso e mal feito aquilo era. Por isso ele decidiu refazer o codigo do zero.
+
+Pouco depois, quando a microsoft decidiu investir em internet, os stocks da netscape cairam. O mercado do browser que antes era a maior fonte de renda da empresa se tornou um dos menos lucrativos, dai tiveram que investir em outras coisas. Foi em 1998 que a microsoft foi culpada de ter praticado ilegalmente táticas de mercado. A justiça americana considerou a prática de agregação do internet explorer ao sistema operacional Windows uma pratica monopolista e ilegal. No entanto, a decisão veio muito tarde para a Netscape que já não era tão forte como anteriormente e seu código havia se tornado gigantesco. Com poucas pessoas para arrumar os bugs os empregados tiveram que trabalhar cada vez mais para manter a idéia viva.
+
+Quando notaram que a briga estava praticamente perdida venderam a empresa para outra chamada AOL (American on line). Muitos dos empregados da netscape se recusaram a trabalhar para a AOL e saíram. Quando a compra da empresa foi finalizada, em 99, as ações da netscape mais que duplicaram. Curioso que enquanto muitos executivos venderam seus stocks quando a netscape chegou ao seu ultimo ano outros ganharam uma fortuna.
+
+Por volta de Junho de 2002, o projeto Mozilla havia produzido um navegador útil e conformante com os padrões web, que funcionava em múltiplos sistemas operacionais incluindo Linux, Mac OS, Windows e Solaris. A versão 1.0 do Mozilla, liberada em 5 de Junho de 2002 foi elogiada por introduzir características que nem mesmo no seu rival, o Internet Explorer, possuía, incluindo um suporte melhor para as preferências de privacidade do usuário e algumas melhorias na interface gráfica. Adicionalmente, o navegador tornou-se a implementação de referência de facto dos vários padrões do World Wide Web Consortium, devido ao seu forte suporte aos mesmos.
+
+Em 5 de Julho de 2003, a AOL anunciou que fecharia a sua divisão de navegadores, o que, em essência, era o Mozilla. Longe de ser o fim da platafoma, este foi o começo da Fundação Mozilla, formada por ex-veteranos da Netscape/Mozilla que tomaram sobre si a responsabilidade do desenvolvimento do projeto. Como consolação, a AOL prometeu investir 2 milhões de dólares da recém-formada fundação.
+
+Mozilla, um produto que originalmente visava desenvolvedores ao invés de usuários finais, agora enfrenta o desafio do marketing para as massas. Dentre os diversos browsers que a Fundação desenvolveu o browser Mozilla Firefox se destacou. Hoje cerca de 19,25% de todos os usuários da Internet do mundo utilizam o Firefox, sendo o terceiro navegador mais utilizado no mundo, atrás do Google Chrome que aparece com 49,18% dos usuários, e do Internet Explorer que aparece com 22,62%
+
 ### O que são tags HTML?
 
 `<nomedatag atributos>conteudodatag</nomedatag>`
