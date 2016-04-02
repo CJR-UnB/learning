@@ -709,8 +709,6 @@ Quanto maior o valor de perspective mais distânte a perspectiva será aplicada.
 
 ```
 
-##### Animation
-
 ### Media Query
 
 As media queries são capazes de extrair dados sobre o dispositivo no qual o usuário está acessando a página. Um dos dados é o tamanho e largura do dispositivo. Além desse é possível descobrir a orientação de um telefone ou tablet, sua resolução, e outros. A sintaxe das media queries se assemelha a seguinte:
@@ -807,34 +805,98 @@ Essa propriedade é capaz de mudar a ordem com que os items são renderizados de
 
 Essa propriedade pode ser usada para posicionar itens em diferentes posições, por exemplo, se atribuirmos margin-right: auto a um item, este irá mostrar um espaço em branco a sua direita. Seguindo a mesma lógica, para centralizar um item, bastaria colocar sua margin como auto.
 
-___
-
 ### OOCSS
 
-	Separar estrutura e skin
-		Repetir caracteristica visual como skin que pode ser combinada em uma variada gama de objetos por exemplo background e estilos de borda
-	Separar container de conteúdo
-		Um objeto deve permanecer igual independente da sua localizacao na pagina, ou seja, nao queremos que as classes pai do css influenciem as classes filho
+Object Orientes CSS é uma forma padronizada para organização do seu código CSS. Pense nele como um guia que dita a arquitetura do seu CSS. Assim como o OOCSS existem outras arquiteturas famosas no CSS. Iremos falar das demais adiante.
 
-  ___
+O princípio básico do CSS Orientado a Objetos é a separação de __estrutura__ e __skin__ e a separação de __container__ e __conteúdo__.
 
-  #weather h3 {
-    font-size: 1.2em;
+Separar estrutura e skin consiste em repetir característica visual como skin que pode ser combinada em uma variada gama de objetos por exemplo background e estilos de borda. Separar container de conteúdo segue o princípio de que um objeto deve permanecer igual independente da sua localizacao na página, ou seja, não queremos que as classes pai do css influenciem as classes filho.
+
+Para deixar bem claro, vamos observar como o CSS Orientado a Objetos pode ajudar o desenvolvedor garantindo maior manutenibilidade e menor repetição de código.
+
+Imagine o seguinte cenário.
+
+```
+#weather h3 {
+  font-size: 1.2em;
+}
+#tweets h3 {
+  font-size: 1.1em;
+}
+```
+
+Aqui temos um weather __module__. Queremos estilizar esse weather, e para isso adicionamos uma font-size ao id. Quando pensamos no código notamos que todos os h3 dentro de #weather __modules__ recebem uma font-size de 1.2em. Mas o que acontece com um __module__ diferente? Temos o __module__ tweets. O que fazer com ele? Adicionamos font-size com valor 1.2em novamente? E se o font-size desse elemento for diferente? Com essas poucas linhas de código já temos um sério problema: nosso h3 possui valores diferentes dependendo do __module__ que o contém. Voltamos a dizer que o nosso font-size dentro de tweets ainda seja 1.2ems para facilitar.
+
+```
+#weather h3 {
+  font-size: 1.2em;
+}
+#tweets h3 {
+  font-size: 1.2em;
+}
+```
+Uma forma de facilitar a legibilidade desse código seria fazer o seguinte:
+
+```
+#weather h3,
+#tweets h3 {
+  font-size: 1.2em;
+}
+```
+
+O problema aqui é que cada vez que quiséssemos adicionar h3 com tamanho 1.2em cujo pai não seja weather e tweets, teremos que voltar ao CSS e escrever mais uma linha para satisfazer esse caso.
+
+```
+#weather h3,
+#tweets h3,
+#comments h3 {
+  font-size: 1.2em;
+}
+```
+
+Agora que vimos os problemas de codar dessa forma precisamos pensar em uma solução para deixar nosso código mais modular, manutenível, e legível. A coisa mais obvia a se fazer seria parar de usar IDs no seu CSS. Já sabemos que essa não é uma boa prática.
+Poderíamos resolver o problema dos ids colocando uma classe no seu lugar. Além disso, podemos mudar o próprio valor default do h1.
+
+```
+h1, .h1 {
+  font-size: 1.6em;
+}
+h2, .h2 {
+  font-size: 1.4em;
+}
+h3, .h3 {
+  font-size: 1.2em;
+}
+```
+
+Muitas pessoas questionam o uso de classes cujo nome é igual a de um identificador. Não tem problema nenhum usarmos .h1 para representar o elementos h1, pelo contrário, essa metodologia é bem flexível. Agora podemos modificar o font-size da forma como gostariamos desde o início e essas mudanças não são limitadas ao __module__ ou um __id__ ou __container__. Vamos analisar o seguinte código:
+
+```
+HTML
+  <div id="box">
+    <h3>Oi</h3>
+  </div>
+
+CSS
+  #box h3 {
+
   }
-  #tweets h3 {
-    font-size: 1.2em;
-  }
+```
 
-  ___
+Como vimos, essa não é uma forma muito boa de manter seu código. No exemplo acima estamos codificando em termos de __modules__ específicos. Quando adicionarmos uma nova div com id="box2" e com h3 dentro teríamos que entrar no arquivo CSS e adicionar mais linhas de código sempre que uma nova div fosse adicionada.
 
-  #weather h3,
-  #tweets h3,
-  #comments h3 {
-    font-size: 1.2em;
-  }
+Usando os conceitos que aprendemos até aqui teríamos o seguinte código:
 
-  ___
-
+```
+HTML
+  <div>
+    <h3>Oi</h3>
+  </div>
+  <div class="tweets">
+    <h3 class="h4">Oi</h3>
+  </div>
+CSS
   h1, .h1 {
     font-size: 1.6em;
   }
@@ -844,51 +906,126 @@ ___
   h3, .h3 {
     font-size: 1.2em;
   }
+  h4, .h4 {
+    font-size: 1.1em;
+  }
+```
 
-  ___
+No caso acima ambos os h3 herdam a mesma estilização, mas como adicionamos a classe h4 ao segundo h3 ele se comporta de forma visualmente diferente. O legal aqui é que a tag h3 era a tag semanticamente correta, mas ela precisava de uma estilização diferente da estilização da anterior.
 
-  HTML
-    <div id="box">
-      <h3>Oi</h3>
-    </div>
+Por estarmos usando essa metodologia orientada a objetos, podemos usar base styling, mas quando realmente precisamos de visuais especificos podemos aplicar essas classes adicionais, assim conquistamos a manutenibilidade que desejavamos. Observe esse outro exemplo:
 
-  CSS
-    #box h3 {
+```
+HTML
+  <div class="notice">Here is a notice.</div>
+CSS
+  .notice {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+  }
+```
 
-    }
+Digamos que queremos adicionar uma imagem ao .notice, fariamos o seguinte:
 
-  ___
+```
+HTML
+  <div class="notice">Here is a notice.</div>
+CSS
+  .notice {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+    background: url(icon.png) no-repeat 0 50%;
+  }
+```
 
-  NAO USE IDS
+Agora queremos outra notificação, só que agora ela possui uma aparência de warning.
 
-  HTML
+```
+HTML
+  <div class="notice">Here is a notice.</div>
+  <div class="warning">Here is a warning.</div>
+CSS
+  .notice {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+    background: url(icon-notice.png) no-repeat 0 50%;
+  }
+  .warning {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+    background: url(icon-warning.png) no-repeat 0 50%;
+  }
+```
+
+Repetimos muito código desnecessário no exemplo acima. Como resolver esse problema? Acompanhe a solução:
+
+```
+HTML
+  <div class="message notice">Here is a notice.</div>
+  <div class="message warning">Here is a warning.</div>
+CSS
+  .message {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+  }
+  .notice {
+    background: url(icon-notice.png) no-repeat 0 50%;
+  }
+  .warning {
+    background: url(icon-warning.png) no-repeat 0 50%;
+  }
+```
+
+A desenvolvedora Nicole Sullivan teve a ideia de trazer o site para o front-end para que o objetivo principal tambem pudesse ser almejado em CSS. Assim surgiu o CSS orientado a objetos.
+Ele foi criado para diminuir a repeticao desnecessaria de propriedades css
+O css orientado a objeto é uma metafora para indicar que e possivel escrever um CSS mais eficiente, sem repeticoes, que enseje a projetos mais profissionais
 
 
-  CSS
-
-  ___
-
-  A desenvolvedora Nicole Sullivan teve a ideia de trazer o site para o front-end para que o objetivo principal tambem pudesse ser almejado em CSS. Assim surgiu o CSS orientado a objetos.
-  Ele foi criado para diminuir a repeticao desnecessaria de propriedades css
-  O css orientado a objeto é uma metafora para indicar que e possivel escrever um CSS mais eficiente, sem repeticoes, que enseje a projetos mais profissionais
-
-  ___
-
-  Dois principios importantes 
-    Separar estrutura e skin
-      repetir caracteristicas visuais como skins separadas que podem ser combinadas em varios objetos para conseguir-se uma extensa gama de variacoes visuais sem muito codigo. por exemplo, backgrounds e estilos de borda
-      A diretriz tambem pode isgnificar o uso de classes para nomar objetose componentes, em vez de confiar somente na semantica HTML. por eemplos, um objeto de midia com class="media" e seus componentes com class="img" (para componentes de imagem e video) e class="bd" (para componentes de texto).
-    Separar container e conteudo
-      raramente use estilos que dependam de localizacao. idealmente, um objeto deve parecer0se igual, independentemente de onde estiver na pagina, ou mesmo se trocar de pagina
-      Em vez de estilizar um titulo secundario especifico com .myObject h2 {}, crie e aplique uma classe que descreva o elemento em questao, como <h2 class="category-title">. Isso garante que:
-        todos os h2 sem a classe nao sejam afetados inadvertidamente
-        todos os g2 com a classe tenham o mesmo estilo
-        nao e preciso criar estilos extras para os casos em que seja preciso que um .myObject se pareca com um h2 nao estilizado.
+Dois principios importantes 
+  Separar estrutura e skin
+    repetir caracteristicas visuais como skins separadas que podem ser combinadas em varios objetos para conseguir-se uma extensa gama de variacoes visuais sem muito codigo. por exemplo, backgrounds e estilos de borda
+    A diretriz tambem pode isgnificar o uso de classes para nomar objetose componentes, em vez de confiar somente na semantica HTML. por eemplos, um objeto de midia com class="media" e seus componentes com class="img" (para componentes de imagem e video) e class="bd" (para componentes de texto).
+  Separar container e conteudo
+    raramente use estilos que dependam de localizacao. idealmente, um objeto deve parecer0se igual, independentemente de onde estiver na pagina, ou mesmo se trocar de pagina
+    Em vez de estilizar um titulo secundario especifico com .myObject h2 {}, crie e aplique uma classe que descreva o elemento em questao, como <h2 class="category-title">. Isso garante que:
+      todos os h2 sem a classe nao sejam afetados inadvertidamente
+      todos os g2 com a classe tenham o mesmo estilo
+      nao e preciso criar estilos extras para os casos em que seja preciso que um .myObject se pareca com um h2 nao estilizado.
 
 
-  ___
+___
 
-  ___
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___
 
 ### SMACSS
 
