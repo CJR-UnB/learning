@@ -8,23 +8,23 @@ O CSS, assim como o HTML, é uma linguagem. Ele difere das demais por definir a 
 
 A primeira versão do CSS foi lançada em 1994. Como não havia nenhuma forma de estilizar documentos Håkon Wium Lie achou que seria útil criar um linguagem capaz de solucionar o problema. Na época, a idéia de separar conteúdo de estrutura não era uma idéia tão inovadora. Tim Berners-Lee escreveu seu navegador NeXT de forma que ele poderia determinar os estilos pelo Style Sheets. Um fato curioso é que Tim não publicou a sintaxe e deixou que cada browser apresentasse a estrutura da forma que o desenvolvedor daquele browser achasse melhor. Todos os browsers daquela época limitavam a estilização das páginas. Em 1993 quando o Mosaic foi lançado ele só permitia a mudaça de cor e alguns aspectos das fontes. Em 1994 Marc Andreessen anunciou que o primeiro beta do Mozila (que acabou se tornando o NetScape) estava aberto para teste. Esse navegador veio com tags que até então não eram conhecidas.
 
-Tres dias antes desse acontecimento Håkon publicou um artigo sobre [Cascading HTML Style Sheets](http://www.w3.org/People/howcome/p/cascade.html). O CSS se destacava em relação aos demais concorrentes pois ele levava em conta tanto aquilo que o autor queria fazer quanto as capacidades do dispositivo e do browser que estavam sendo utilizados para "rodar" o CSS. Ao fim de 1995 a W3C aprovou o HTML Editorial Review Board (HTML ERB) para ratificar o futuro das especificações HTML. Na mesma época, como o interesse no CSS por parte dos membros do grupo cresceu, a especificação do CSS foi trabalhada para se tornar uma recomendação. Quando a microsoft sinalizou que iria adicionar suporte ao CSS em seu browser IE3(Internet Explorer 3) o sucesso do CSS aumentou consideravelmente. Foi ai que a Netscape começou a pensar em aceitar o CSS em seus navegadores. Ela implementou seu o CSS internamente transformando regras CSS em pedaços de código Javascript que depois seriam executado juntamente a scripts. Além disso ela deicidiu deixar desenvolvedores escreverem [JSSS](http://www.w3.org/Submission/1996/1/WD-jsss-960822) como forma de evitar que os desenvolvedores escrevessem CSS. Em 1996 foi lançada a primeira recomendação do CSS 1. 
+Três dias antes desse acontecimento Håkon publicou um artigo sobre [Cascading HTML Style Sheets](http://www.w3.org/People/howcome/p/cascade.html). O CSS se destacava em relação aos demais concorrentes pois ele levava em conta tanto aquilo que o autor queria fazer quanto as capacidades do dispositivo e do browser que estavam sendo utilizados para "rodar" o CSS. Ao fim de 1995 a W3C aprovou o HTML Editorial Review Board (HTML ERB) para ratificar o futuro das especificações HTML. Na mesma época, como o interesse no CSS por parte dos membros do grupo cresceu, a especificação do CSS foi trabalhada para se tornar uma recomendação. Quando a microsoft sinalizou que iria adicionar suporte ao CSS em seu browser IE3(Internet Explorer 3) o sucesso do CSS aumentou consideravelmente. Foi ai que a Netscape começou a pensar em aceitar o CSS em seus navegadores. Ela implementou seu o CSS internamente transformando regras CSS em pedaços de código Javascript que depois seriam executado juntamente a scripts. Além disso ela deicidiu deixar desenvolvedores escreverem [JSSS](http://www.w3.org/Submission/1996/1/WD-jsss-960822) como forma de evitar que os desenvolvedores escrevessem CSS. Em 1996 foi lançada a primeira recomendação do CSS 1. 
 
 ##### Links Complementares
 
-[história do CSS](http://www.w3.org/Style/LieBos2e/history/)
+[História do CSS](http://www.w3.org/Style/LieBos2e/history/)
 
 ### Sintaxe 
 
 Uma regra no CSS consiste em um seletor e sua respectiva declaração. Um bloco de declaração é composto por propriedades e valores, segue um exemplo:
 
-| Seletor |   | Propriedade  |    | Valor |    |    |
-| --------|:-:| :-----------:| :-:| :---: | -- | -: |
-| h1      | { | color        | :  | green | ;  | }  |
+|  Seletor |   | Propriedade  |   |  Valor |  |  |
+|---|---|---|---|---|---|---|
+| h1  | {  | color  | :  |  green | ;  |  } |
 
 ### O que são seletores?
 
-Seletores são usados para achar elementos HTML baseado em nome, id, classe, atributo, e outros. Os estilos declarados no CSS serão aplicados quando as tags e atributos existirem no HTML. Os seletores podem ser:
+Seletores são usados para encontrar elementos HTML baseado em nome, id, classe, atributo, e outros. Os estilos declarados no CSS serão aplicados quando as tags e atributos existirem no HTML. Os seletores podem ser:
 
 + Elementos de um tipo específico
 + Atributos
@@ -72,7 +72,7 @@ Classes podem ser aplicadas em diversos elementos, sem restrição. Já os IDs s
 
 ### Como seletores são interpretados?
 
-> Seletores são lidos da direita para a esquerda pelos navegadores. É mais eficiente para um navegador começar sua procura por combinações a partir do elemento mais a direita (o que ele sabe que receberá o estilo) e trabalhar o seu caminho de volta através da árvore de DOM, do que comçar no alto dessa árvore e percorrer o caminho para baixo, pois poderia nem mesmo acabar no seletor que precisa receber a estilização (também conhecido como seletor-chave).
+Seletores são lidos da direita para a esquerda pelos navegadores. É mais eficiente para um navegador começar sua procura por combinações a partir do elemento mais a direita (o que ele sabe que receberá o estilo) e trabalhar o seu caminho de volta através da árvore de DOM, do que comçar no alto dessa árvore e percorrer o caminho para baixo, pois poderia nem mesmo acabar no seletor que precisa receber a estilização (também conhecido como seletor-chave).
 
 ### Especificidade
 
@@ -82,8 +82,6 @@ A especificadade é o que determina qual regra CSS tem precedência quando vári
 + IDs
 + Classes, pseudoclasses e atributos
 + Elementos e pseudoelementos
-
-___
 
 Quando pensamos na especificidade de um elemento `div` temos:
 
@@ -98,8 +96,6 @@ Se o seletor fosse #id_qualquer div teríamos:
 
 Imaginando que ambas as regras estivessem sendo usadas para estilizar uma página `#id_qqr div` teria precedência em relação a `div` pois 0101 > 0001. Essa matemática só serve para mostrar a lógica que é usada para interpretar seu arquivo CSS.
 
-___
-
 Pensando em outro exemplo para fixar o conteúdo pense qual das regras CSS tem maior peso, `#id_qqr article ul` ou `#id_qqr .list`?
 
 Fazendo os cálculos temos:
@@ -108,7 +104,7 @@ Fazendo os cálculos temos:
 
 No seletor `#id_qqr article ul` temos 1 ID e 2 elementos. Já no `#id_qqr .list` temos 1 ID e 1 classe. Como 0110 > 0102 a regra com seletor `#id_qqr .list` teria precedência sobre `#id_qqr article ul`. Além disso, a regra `#id_qqr .list` será mais eficiente em questão de performace.
 
-Quando acontecer um empate, ou seja, duas regras terem mesmo peso, temos que usar `!important` naquela que deve ser priorizada. Havendo conflito entre `!important`, entra em ação o efeito cascata, com precedência das CSS de usuário `as de autor.
+Quando acontecer um empate, ou seja, duas regras terem mesmo peso, temos que usar `!important` naquela que deve ser priorizada. Havendo conflito entre `!important`, entra em ação o efeito cascata, com precedência das CSS de usuário às de autor.
 
 ### Não use ID's como seletor
 
@@ -226,7 +222,7 @@ p {
 
 ##### Padding
 
-Essa propriedade gera um espaço entre o conteúdo do elemento e sua borda. Assim como na `margin` podemos utiliza-la de diferentes formas.
+Essa propriedade gera um espaço entre o conteúdo do elemento e sua borda. Assim como na `margin` podemos utilizá-la de diferentes formas.
 
 ```
 p {
@@ -490,62 +486,230 @@ A propriedade Border Image permite a utilização de uma imagem como borda de um
 
 ##### Color
 
-RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
+É possível definirmos as cores de elementos como por exemplo texto. O RGBA são uma extensão do RGB. Além de permitir que o usuário especifique os valores de Red Green e Blue ele permite que o usuário insira um valor para o canal alpha. Esse canal alpha é o responsável por ditar a opacidade da cor. Quando o valor está mínimo significa que a cor será transparente, e quando o valor corresponde ao valor máximo temos a cor completamente opaca.
 
-An RGBA color value is specified with: rgba(red, green, blue, alpha). The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
+color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
 
- #p1 {background-color: rgba(255, 0, 0, 0.3);}  /* red with opacity */
-
-##### Gradients
-
-CSS3 gradients let you display smooth transitions between two or more specified colors.
-
-Earlier, you had to use images for these effects. However, by using CSS3 gradients you can reduce download time and bandwidth usage. In addition, elements with gradients look better when zoomed, because the gradient is generated by the browser.
-
-CSS3 defines two types of gradients:
-
-Linear Gradients (goes down/up/left/right/diagonally)
-Radial Gradients (defined by their center)
-
-Linear Gradients
-To create a linear gradient you must define at least two color stops. Color stops are the colors you want to render smooth transitions among. You can also set a starting point and a direction (or an angle) along with the gradient effect.
-
-Syntax
-background: linear-gradient(direction, color-stop1, color-stop2, ...);
-
-Linear Gradient - Top to Bottom (this is default)
- #grad {
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(red, yellow); /* Standard syntax */
+```
+#p1 {
+ background-color: rgba(0, 255, 0, 1.0);
 }
 
-Linear Gradient - Left to Right
- #grad {
-  background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, red , yellow); /* Standard syntax */
+#p1 {
+ background-color: rgba(0, 255, 0, 0.5);
 }
+
+#p1 {
+ background-color: rgba(0, 255, 0, 0.0);
+}
+```
 
 ##### Shadows
 
-##### Text
+Essa é uma das propriedades mais legais. Ela adiciona sombra ao elemento alvo. Essa sombra dá uma sensação de profundidade muito interessante e ela é muito usada em frameworks CSS. No exemplo a seguir utilizamos box-shadow passando os seguintes argumentos: sombra-horizontal sombra-vertical blur cor; 
 
-##### Font
+```
+div {
+  box-shadow: 8px 8px 4px #A1A1A1;
+}
+```
 
-##### Transform
+Ele pode assumir os seguintes valores:
+
++ none: Aqui a sombra não será mostrada.
++ inherit: Atribui ao valor dessa propriedade o valor do elemento pai.
++ initial: Utiliza o valor default de shadow daquele elemento.
 
 ##### Transition
 
+As transitions permitem que você altere as propriedades de um elemento de forma transitiva. Elas podem ser ativadas por eventos e podem mudar, por exemplo, a cor de um texto quando o usuário dér `hover` em um elemento. Além disso, podemos definir um delay até que a transição comece e um tempo para sua duração. Para que elas funcionem é necessário que o programador diga o estado inicial e o estado final de certo elemento. Segue o conjunto de propriedades que tornam possível a transição de elementos:
+
++ transition property
++ transition duration
++ transition timing function
++ transition delay
+
+Abaixo temos um exemplo de uma transição de cor do background de um elemento:
+
+```
+.button {
+  color: #fff;
+  background: #4a89ca;
+  transition-duration: 1s;
+}
+
+.button:hover {
+  background: #d36a62;
+}
+
+.button:active {
+  background: #a33830;
+}
+```
+
+####### Transition Property
+
+No exemplo acima a transition é aplicada para todas as propriedades na regra CSS. Para definirmos com precisão quais propriedades serão afetadas pela transition usamos o `transition-property`. Segue o exemplo:
+
+```
+.button {
+  color: #fff;
+  background: #4a89ca;
+  transition-duration: 1s;
+  transition-property: background;
+}
+
+.button:hover {
+  background: #d36a62;
+}
+```
+
+Obs: por default `transition-property` vem definida como `all`.
+
+É importante notar que nem todos os elementos do HTML podem sofrer transições. Apenas elementos animáveis cujas propriedades possuem halfway points podem aproveitar esse recuso do CSS3.
+
+####### Delay
+
+A propriedade `transition-delay` deixa você começar uma transição alguns segundos depois do evento ser disparado. Isso pode ser útil quando você desejar que uma animação comece depois que outra termina.
+
+####### Transition Timing Function
+
+Uma coias legal de se fazer é mudar a velocidade de uma transição durante sua duração, ou seja, enquanto ela está sendo executada.
+Esse efeito é alcançado com o uso da propriedade `transition-timing-function`.
+
+Por default, quando criamos uma transition ela segue uma curva de aceleração. A mudança na função de tempo resulta em uma curva de aceleração distinta. Dependendo da curva, algumas partes da sua animação podem ser executadas mais rápidamente que outras. Para mudar o valor da `transition-timing-function` podem usar os seguintes valores:
+
++ ease        -> Começa de vagar de acelera.
++ linear      -> Mantem uma velocidade constrante por toda a duração da transição.
++ ease-in     -> Começa de vagar e para rapidamente.
++ ease-out    -> Começa rapido e para aos poucos.
++ ease-in-out -> Começa e termina lento.
+
+####### Abreviação
+
+É comum abreviarmos a nomeclatura das transitions colocando transition-property, transition-duration, transition-timing-function, e transition-delay em uma só linha da seguinte forma:
+
+```
+.btn {
+  transition: <transition-property> <transition-duration> <transition-timing-function> <transition-delay>;
+}
+```
+
+Obs: Note que no exemplo, o primeiro tempo passado como argumento corresponde ao transition-duration e o segundo ao transition-delay.
+
+####### Cubic Bezier
+
+As funções de tempo que usamos até aqui são simples. Usando `transition-timing-function: cubic-bezier()` podemos criar timing-functions mais complexas adicionando diversos níveis de aceleração durante a transição.
+
+```
+.elem {
+  transition: transform .5s cubic-bezier(.5, -0.5, .3, 1);
+}
+```
+
+##### Links Complementares
+
+[Cubic Bezier](http://cubic-bezier.com/#.17,.67,.83,.67,)
+
+##### Transform
+
+Essa propriedade aplica transformações nos elementos. Essas transformações podem variar em um espaço 2D ou 3D. Os valores que a propriedade pode assumir são os seguintes:
+
++ rotate
++ scale
++ move
++ skew
++ translate
+
+###### Rotate
+
+O `transform: rotate(ang);` rotaciona o elemento selecionado. É passado como parâmetro o quanto aquele elemento deve ser rotacionado. Além disso, saiba que a rotação é aplicada tendo como ponto de rotação o centro do elemento. Segue o exemplo:
+
+```
+img {
+  transform: rotate(25deg);
+}
+```
+
+###### Skew
+
+O `transform: skew(x,y);` aplica um efeito parecido com o efeito itálico que é aplicado em fontes, a diferença é que o skew pode ser aplicado em elementos que não são fontes.
+
+```
+img:hover {
+  transform: skew(15deg, 15deg);
+}
+```
+
+###### Scale
+
+Como o próprio nome diz, `transform: scale(x,y);` escala o elemento. Ele escala o elemento sem mudar o centro do mesmo, ou seja, depois de escalado sua posição central permanece a mesma.
+
+```
+img {
+  transform: scale(2, 2);
+}
+```
+
+###### Translate
+
+O `transform: translate(x,y);` é um dos mais legais. Ele permite que você modifique a posição X e Y do elemento. Se você colocar 100px no valor de x significa que ele vai mover para direita 100px relativos ao centro daquele elemento. Se você colocar -100px o mesmo vai ocorrer porém o elemento irá para esquerda.
+
+```
+img:hover {
+  transform: translate(100px, 0px);
+}
+```
+
+###### Transform Origin
+
+Até então os exemplos usavam o ponto central do elemento como base para aplicar as transformações. Muitas vezes queremos alterar esse comportamento e aplicar transformações relativas ao canto de um elemento. Para modificar essa posição relativa podemos usar a propriedade `transform-origin: x y;`.
+
+```
+img {
+  transform-origin: 50% 50%; // nesse exemplo a posição será relativa ao centro
+}
+
+img {
+  transform-origin: 0 0;      // nesse exemplo a posição será relativa ao canto superior esquerdo do elemento
+  transform-origin: top left; // exatamente a mesma coisa do exemplo logo acima
+}
+```
+
+###### Combinando Transforms
+
+Outra coisa que podemos fazer é combinar transforms para evitar duplicação de código, fazemos da seguinte forma:
+
+```
+img:hover {
+  transform: rotate(-10deg) scale(5);
+}
+```
+
+###### Adicionando Efeitos 3D
+
+Para adicionarmos efeitos 3D em nossos transforms precisamos usar a propriedade `perspective`. É ela que prepara o ambiente para que nossos transforms ajam sobre um espaço 3D, em outras palavras , os filhos do elemento que possui a propriedade `perspective` terão transforms realizados sobre um espaço 3D.
+
+```
+.pai {
+  perspective: 300px;
+}
+```
+
+Quanto maior o valor de perspective mais distânte a perspectiva será aplicada. Pense como se uma câmera estivesse observando um cenário 3D. Aumentando o valor de perspective essa câmera iria se afastar do cenário, e diminuindo ela iria se aproximar. Agora que temos `perspective` podemos realizar as transformações.
+
+```
+.pai {
+  perspective: 300px;
+}
+
+.filho {
+  transform: rotate(20deg, 20deg);
+}
+
+```
+
 ##### Animation
-
-##### Image
-
-##### Resizing
 
 ### Media Query
 
@@ -575,20 +739,75 @@ Elas são extremamente importantes pois elas além de muitas coisas, também per
 
 No exemplo anterior usamos o valor `400px` para definir o ponto em que nosso layout iria se adaptar `aquela resolução. Esse ponto é chamado __breakpoint__ . É possível adicionarmos diversos breakpoints para tornar o site adaptavel não só para desktop e mobile, mas para ipads e outros. Optamos também por usar max-width, mas existe uma outra media feature chamda min-width que costuma ser usada.
 
+```
 @media screen and (min-width: 480px) {
   body {
     background-color: lightgreen;
   }
 }
+```
 
 ### Flex-box
 
-Flexible boxes, or flexbox, is a new layout mode in CSS3.
+##### O que é? Para que serve? Por que devo usar?
 
-Use of flexbox ensures that elements behave predictably when the page layout must accommodate different screen sizes and different display devices.
+Flex-box é um modelo criado no CSS3 que substitui o block-model. Ele disponibiliza uma nova forma para distribuir elementos nas suas páginas. Além disso, o uso do flex-box pode facilitar a responsividade das suas páginas.
 
-For many applications, the flexible box model provides an improvement over the block model in that it does not use floats, nor do the flex container's margins collapse with the margins of its contents.
+Ele consiste de containers e items. Containers possuem uma main axis que atravessa-os de forma horizontal, e uma cross axis que atravessa-os de forma vertical. Dentro desses containers temos itens que serão posicionados utilizando novas técnicas que aprenderemos aqui.
 
+##### Primeiros Passos
+
+Tudo começa com a propriedade display. Quando atribuimos ao display a propriedade flex ou inline-flix mudamos o modelo de renderização. Aquele elemento que possui a propriedade display pode, também, ser chamado de container. É possível adicionarmos diversos itens àquele elemento/container. É interessante notar que os elementos que não estão no escopo daquele container não serão afetados pelo `display: flex`, logo, serão renderizados normalmente.
+
+##### Justify-content
+
+O justify-content posiciona um item relativo ao main axis.
+  
+  + flex-start: posiciona os itens no inicio da main axis
+  + flex-end: posiciona os itens ao final da main axis
+  + center: posiciona os itens no centro
+  + space-between: posiciona os itens de forma igualmente distribuida tal que o primeiro item corresponda ao start da axis e o ultimo ao end
+  + space-around: posiciona os itens de forma igualmente distribuida tal que o primeiro item tenha um espaçamento em relação a "borda", assim como o ultimo.
+
+##### Align-items
+
+O align-items posiciona os itens relativos ao cross axis
+
+  + flex-start: posiciona os itens no inicio da cross axis
+  + flex-end: posiciona os itens ao final da cross axis
+  + center: posiciona os itens no centro da cross axis
+  + baseline: alinha de forma que seus baselines ficam alinhados
+  + stretch: estica os itens no cross axis
+
+##### Flex-direction
+
+A propriedade flex-direction permite mudar o comportamento das axis. Apesar de, por default, a main axis aparecer horizontal e a cross axis vertical é possível inverte-las quando usamos tal propriedade.
+  
+  + row: main axis da esquerda para direita
+  + row-reverse: main axis mostra os items da direita para esquerda
+  + column: main axis se transforma numa column com ordenação de cima para baixo
+  + column-reverse: main axis se transforma numa column com ordenação de baixo para cima
+
+##### Flex
+
+Essa propriedade dita o tamanho de cada item dentro do container. O valor é relativo aos demais itens daquele mesmo container, ou seja, se o valor de um item for 2 e dos demais 1 aquele com valor 2 ocupará o dobro do tamanho dos demais.
+
+##### Flex-wrap
+
+A propriedade flex-wrap soluciona o seguinte caso: Algumas vezes não sobra espaço para outros itens em uma certa linha pois a mesma está cheia, daí é necessário que especifiquemos se aqueles itens irão para proxima linha ou se eles irião ultrapassar a barreira do container.
+  nowrap: Por default os itens não serão "empilhados"
+  wrap: permite que os itens sejam "empilhados"
+  wrap-reverse: será wrap em order reversa
+
+##### Ordering
+
+Essa propriedade é capaz de mudar a ordem com que os items são renderizados dentro de um certo container. Itens com order superior aparecer por ultimo e itens com order inferior aparecem primeiro.
+
+##### Margin
+
+Essa propriedade pode ser usada para posicionar itens em diferentes posições, por exemplo, se atribuirmos margin-right: auto a um item, este irá mostrar um espaço em branco a sua direita. Seguindo a mesma lógica, para centralizar um item, bastaria colocar sua margin como auto.
+
+___
 
 ### OOCSS
 
