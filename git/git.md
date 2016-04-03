@@ -37,8 +37,8 @@ Quando estiver trabalhando no seu projeto, as vezes você desejará deixar algun
 
 ### Bibliografia e sites úteis
 
-[Introduction to Git](https://www.drupal.org/node/991716)
-[Introdução ao Git](http://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/)
-[GitHub Guides](https://guides.github.com/)
-[Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/)
-[Git Ignore](https://help.github.com/articles/ignoring-files/)
+[Introduction to Git](https://www.drupal.org/node/991716) <br/>
+[Introdução ao Git](http://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/) <br/>
+[GitHub Guides](https://guides.github.com/) <br/>
+[Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/) <br/>
+[Git Ignore](https://help.github.com/articles/ignoring-files/) <br/>
