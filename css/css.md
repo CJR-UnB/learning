@@ -1001,77 +1001,92 @@ O OOCSS prega que devemos criar componentes reutilizáveis. Pense como se você 
 
 ### SMACSS
 
-style guide that help organize and structure CSS for projects on any scale
+Dois anos depois do surgimento do OOCSS surgiu o SMACSS. Assim como o OOCSS ele busca diminuir o acoplamento, aumentar flexibilidade, e reúso do código CSS. O SMACSS funciona como um guia de estilo que te ajuda a organizar a estrutura do seu projeto CSS independente do tamanho do mesmo. SMACSS vem de Scalable and Modular Architecture for CSS (Arquitetura Escalável e Modular para CSS).
 
-identify repeating pattern that are going to combine into modular code
+Segundo o SMACSS devemos identificar padrões no código que devem ser combinados em código mais modular. A arquitetura das pastas é a seguinte:
 
-Cateories
-  Base
-  Layout
-  Modules
-  States
-  Themes
+```
+css
+-- base
+-- layout
+-- modules
+-- states
+-- themes
+```
 
-Base
-  what elements look by default
+##### Base
 
-Layout
-  define layout for major parts of the page
-  header
-  footer
-  sidebar
-  grid
+As regras da pasta base definem como os elementos serão mostrados ao usuário se nenhum outros arquivo sobrescrever aquele, ou seja, aqui colocamos a forma como o elemento aparenta por default.
 
-Modules
-  majority of the project
+##### Layout
 
-States
-  element states
-  hidden
-  active
-  collapsed
+Regas Layout definem como será o layout para partes grandes da página, por exemplo, como será meu `header`, `footer`, `sidebar`, ou `grid`.
 
-Theme
-  define diferent color to give our project diferent colors
+##### Modules
 
+Regras Module serão usadas na maior parte do projeto.
+
+##### States
+
+As regras da pasta state definem como elementos serão mostrados caso seus estados sejam modificados, ou seja, se o elemento estiver active, hover, hidden, collapsed e outras sua estilização estará definida nessa pasta.
+  
+##### Theme
+
+Define as partes do seu site que serão customizadas com skins diferenciadas dependendo da ocasião, por exemplo, se estivermos no natal é possível que alguma imagem do seu HTML seja substituida por outra imagem sazonal.
+
+###### Exemplo Completo da Estrutura de Pastas
+
+```
 scss
-  application.scss  -> import all indexes
+  application.scss    -> importa todos arquivos _index.scss para todas as pastas
   base
-    _base.scss      -> styles for base element selectors (ex: h1, h2, body, *, ...)
-    _index.scss     -> import others
-    _normalize.scss -> reset styles
+    _base.scss        -> estilização para todos os seletores base (ex: h1, h2, body, *, ...)
+    _index.scss       -> importa todos os outros arquivos dentro da pasta base
+    _normalize.scss   -> reseta os estilos
   layout
     _container.scss   -> 
     _extends.scss     -> 
-    _index.scss       -> import others
+    _index.scss       -> importa todos os outros arquivos dentro da pasta layout
     _panel.scss       -> 
   modules
-    _buttons.scss
-    _extends.scss
-    _forms.scss
-    _headlines.scss
-    _icons.scss
-    _img.scss
-    _index.scss
-    _nav.scss
-    _navbar.scss
+    _buttons.scss     -> 
+    _extends.scss     -> 
+    _forms.scss       -> 
+    _headlines.scss   -> 
+    _icons.scss       -> 
+    _img.scss         -> 
+    _index.scss       -> importa todos os outros arquivos dentro da pasta modules
+    _nav.scss         -> 
+    _navbar.scss      -> 
   states
-    _index.scss
+    _index.scss       -> importa todos os outros arquivos dentro da pasta states
   theme
+    _index.scss       -> importa todos os outros arquivos dentro da pasta theme
+    _halloween.scss
+    _christmas.scss   -> 
   utilities
-    _config.scss
-    _functions.scss
-    _helpers.scss
-    _index.scss
-    _mixins.scss
+    _config.scss      -> arquivo de configuração
+    _functions.scss   -> 
+    _helpers.scss     -> helpers
+    _index.scss       -> importa todos os outros arquivos dentro da pasta utilities
+    _mixins.scss      -> mixins
+```
+```
+application.scss
 
-application
   @import utilities
   @import base
   @import layout
   @import module
   @import state
   @import theme
+```
+
+##### Links Complementares
+
+[Livro Oficial sobre Arquitetura Escalável e Modular para CSS](https://smacss.com/)
+
+[Livro que fala sobre Arquitetura Escalável e Modular para CSS](https://www.casadocodigo.com.br/products/livro-css-eficiente)
 
 ### BEM
 
@@ -1117,3 +1132,9 @@ Devemos dividir as partes em bloco apenas se aquela parte puder ser reutilizada 
 Um dos pontos negativos do BEM é aumentar consideravelmente o tamanho das suas classes usadas no html tornando o codigo um pouco mais "sujo", podem garantindo maior manutenibilidade.
 
 One of the big advantages of using the BEM convention is: We communicate what a block of HTML does just front its naming convention, and selectors are easier to understand because we provide the context directly into the selector
+
+### RSCSS
+
+##### Links Complementares
+
+[Reasonable System for CSS Stylesheet Structure.](https://github.com/rstacruz/rscss)
