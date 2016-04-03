@@ -807,11 +807,17 @@ Essa propriedade pode ser usada para posicionar itens em diferentes posições, 
 
 ### OOCSS
 
-Object Orientes CSS é uma forma padronizada para organização do seu código CSS. Pense nele como um guia que dita a arquitetura do seu CSS. Assim como o OOCSS existem outras arquiteturas famosas no CSS. Iremos falar das demais adiante.
+Object Orientes CSS é uma forma padronizada para organização do seu código CSS criada por Nicole Sullivan. Pense nele como um guia que dita a arquitetura do seu CSS. Assim como o OOCSS existem outras arquiteturas famosas no CSS. Iremos falar delas mais adiante. 
 
 O princípio básico do CSS Orientado a Objetos é a separação de __estrutura__ e __skin__ e a separação de __container__ e __conteúdo__.
 
-Separar estrutura e skin consiste em repetir característica visual como skin que pode ser combinada em uma variada gama de objetos por exemplo background e estilos de borda. Separar container de conteúdo segue o princípio de que um objeto deve permanecer igual independente da sua localizacao na página, ou seja, não queremos que as classes pai do css influenciem as classes filho.
+Separar __estrutura__ e __skin__ consiste em repetir característica visual como skin que pode ser combinada em uma variada gama de objetos por exemplo background e estilos de borda. Separar container de conteúdo segue o princípio de que um objeto deve permanecer igual independente da sua localizacao na página, ou seja, não queremos que as classes pai do css influenciem as classes filho. É bastante comum o uso de classes para nomear objetos e componentes, em vez de confiar somente na semantica HTML. Por exmplo, um objeto de mídia com class="media" e seus componentes com class="img" (para componentes de imagem e video) e class="bd" (para componentes de texto). Ao referenciar essas classes nas folhas de estilo, o HTML ganhavuma flexibilidade maior; ou seja, se um novo elemento de mídia surgir nos próximos anos (como <svg>), ele pode receber a estilização sem que seja preciso mexer em uma linha de CSS.
+
+Separar __container__ e __conteúdo__ significa não use estilos que dependam de localização. Um objeto deve parecer-se igual, independentemente de onde estiver na página. Em vez de estilizar um título secundário específico com `.myObject h2 {}`, crie e aplique uma classe que descreva o elemento em questao, como `<h2 class="category-title">`. Isso garante que:
+
++ Todos os `h2` sem a classe não sejam afetados inadvertidamente.
++ Todos os `h2` com a classe tenham o mesmo estilo.
++ Não é preciso criar estilos extras para os casos em que seja preciso que um `.myObject` se pareca com um `h2` não estilizado.
 
 Para deixar bem claro, vamos observar como o CSS Orientado a Objetos pode ajudar o desenvolvedor garantindo maior manutenibilidade e menor repetição de código.
 
@@ -826,7 +832,7 @@ Imagine o seguinte cenário.
 }
 ```
 
-Aqui temos um weather __module__. Queremos estilizar esse weather, e para isso adicionamos uma font-size ao id. Quando pensamos no código notamos que todos os h3 dentro de #weather __modules__ recebem uma font-size de 1.2em. Mas o que acontece com um __module__ diferente? Temos o __module__ tweets. O que fazer com ele? Adicionamos font-size com valor 1.2em novamente? E se o font-size desse elemento for diferente? Com essas poucas linhas de código já temos um sério problema: nosso h3 possui valores diferentes dependendo do __module__ que o contém. Voltamos a dizer que o nosso font-size dentro de tweets ainda seja 1.2ems para facilitar.
+Aqui temos um weather __module__. Queremos estilizar esse weather, e para isso adicionamos uma font-size ao id. Vamos pensar no código que acabamos de escrever. Todos os `h3` dentro de `#weather` __modules__ recebem uma `font-size de 1.2em`. Mas o que acontece com um __module__ diferente? Temos o __module__ tweets. O que fazer com ele? Adicionamos font-size com valor 1.2em novamente? E se o font-size desse elemento for diferente? Com essas poucas linhas de código já temos um sério problema: nosso `h3` possui valores diferentes dependendo do __module__ que o contém. Voltamos a dizer que o nosso font-size dentro de tweets seja 1.2em para facilitar o raciocínio.
 
 ```
 #weather h3 {
@@ -855,7 +861,7 @@ O problema aqui é que cada vez que quiséssemos adicionar h3 com tamanho 1.2em 
 }
 ```
 
-Agora que vimos os problemas de codar dessa forma precisamos pensar em uma solução para deixar nosso código mais modular, manutenível, e legível. A coisa mais obvia a se fazer seria parar de usar IDs no seu CSS. Já sabemos que essa não é uma boa prática.
+Agora que vimos os problemas de codar dessa forma precisamos pensar em uma solução para deixar nosso código mais modular, manutenível, e legível. A coisa mais óbvia a se fazer seria parar de usar IDs no seu CSS. Já sabemos que essa não é uma boa prática.
 Poderíamos resolver o problema dos ids colocando uma classe no seu lugar. Além disso, podemos mudar o próprio valor default do h1.
 
 ```
@@ -870,7 +876,7 @@ h3, .h3 {
 }
 ```
 
-Muitas pessoas questionam o uso de classes cujo nome é igual a de um identificador. Não tem problema nenhum usarmos .h1 para representar o elementos h1, pelo contrário, essa metodologia é bem flexível. Agora podemos modificar o font-size da forma como gostariamos desde o início e essas mudanças não são limitadas ao __module__ ou um __id__ ou __container__. Vamos analisar o seguinte código:
+Muitas pessoas questionam o uso de classes cujo nome é igual a de um identificador. Não tem problema nenhum usarmos `.h1` para representar o elementos h1, pelo contrário, essa metodologia é bem flexível. Agora podemos modificar o font-size da forma como gostariamos desde o início e essas mudanças não são limitadas ao __module__ ou um __id__ ou __container__. Vamos analisar o seguinte código:
 
 ```
 HTML
@@ -926,7 +932,7 @@ CSS
   }
 ```
 
-Digamos que queremos adicionar uma imagem ao .notice, fariamos o seguinte:
+Digamos que queremos adicionar uma imagem ao `.notice`, fariamos o seguinte:
 
 ```
 HTML
@@ -981,51 +987,17 @@ CSS
   }
 ```
 
-A desenvolvedora Nicole Sullivan teve a ideia de trazer o site para o front-end para que o objetivo principal tambem pudesse ser almejado em CSS. Assim surgiu o CSS orientado a objetos.
-Ele foi criado para diminuir a repeticao desnecessaria de propriedades css
-O css orientado a objeto é uma metafora para indicar que e possivel escrever um CSS mais eficiente, sem repeticoes, que enseje a projetos mais profissionais
+Resolvemos o problema de repetição de código, e agora, quando quisermos mudar uma propriedade para todos os diferentes tipos de messagem, basta mudarmos a classe `.message`.
 
+####### Resumo
 
-Dois principios importantes 
-  Separar estrutura e skin
-    repetir caracteristicas visuais como skins separadas que podem ser combinadas em varios objetos para conseguir-se uma extensa gama de variacoes visuais sem muito codigo. por exemplo, backgrounds e estilos de borda
-    A diretriz tambem pode isgnificar o uso de classes para nomar objetose componentes, em vez de confiar somente na semantica HTML. por eemplos, um objeto de midia com class="media" e seus componentes com class="img" (para componentes de imagem e video) e class="bd" (para componentes de texto).
-  Separar container e conteudo
-    raramente use estilos que dependam de localizacao. idealmente, um objeto deve parecer0se igual, independentemente de onde estiver na pagina, ou mesmo se trocar de pagina
-    Em vez de estilizar um titulo secundario especifico com .myObject h2 {}, crie e aplique uma classe que descreva o elemento em questao, como <h2 class="category-title">. Isso garante que:
-      todos os h2 sem a classe nao sejam afetados inadvertidamente
-      todos os g2 com a classe tenham o mesmo estilo
-      nao e preciso criar estilos extras para os casos em que seja preciso que um .myObject se pareca com um h2 nao estilizado.
+O OOCSS prega que devemos criar componentes reutilizáveis. Pense como se você tivesse uma coleção de legos. Misture componentes para construir seus sites.
 
+##### Links Complementares
 
-___
+[Livro que explica CSS Orientado a Objetos](https://www.casadocodigo.com.br/products/livro-css-eficiente)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-___
+[Video que explica CSS Orientado a Objetos](https://www.youtube.com/watch?v=8FLWwZw5wQg)
 
 ### SMACSS
 
@@ -1033,16 +1005,12 @@ style guide that help organize and structure CSS for projects on any scale
 
 identify repeating pattern that are going to combine into modular code
 
-  ___
-
 Cateories
   Base
   Layout
   Modules
   States
   Themes
-
-  ___
 
 Base
   what elements look by default
@@ -1065,8 +1033,6 @@ States
 
 Theme
   define diferent color to give our project diferent colors
-
-  ___
 
 scss
   application.scss  -> import all indexes
@@ -1098,8 +1064,6 @@ scss
     _helpers.scss
     _index.scss
     _mixins.scss
-
-  ___
 
 application
   @import utilities
