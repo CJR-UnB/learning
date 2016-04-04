@@ -1133,8 +1133,45 @@ Um dos pontos negativos do BEM é aumentar consideravelmente o tamanho das suas 
 
 One of the big advantages of using the BEM convention is: We communicate what a block of HTML does just front its naming convention, and selectors are easier to understand because we provide the context directly into the selector
 
+### ITCSS
+
+Iverted Triangle CSS
+
+Harry Roberts
+
+Esse triângulo possui camadas que, conforme avançam, tornam0se mais específicas e focadas em realizar tarefas.
+
+Foi criado pensando em grandes projetos.
+
+O triângulo inverso possui 7 camadas
+  Configurações (Settings): variáveis e configurações globais;
+  Ferramentas (Tools): funções e mixins;
+  Genérico (Generic): estilos genéricos (resets, normalizes);
+  Elementos(Elements): estilização de elementos HTML diretamente;
+  Objetos(Objects): padrões não cosméticos;
+  Componentes (Components): peças de UI isoladas
+  Trumps: utilitários, helpers
+
+Ele segue algumas regras
+  Sem uso de IDs, somente classes
+  Criação modular de componentes, em vez de páginas
+  Uso e abuso de classes no HTML
+
+
 ### RSCSS
 
 ##### Links Complementares
 
 [Reasonable System for CSS Stylesheet Structure.](https://github.com/rstacruz/rscss)
+
+### DoCSSa
+
+##### Links Complementares
+
+[Sass based CSS architecture and methodology.](http://docssa.info/#)
+
+### MVCSS
+
+##### Links Complementares
+
+[Modular View CSS](http://mvcss.io/)
