@@ -1139,7 +1139,7 @@ Iverted Triangle CSS
 
 Harry Roberts
 
-Esse triângulo possui camadas que, conforme avançam, tornam0se mais específicas e focadas em realizar tarefas.
+Esse triângulo possui camadas que, conforme avançam, tornam-se mais específicas e focadas em realizar tarefas.
 
 Foi criado pensando em grandes projetos.
 
@@ -1157,6 +1157,104 @@ Ele segue algumas regras
   Criação modular de componentes, em vez de páginas
   Uso e abuso de classes no HTML
 
+Geral para explicito: comeca-se pelos estilos mais gerais e genericos possiveis e, a partir dai, vao-se colocando camadas de estilo adicionais
+
+Baixa especificade para alta especificidade: regras com especificidade menos aparecem em camadas mais genericas; regras de maior, em camadas mais especificas/focadas
+
+Muito alcance para pouco alcance: as regras presentes em camadas mais genericas afetam grande parte do DOM e, a medida que vao se afunilando, alcancam cada vez menos porcoes.
+
+
+Quando usar ITCSS é recomendado o uso de pré-processadores
+
+
+
+Configurações
+  Se você usa algum pré-processador, você coloca seus estilos globais aqui
+
+  $main-color: #bla
+  $main-text-color: #bla
+  $main-background-color: #ble
+  #module-size: bla
+
+Ferramentas
+  Se você usa algum pré-processador, deve conter funções e mixins. Essa camada vem depois de configurações pois é provavel que dentro dessas funções ou mixins você faça uso de uma configuração global.
+
+  @function convert-to-rem($value, $base-value: $rem-base) {
+  ...
+  }
+
+Genérico
+  Definimos eventuais resets para o CSS.
+
+  Normalize.css
+  
+  * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+Elementos
+  Estilização dos elementos
+  comporta estilizações de elementos HTML
+
+  img {
+    ...
+  }
+
+  video {
+    ...
+  }
+
+Objetos
+  Comporta estilos não cosméticas
+  grids
+  containers
+
+  .media {
+    ...
+  }
+
+  .img {
+    ...
+  }
+
+Componentes
+  Comporta o maior numero de estilos
+  Devem constar os codigos dos elementos de UI
+
+  menu 
+  carousel
+  slider
+
+  Alto nivel de especificidade
+
+Trumps
+  Camada que cuida de eventuais problemas
+  especificidade adicional
+  !important
+  helpers sobrescritas e hacks
+
+
+ORGANIZACAO DO CODIGO COM ITCSS
+
+o proprio criados recomenda a seguinte convencao de nomeclatura e o uso de partials
+
+_<camada>.<partial>.scss
+
+a order dos imports eh a seguinte
+
+settings
+tools
+generic
+elementos
+objects
+components
+trumps
+
+##### Links Complementares
+
+[Harry Roberts - ITCSS.](https://www.youtube.com/watch?v=1OKZOV-iLj4)
 
 ### RSCSS
 
@@ -1175,3 +1273,21 @@ Ele segue algumas regras
 ##### Links Complementares
 
 [Modular View CSS](http://mvcss.io/)
+
+### Atomic CSS
+
+[Atomic CSS](http://acss.io)
+
+[Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+
+### Organic CSS
+
+[](http://krasimir.github.io/organic-css/)
+
+### Dicas
+
+##### Links Compomentares
+
+[Problemas do CSS](https://css-tricks.com/box-sizing/)
+
+[Guidelines](http://cssguidelin.es/)

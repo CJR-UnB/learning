@@ -1,0 +1,1979 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>css</title></head><body><article class="markdown-body"><h1 id="css"><a name="user-content-css" href="#css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS</h1>
+<h3 id="o-que-e-css-cascading-style-sheets-e-qual-sua-utilidade"><a name="user-content-o-que-e-css-cascading-style-sheets-e-qual-sua-utilidade" href="#o-que-e-css-cascading-style-sheets-e-qual-sua-utilidade" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>O que é CSS (Cascading Style Sheets) e qual sua utilidade?</h3>
+<p>O CSS, assim como o HTML, é uma linguagem. Ele difere das demais por definir a forma como os dados escritos em uma linguagem de marcação serão apresentados. No decorrer dos anos muitas mudanças foram feitas no CSS para suprir a necessidade crescente dos desenvolvedores web. Ela foi feita com o objetivo de separar o conteúdo de uma página da forma como este conteúdo era apresentado para os visitantes. Por meio do CSS é possível customizar cores, fontes, posições, e outros. Antes do CSS, era possível customizar fontes e cores usando o atributo <code>style=""</code> do HTML, mas foi notado que esse atributo não era o suficiente para suprir as necessidades dos desenvolvedores pois eles teriam que repetir muito código para customizar uma página. Se quiséssemos 2 títulos com cor vermelha teríamos que entrar no HTML e adicionar o mesmo código para cada um dos títulos. O atributo surgiu na versão 3.2 do HTML juntamente com o termo Web Designer. Ao separar os arquivos CSS aumentamos a flexibilidade e o controle das páginas além de permitir compartilhamento do estilos para diferentes partes do seu site.</p>
+<h3 id="historico"><a name="user-content-historico" href="#historico" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Histórico</h3>
+<p>A primeira versão do CSS foi lançada em 1994. Como não havia nenhuma forma de estilizar documentos Håkon Wium Lie achou que seria útil criar um linguagem capaz de solucionar o problema. Na época, a idéia de separar conteúdo de estrutura não era uma idéia tão inovadora. Tim Berners-Lee escreveu seu navegador NeXT de forma que ele poderia determinar os estilos pelo Style Sheets. Um fato curioso é que Tim não publicou a sintaxe e deixou que cada browser apresentasse a estrutura da forma que o desenvolvedor daquele browser achasse melhor. Todos os browsers daquela época limitavam a estilização das páginas. Em 1993 quando o Mosaic foi lançado ele só permitia a mudaça de cor e alguns aspectos das fontes. Em 1994 Marc Andreessen anunciou que o primeiro beta do Mozila (que acabou se tornando o NetScape) estava aberto para teste. Esse navegador veio com tags que até então não eram conhecidas.</p>
+<p>Três dias antes desse acontecimento Håkon publicou um artigo sobre <a href="http://www.w3.org/People/howcome/p/cascade.html">Cascading HTML Style Sheets</a>. O CSS se destacava em relação aos demais concorrentes pois ele levava em conta tanto aquilo que o autor queria fazer quanto as capacidades do dispositivo e do browser que estavam sendo utilizados para &ldquo;rodar&rdquo; o CSS. Ao fim de 1995 a W3C aprovou o HTML Editorial Review Board (HTML ERB) para ratificar o futuro das especificações HTML. Na mesma época, como o interesse no CSS por parte dos membros do grupo cresceu, a especificação do CSS foi trabalhada para se tornar uma recomendação. Quando a microsoft sinalizou que iria adicionar suporte ao CSS em seu browser IE3(Internet Explorer 3) o sucesso do CSS aumentou consideravelmente. Foi ai que a Netscape começou a pensar em aceitar o CSS em seus navegadores. Ela implementou seu o CSS internamente transformando regras CSS em pedaços de código Javascript que depois seriam executado juntamente a scripts. Além disso ela deicidiu deixar desenvolvedores escreverem <a href="http://www.w3.org/Submission/1996/1/WD-jsss-960822">JSSS</a> como forma de evitar que os desenvolvedores escrevessem CSS. Em 1996 foi lançada a primeira recomendação do CSS 1. </p>
+<h5 id="links-complementares"><a name="user-content-links-complementares" href="#links-complementares" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="http://www.w3.org/Style/LieBos2e/history/">História do CSS</a></p>
+<h3 id="sintaxe"><a name="user-content-sintaxe" href="#sintaxe" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Sintaxe</h3>
+<p>Uma regra no CSS consiste em um seletor e sua respectiva declaração. Um bloco de declaração é composto por propriedades e valores, segue um exemplo:</p>
+<table>
+<thead>
+<tr>
+<th>Seletor</th>
+<th></th>
+<th>Propriedade</th>
+<th></th>
+<th>Valor</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h1</td>
+<td>{</td>
+<td>color</td>
+<td>:</td>
+<td>green</td>
+<td>;</td>
+<td>}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="o-que-sao-seletores"><a name="user-content-o-que-sao-seletores" href="#o-que-sao-seletores" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>O que são seletores?</h3>
+<p>Seletores são usados para encontrar elementos HTML baseado em nome, id, classe, atributo, e outros. Os estilos declarados no CSS serão aplicados quando as tags e atributos existirem no HTML. Os seletores podem ser:</p>
+<ul>
+<li>Elementos de um tipo específico</li>
+<li>Atributos<br />
+  ++ IDs<br />
+  ++ Classes</li>
+<li>Elementos relativos a outros elementos</li>
+</ul>
+<h5 id="elementos-de-um-tipo-especifico"><a name="user-content-elementos-de-um-tipo-especifico" href="#elementos-de-um-tipo-especifico" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Elementos de um tipo específico</h5>
+<p>O seletor por elemento seleciona elementos baseado no nome daquele elemento.</p>
+<pre><code>h1 {
+}
+</code></pre>
+
+<h5 id="atributos-ids"><a name="user-content-atributos-ids" href="#atributos-ids" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Atributos -&gt; IDs</h5>
+<p>O seletor por ID usa o atributo id do HTML para selecionar um elemento específico. Ele deve ser único, ou seja, não podemos ter 2 ids com mesmo valor.</p>
+<pre><code>#id_qqr {
+}
+</code></pre>
+
+<h5 id="atributos-classes"><a name="user-content-atributos-classes" href="#atributos-classes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Atributos -&gt; Classes</h5>
+<p>O seletor por classe seleciona um elemento cujo atributo class corresponda ao nome da classe usada no CSS. Diferente dos IDs, não tem problema repetir nome de classes pelo arquivo HTML. </p>
+<pre><code>.classe_qqr {
+}
+</code></pre>
+
+<h5 id="elementos-relativos-a-outros-elementos"><a name="user-content-elementos-relativos-a-outros-elementos" href="#elementos-relativos-a-outros-elementos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Elementos relativos a outros elementos</h5>
+<pre><code>ul:first-child {
+}
+</code></pre>
+
+<h5 id="observacoes-importantes"><a name="user-content-observacoes-importantes" href="#observacoes-importantes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Observações Importantes</h5>
+<p>Classes podem ser aplicadas em diversos elementos, sem restrição. Já os IDs só podem ser aplicados em um único elemento. O objetivo deles é poder identificar um elemento unicamente para que mudanças naquele elemento não afetem outros elementos. Seletores podem ser combinados de diversas formas para alcançar um grande nível de especificidade. Multiplos seletores podem ser juntados para especificar elementos baseado em sua localização, em seu tipo, em seu id, em sua classe, ou em qualquer combinação destes. A ordem dos seletores é extremamente importante. Escrever <code>div .nomeDaClasse {color:red;}</code> corresponde a customizar a cor do texto dos elementos da classe <code>nomeDaClasse</code> que estão contidos dentro de uma div, ou seja, elementos que usam a classe <code>nomeDaClasse</code> mas não estão dentro de uma div não são estilizados. Ao escrever <code>.nomeDaClasse div {color:red;}</code> os elementos afetados serão as <code>divs</code> que estão dentro de classes <code>nomeDaClasse</code>. </p>
+<h3 id="como-seletores-sao-interpretados"><a name="user-content-como-seletores-sao-interpretados" href="#como-seletores-sao-interpretados" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Como seletores são interpretados?</h3>
+<p>Seletores são lidos da direita para a esquerda pelos navegadores. É mais eficiente para um navegador começar sua procura por combinações a partir do elemento mais a direita (o que ele sabe que receberá o estilo) e trabalhar o seu caminho de volta através da árvore de DOM, do que comçar no alto dessa árvore e percorrer o caminho para baixo, pois poderia nem mesmo acabar no seletor que precisa receber a estilização (também conhecido como seletor-chave).</p>
+<h3 id="especificidade"><a name="user-content-especificidade" href="#especificidade" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Especificidade</h3>
+<p>A especificadade é o que determina qual regra CSS tem precedência quando várias podem ser aplicadas ao mesmo elemento. Existem 4 categorias que definem o nível de especificidade de um seletor, seguem:</p>
+<ul>
+<li>Estilos inline</li>
+<li>IDs</li>
+<li>Classes, pseudoclasses e atributos</li>
+<li>Elementos e pseudoelementos</li>
+</ul>
+<p>Quando pensamos na especificidade de um elemento <code>div</code> temos:</p>
+<p>div = (Estilos inline = 0), (IDs = 0), (Classes, pseudoclasses e atributos = 0), (Elementos e pseudoelementos = 1)<br />
+div = 0, 0, 0, 1<br />
+div = 0001</p>
+<p>Se o seletor fosse #id_qualquer div teríamos:</p>
+<p>#id_qqr div = 0, 1, 0, 1<br />
+#id_qqr div = 0101</p>
+<p>Imaginando que ambas as regras estivessem sendo usadas para estilizar uma página <code>#id_qqr div</code> teria precedência em relação a <code>div</code> pois 0101 &gt; 0001. Essa matemática só serve para mostrar a lógica que é usada para interpretar seu arquivo CSS.</p>
+<p>Pensando em outro exemplo para fixar o conteúdo pense qual das regras CSS tem maior peso, <code>#id_qqr article ul</code> ou <code>#id_qqr .list</code>?</p>
+<p>Fazendo os cálculos temos:<br />
+<code>#id_qqr article ul</code> = 0102<br />
+<code>#id_qqr .list</code> = 0110</p>
+<p>No seletor <code>#id_qqr article ul</code> temos 1 ID e 2 elementos. Já no <code>#id_qqr .list</code> temos 1 ID e 1 classe. Como 0110 &gt; 0102 a regra com seletor <code>#id_qqr .list</code> teria precedência sobre <code>#id_qqr article ul</code>. Além disso, a regra <code>#id_qqr .list</code> será mais eficiente em questão de performace.</p>
+<p>Quando acontecer um empate, ou seja, duas regras terem mesmo peso, temos que usar <code>!important</code> naquela que deve ser priorizada. Havendo conflito entre <code>!important</code>, entra em ação o efeito cascata, com precedência das CSS de usuário às de autor.</p>
+<h3 id="nao-use-ids-como-seletor"><a name="user-content-nao-use-ids-como-seletor" href="#nao-use-ids-como-seletor" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Não use ID&rsquo;s como seletor</h3>
+<p>Um dos motivos pelo qual desenvolvedores Web usam IDs como seletores é a performace. É provado que IDs são mais rápidos que classes, porém a diferença é absurdamente minuscula, ou seja, este critério não deve ser usado para priorizar o uso de IDs sobre classes. Outra coisa que muitas vezes as pessoas esquecem é que ao acessarmos <code>#id a {}</code> a ordem que o browser busca o elemento é a seguinte: ele pega todos os elementos <code>a</code> e verifica se são descendentes imediatos de <code>#id</code>, caso não seja vai checando os ascendentes até chegar a <code>&lt;html&gt;</code>. Agora que sabemos como os seletores são interpretados é lógico pensar que IDs são os seletores mais rápidos somente se forem os seletores-chave, ou seja, <code>#id</code> é mais rápido que <code>.cls</code> que é mais rápido que <code>#id a</code>. É interessante usarmos classes como seletores pois o conteúdo daquela classe pode ser reutilizado sem precisar replicar o código CSS, basta adicionar aquela classe ao elemento HTML. Isso garante maior manutenibilidade e flexibilidade ao nosso código. É indicado que os desenvolvedores usem IDs para como identificadores que serão usados pelo JavaScript.</p>
+<h3 id="propriedades"><a name="user-content-propriedades" href="#propriedades" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Propriedades</h3>
+<h5 id="color"><a name="user-content-color" href="#color" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Color</h5>
+<p>A cor dos elementos pode ser escrita usando o nome da cor. O problema é que dessa forma temos um número muito pequeno de possíveis cores. Para aumentar a diversidades de cores podemos utilizar o valor rgb daquela cor ou o valor hexadecimal.</p>
+<pre><code>p {
+    color: red;
+}
+</code></pre>
+
+<pre><code>p {
+    color: rgb(255,0,0);
+}
+</code></pre>
+
+<pre><code>p {
+    color: #FF0000;
+}
+</code></pre>
+
+<h5 id="background"><a name="user-content-background" href="#background" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Background</h5>
+<ul>
+<li>
+<p>Background Color</p>
+</li>
+<li>
+<p>Como o próprio nome diz, essa propriedade define a cor do background daquele elemento. Assim  como na propriedade <code>color</code> podemos especificar a cor usando um nome válido, um valor hexadecimal, ou o RGB correspondente.</p>
+</li>
+</ul>
+<pre><code>body {
+    background-color: pink;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Background Image</p>
+</li>
+<li>
+<p>Essa propriedade define uma imagem para ser usada como plano de fundo do elemento selecionado.</p>
+</li>
+</ul>
+<pre><code>body {
+    background-image: url(&quot;path.jpg&quot;);
+}
+</code></pre>
+
+<h5 id="width"><a name="user-content-width" href="#width" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Width</h5>
+<p>Essa propriedade define o width de um elemento. Ela pode assumir diferentes valores como por exemplo: auto, length, initial, inherit. Quando usamos auto o browser calcula o width do elemento. Length corresponde a passar o tamanho do width, seja com pixels, ems, ou porcentagens. Initial utiliza o valor igual ao default daquele elemento. Inherit faz aquele elemento herdar o width do elemento pai.</p>
+<pre><code>img {
+    width: 100px;
+}
+</code></pre>
+
+<pre><code>img {
+    width: 10em;
+}
+</code></pre>
+
+<pre><code>img {
+    width: 50%;
+}
+</code></pre>
+
+<h5 id="height"><a name="user-content-height" href="#height" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Height</h5>
+<p>Essa propriedade é similar ao width. A diferença é que, enquanto o width define da largura do elemento a propriedade height define a altura do elemento. Com relação aos valores que o height pode assumir são exatamente os mesmos que o widht.</p>
+<pre><code>img {
+    height: 100px;
+}
+</code></pre>
+
+<pre><code>img {
+    height: 10em;
+}
+</code></pre>
+
+<pre><code>img {
+    height: 50%;
+}
+</code></pre>
+
+<h5 id="margin"><a name="user-content-margin" href="#margin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Margin</h5>
+<p>Essa propriedade é usada para definir o espaço ocupado pelo elemento fora de sua borda. Não confunda ela com a propriedade <code>padding</code> que define o espaço ocupado pelo elemento dentro de sua borda. Ambos os exemplos abaixo causam o mesmo efeito ao documento.</p>
+<pre><code>p {
+  margin: 10px 20px 30px 40px;
+}
+</code></pre>
+
+<pre><code>p {
+  margin-top: 10px; 
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+</code></pre>
+
+<h5 id="padding"><a name="user-content-padding" href="#padding" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Padding</h5>
+<p>Essa propriedade gera um espaço entre o conteúdo do elemento e sua borda. Assim como na <code>margin</code> podemos utilizá-la de diferentes formas.</p>
+<pre><code>p {
+  padding: 10px 20px 30px 40px;
+}
+</code></pre>
+
+<pre><code>p {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+</code></pre>
+
+<h5 id="border"><a name="user-content-border" href="#border" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Border</h5>
+<p>A propriedade da borda permite que seja especificado o estilo, o tamanho e a cor da borda do elemento</p>
+<pre><code>p {
+  border: 2px solid green;
+}
+</code></pre>
+
+<pre><code>p {
+  border-width: 2px;
+  border-style: solid;
+  border-color: green;
+}
+</code></pre>
+
+<h5 id="text"><a name="user-content-text" href="#text" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Text</h5>
+<ul>
+<li>
+<p>Text Color</p>
+</li>
+<li>
+<p>Define a cor de um elemento.</p>
+</li>
+</ul>
+<pre><code>body {
+  color: green;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Text Align</p>
+</li>
+<li>
+<p>Um texto pode estar alinhado com o centro (center), com as bordas (right/left), ou pode estar definido para que suas linhas ocupem exatamente o mesmo tamanho (justified).</p>
+</li>
+</ul>
+<pre><code>h3 {
+  text-align: justify;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Text Decoration</p>
+</li>
+<li>
+<p>Vários elementos HTML vem com estilos predefinidos. Dentre eles, um dos mais irritantes para desenvolvedores novatos é o text-decoration de elementos como por exemplo links. Aqueles underlines raramente são necessários e por isso é possível se livrar deles da seguinte forma:</p>
+</li>
+</ul>
+<pre><code>a {
+  text-decoration: none;
+}
+</code></pre>
+
+<p>Além de tirá-lo é possível substituí-lo por outros estilos que se adequam `a situação. Seguem exemplos uteis:</p>
+<pre><code>h1 {
+  text-decoration: overline;
+  text-decoration: underline;
+  text-decoration: line-through;
+}
+</code></pre>
+
+<h5 id="fonts"><a name="user-content-fonts" href="#fonts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fonts</h5>
+<p>Podemos serparar os tipos de fontes basedo nas generic families das fontes. As usadas são as Serifs, as Monospace, e as Sans-serifs. As propriedades que cuidam das fontes do css se chamam <code>font-family</code> e <code>font-style</code> e elas pode ser usadas da seguinte forma:</p>
+<pre><code>body {
+  font-family: &quot;Times New Roman&quot;, Times, serif;
+  font-style: italic;
+}
+</code></pre>
+
+<p>Obs: Existem outras propriedades que não cobrimos aqui.</p>
+<h5 id="position"><a name="user-content-position" href="#position" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Position</h5>
+<p>A propriedade <code>position</code> indica que tipo de posicionamento foi usado para ajustar o elemento. Existem quatro tipos de posicionamento. O primeiro é o posicionamento estático, ou seja, dizemos exatamente onde queremos que o elemento apareça na tela. Existe também o posicionamento relativo cujo elemento será posicionado de acordo com sua posição natural. Quando posicionamos um elemento usando posicionamento fixo o mesmo é posicionado em relação ao viewport, ou seja, independente se o usuário planeja dar scroll na página aquele elemento será mostrado sempre no mesmo local do viewport. Um exemplo de situação em que esse tipo de posicionamento é usado é em navigations fixas. Por ultimo temos o posicionamento absoluto. Nele o elemento com posicionamento absoluto é posicionado relativo ao elemento pai.</p>
+<pre><code>div {
+  position: static;
+  position: relative;
+  position: fixed;
+  position: absolute;
+}
+</code></pre>
+
+<h5 id="float"><a name="user-content-float" href="#float" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Float</h5>
+<p>A propriedade float permite que um elemento flutue para uma determinada posição. Quando usamos <code>float: left;</code> o elemento flutua para esquerda da página. O oposto ocorre ao usarmos <code>float: right;</code>. Muitas vezes é interessante o uso do <code>clear:</code> para corrigir comportamentos de alguns elementos que flutuam. Essa propriedade define qual lado daquele elemento não permite que outros elementos flutuem. Outra tática que é usada para solucionar problemas relacionados a floats é  usar a propriedade <code>overflow: auto</code> para impedir que elementos maiores do que aqueles que os contém saiam das bordas do elemento pai. A seguir são mostrados exemplos de todas essas propriedades faladas:</p>
+<pre><code>div {
+  float: right;
+}
+
+div {
+  clear: left;
+}
+
+.clearfix {
+  overflow: auto;
+}
+</code></pre>
+
+<h5 id="display"><a name="user-content-display" href="#display" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Display</h5>
+<p>O Display de um elemento especifica como aquele elemento será mostrado na página. Elementos a nível de bloco começam no inicio da um linha e ocupam todo o width possível até o final daquela mesma linha. Elementos a nível de bloco não começam no início da linha e tomam apenas o espaço necessário.</p>
+<pre><code>li {
+  display: inline;
+}
+
+img {
+  display: block;
+}
+
+p {
+  display: none;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Inline-block</p>
+</li>
+<li>
+<p>É essecial que seja entendido o conceito dessa propriedade. Elementos que utilizar ela são como elementos inline mas eles possuem width e height. Essa propriedade soluciona um dos mais comuns problemas no desenvolvimento web, a falta de grids por padrão.</p>
+</li>
+</ul>
+<pre><code>.float-elem {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+}
+</code></pre>
+
+<h3 id="pseudo-class"><a name="user-content-pseudo-class" href="#pseudo-class" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudo-class</h3>
+<p>As pseudo-classes são usadas para estilizar os elementos baseados em ações que foram realizadas naquele mesmo elemento. A sintaxe segue o seguinte padrão:</p>
+<pre><code>selector:pseudo-class {
+    property:value;
+}
+</code></pre>
+
+<p>É comum usamos as pseudo-classes em elementos como links, veja o exemplo:</p>
+<pre><code>a:visited {
+  ... aqui colocamos o estilo do link 
+  depois que ele foi visitado ...
+}
+
+a:link {
+  ... aqui colocamos o estilo do link 
+  antes dele ser visitado ...
+}
+
+a:hover {
+  ... aqui colocamos o estilo do link 
+  quando o mouse estiver em cima dele ...
+}
+</code></pre>
+
+<h3 id="pseudo-element"><a name="user-content-pseudo-element" href="#pseudo-element" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudo-element</h3>
+<p>Os pseudo-elementos são usados com menos frequência que as pseudo-classes, mas podem ser muito úteis. A sintaxe deles é semelhante a sintaxe das pseudo-classes. Segue um exemplo:</p>
+<pre><code>selector::pseudo-element {
+    property:value;
+}
+</code></pre>
+
+<p>Eles permitem que o desenvolvedor especifique um estilo em certa parte de um elemento que não está presente no documento, ou seja, permite que elementos lógicos sejam definidos sem que estes estejam no Document Element Tree.</p>
+<h3 id="pseudo-class-vs-pseudo-element"><a name="user-content-pseudo-class-vs-pseudo-element" href="#pseudo-class-vs-pseudo-element" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudo-class vs Pseudo-element</h3>
+<p>Note que entre o seletor e o pseudo-elemento temos <code>::</code> diferente das pseudo-classes onde temos <code>:</code>. Os próximos exemplos mostram alguns pseudo-elementos úteis:</p>
+<pre><code>p::before {
+
+}
+
+p::after {
+
+}
+
+p:first-child { 
+
+}
+
+p:nth-child(2) {
+
+}
+</code></pre>
+
+<p>selector:pseudo-class {<br />
+    property:value;<br />
+}</p>
+<p>selector::pseudo-element {<br />
+    property:value;<br />
+}</p>
+<h5 id="links-complementares_1"><a name="user-content-links-complementares_1" href="#links-complementares_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="http://www.d.umn.edu/~lcarlson/csswork/selectors/pseudo_dif.html">pseudo-class vs pseudo-element</a></p>
+<h1 id="css3"><a name="user-content-css3" href="#css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3</h1>
+<h5 id="borders"><a name="user-content-borders" href="#borders" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Borders</h5>
+<ul>
+<li>Border Radius</li>
+</ul>
+<p>Essa propriedade adiciona bordas aredondadas ao elemento. Quando especificamos apenas um valor, esse valor será aplicado para cada borda do elemento. Quando usamos quatro valores, estes serão aplicados para o topo esquerdo, topo direito, canto inferior direito, e canto inferior esquerdo daquele elemento.</p>
+<pre><code>border-radius: 10px 10px 10px 10px;
+border-radius: 10px 10px 10px;
+border-radius: 10px 10px;
+border-radius: 10px;
+</code></pre>
+
+<ul>
+<li>Border Image</li>
+</ul>
+<p>A propriedade Border Image permite a utilização de uma imagem como borda de um elemento. A propriedade permite uma imagem que será usada como borda, um argumento dizendo onde aquela imagem será cortada, e um argumento dizendo se aquela imagem deve se repetir ou se deve ser alongada para caber dentro do espaço delimitado.</p>
+<pre><code>#borderimg {
+    -webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(border.png) 30 round;
+}
+</code></pre>
+
+<pre><code>#borderimg {
+    -webkit-border-image: url(border.png) 30 stretch; /* Safari 3.1-5 */
+    -o-border-image: url(border.png) 30 stretch; /* Opera 11-12.1 */
+    border-image: url(border.png) 30 stretch;
+}
+</code></pre>
+
+<h5 id="color_1"><a name="user-content-color_1" href="#color_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Color</h5>
+<p>É possível definirmos as cores de elementos como por exemplo texto. O RGBA são uma extensão do RGB. Além de permitir que o usuário especifique os valores de Red Green e Blue ele permite que o usuário insira um valor para o canal alpha. Esse canal alpha é o responsável por ditar a opacidade da cor. Quando o valor está mínimo significa que a cor será transparente, e quando o valor corresponde ao valor máximo temos a cor completamente opaca.</p>
+<p>color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.</p>
+<pre><code>#p1 {
+ background-color: rgba(0, 255, 0, 1.0);
+}
+
+#p1 {
+ background-color: rgba(0, 255, 0, 0.5);
+}
+
+#p1 {
+ background-color: rgba(0, 255, 0, 0.0);
+}
+</code></pre>
+
+<h5 id="shadows"><a name="user-content-shadows" href="#shadows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Shadows</h5>
+<p>Essa é uma das propriedades mais legais. Ela adiciona sombra ao elemento alvo. Essa sombra dá uma sensação de profundidade muito interessante e ela é muito usada em frameworks CSS. No exemplo a seguir utilizamos box-shadow passando os seguintes argumentos: sombra-horizontal sombra-vertical blur cor; </p>
+<pre><code>div {
+  box-shadow: 8px 8px 4px #A1A1A1;
+}
+</code></pre>
+
+<p>Ele pode assumir os seguintes valores:</p>
+<ul>
+<li>none: Aqui a sombra não será mostrada.</li>
+<li>inherit: Atribui ao valor dessa propriedade o valor do elemento pai.</li>
+<li>initial: Utiliza o valor default de shadow daquele elemento.</li>
+</ul>
+<h5 id="transition"><a name="user-content-transition" href="#transition" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Transition</h5>
+<p>As transitions permitem que você altere as propriedades de um elemento de forma transitiva. Elas podem ser ativadas por eventos e podem mudar, por exemplo, a cor de um texto quando o usuário dér <code>hover</code> em um elemento. Além disso, podemos definir um delay até que a transição comece e um tempo para sua duração. Para que elas funcionem é necessário que o programador diga o estado inicial e o estado final de certo elemento. Segue o conjunto de propriedades que tornam possível a transição de elementos:</p>
+<ul>
+<li>transition property</li>
+<li>transition duration</li>
+<li>transition timing function</li>
+<li>transition delay</li>
+</ul>
+<p>Abaixo temos um exemplo de uma transição de cor do background de um elemento:</p>
+<pre><code>.button {
+  color: #fff;
+  background: #4a89ca;
+  transition-duration: 1s;
+}
+
+.button:hover {
+  background: #d36a62;
+}
+
+.button:active {
+  background: #a33830;
+}
+</code></pre>
+
+<h6 id="transition-property"><a name="user-content-transition-property" href="#transition-property" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a># Transition Property</h6>
+<p>No exemplo acima a transition é aplicada para todas as propriedades na regra CSS. Para definirmos com precisão quais propriedades serão afetadas pela transition usamos o <code>transition-property</code>. Segue o exemplo:</p>
+<pre><code>.button {
+  color: #fff;
+  background: #4a89ca;
+  transition-duration: 1s;
+  transition-property: background;
+}
+
+.button:hover {
+  background: #d36a62;
+}
+</code></pre>
+
+<p>Obs: por default <code>transition-property</code> vem definida como <code>all</code>.</p>
+<p>É importante notar que nem todos os elementos do HTML podem sofrer transições. Apenas elementos animáveis cujas propriedades possuem halfway points podem aproveitar esse recuso do CSS3.</p>
+<h6 id="delay"><a name="user-content-delay" href="#delay" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a># Delay</h6>
+<p>A propriedade <code>transition-delay</code> deixa você começar uma transição alguns segundos depois do evento ser disparado. Isso pode ser útil quando você desejar que uma animação comece depois que outra termina.</p>
+<h6 id="transition-timing-function"><a name="user-content-transition-timing-function" href="#transition-timing-function" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a># Transition Timing Function</h6>
+<p>Uma coias legal de se fazer é mudar a velocidade de uma transição durante sua duração, ou seja, enquanto ela está sendo executada.<br />
+Esse efeito é alcançado com o uso da propriedade <code>transition-timing-function</code>.</p>
+<p>Por default, quando criamos uma transition ela segue uma curva de aceleração. A mudança na função de tempo resulta em uma curva de aceleração distinta. Dependendo da curva, algumas partes da sua animação podem ser executadas mais rápidamente que outras. Para mudar o valor da <code>transition-timing-function</code> podem usar os seguintes valores:</p>
+<ul>
+<li>ease        -&gt; Começa de vagar de acelera.</li>
+<li>linear      -&gt; Mantem uma velocidade constrante por toda a duração da transição.</li>
+<li>ease-in     -&gt; Começa de vagar e para rapidamente.</li>
+<li>ease-out    -&gt; Começa rapido e para aos poucos.</li>
+<li>ease-in-out -&gt; Começa e termina lento.</li>
+</ul>
+<h6 id="abreviacao"><a name="user-content-abreviacao" href="#abreviacao" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a># Abreviação</h6>
+<p>É comum abreviarmos a nomeclatura das transitions colocando transition-property, transition-duration, transition-timing-function, e transition-delay em uma só linha da seguinte forma:</p>
+<pre><code>.btn {
+  transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function&gt; &lt;transition-delay&gt;;
+}
+</code></pre>
+
+<p>Obs: Note que no exemplo, o primeiro tempo passado como argumento corresponde ao transition-duration e o segundo ao transition-delay.</p>
+<h6 id="cubic-bezier"><a name="user-content-cubic-bezier" href="#cubic-bezier" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a># Cubic Bezier</h6>
+<p>As funções de tempo que usamos até aqui são simples. Usando <code>transition-timing-function: cubic-bezier()</code> podemos criar timing-functions mais complexas adicionando diversos níveis de aceleração durante a transição.</p>
+<pre><code>.elem {
+  transition: transform .5s cubic-bezier(.5, -0.5, .3, 1);
+}
+</code></pre>
+
+<h5 id="links-complementares_2"><a name="user-content-links-complementares_2" href="#links-complementares_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="http://cubic-bezier.com/#.17,.67,.83,.67,">Cubic Bezier</a></p>
+<h5 id="transform"><a name="user-content-transform" href="#transform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Transform</h5>
+<p>Essa propriedade aplica transformações nos elementos. Essas transformações podem variar em um espaço 2D ou 3D. Os valores que a propriedade pode assumir são os seguintes:</p>
+<ul>
+<li>rotate</li>
+<li>scale</li>
+<li>move</li>
+<li>skew</li>
+<li>translate</li>
+</ul>
+<h6 id="rotate"><a name="user-content-rotate" href="#rotate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Rotate</h6>
+<p>O <code>transform: rotate(ang);</code> rotaciona o elemento selecionado. É passado como parâmetro o quanto aquele elemento deve ser rotacionado. Além disso, saiba que a rotação é aplicada tendo como ponto de rotação o centro do elemento. Segue o exemplo:</p>
+<pre><code>img {
+  transform: rotate(25deg);
+}
+</code></pre>
+
+<h6 id="skew"><a name="user-content-skew" href="#skew" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Skew</h6>
+<p>O <code>transform: skew(x,y);</code> aplica um efeito parecido com o efeito itálico que é aplicado em fontes, a diferença é que o skew pode ser aplicado em elementos que não são fontes.</p>
+<pre><code>img:hover {
+  transform: skew(15deg, 15deg);
+}
+</code></pre>
+
+<h6 id="scale"><a name="user-content-scale" href="#scale" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Scale</h6>
+<p>Como o próprio nome diz, <code>transform: scale(x,y);</code> escala o elemento. Ele escala o elemento sem mudar o centro do mesmo, ou seja, depois de escalado sua posição central permanece a mesma.</p>
+<pre><code>img {
+  transform: scale(2, 2);
+}
+</code></pre>
+
+<h6 id="translate"><a name="user-content-translate" href="#translate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Translate</h6>
+<p>O <code>transform: translate(x,y);</code> é um dos mais legais. Ele permite que você modifique a posição X e Y do elemento. Se você colocar 100px no valor de x significa que ele vai mover para direita 100px relativos ao centro daquele elemento. Se você colocar -100px o mesmo vai ocorrer porém o elemento irá para esquerda.</p>
+<pre><code>img:hover {
+  transform: translate(100px, 0px);
+}
+</code></pre>
+
+<h6 id="transform-origin"><a name="user-content-transform-origin" href="#transform-origin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Transform Origin</h6>
+<p>Até então os exemplos usavam o ponto central do elemento como base para aplicar as transformações. Muitas vezes queremos alterar esse comportamento e aplicar transformações relativas ao canto de um elemento. Para modificar essa posição relativa podemos usar a propriedade <code>transform-origin: x y;</code>.</p>
+<pre><code>img {
+  transform-origin: 50% 50%; // nesse exemplo a posição será relativa ao centro
+}
+
+img {
+  transform-origin: 0 0;      // nesse exemplo a posição será relativa ao canto superior esquerdo do elemento
+  transform-origin: top left; // exatamente a mesma coisa do exemplo logo acima
+}
+</code></pre>
+
+<h6 id="combinando-transforms"><a name="user-content-combinando-transforms" href="#combinando-transforms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Combinando Transforms</h6>
+<p>Outra coisa que podemos fazer é combinar transforms para evitar duplicação de código, fazemos da seguinte forma:</p>
+<pre><code>img:hover {
+  transform: rotate(-10deg) scale(5);
+}
+</code></pre>
+
+<h6 id="adicionando-efeitos-3d"><a name="user-content-adicionando-efeitos-3d" href="#adicionando-efeitos-3d" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adicionando Efeitos 3D</h6>
+<p>Para adicionarmos efeitos 3D em nossos transforms precisamos usar a propriedade <code>perspective</code>. É ela que prepara o ambiente para que nossos transforms ajam sobre um espaço 3D, em outras palavras , os filhos do elemento que possui a propriedade <code>perspective</code> terão transforms realizados sobre um espaço 3D.</p>
+<pre><code>.pai {
+  perspective: 300px;
+}
+</code></pre>
+
+<p>Quanto maior o valor de perspective mais distânte a perspectiva será aplicada. Pense como se uma câmera estivesse observando um cenário 3D. Aumentando o valor de perspective essa câmera iria se afastar do cenário, e diminuindo ela iria se aproximar. Agora que temos <code>perspective</code> podemos realizar as transformações.</p>
+<pre><code>.pai {
+  perspective: 300px;
+}
+
+.filho {
+  transform: rotate(20deg, 20deg);
+}
+
+</code></pre>
+
+<h3 id="media-query"><a name="user-content-media-query" href="#media-query" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Media Query</h3>
+<p>As media queries são capazes de extrair dados sobre o dispositivo no qual o usuário está acessando a página. Um dos dados é o tamanho e largura do dispositivo. Além desse é possível descobrir a orientação de um telefone ou tablet, sua resolução, e outros. A sintaxe das media queries se assemelha a seguinte:</p>
+<pre><code>@media not|only mediatype and (media feature) {
+  CSS-Code;
+}
+</code></pre>
+
+<p>Elas são extremamente importantes pois elas além de muitas coisas, também permitem a mudança de estilos da página quando o usuário acessa em um ambiente mobile. O próximo exemplo mostra essa mudança de estilo aplicada sobre um classe.</p>
+<pre><code>.nomeDaClasse {
+  float: left;
+  width: 25%;
+}
+
+@media (max-width: 400px) {
+  .nomeDaClasse {
+    float: none;
+    width: 100%;
+  }
+}
+</code></pre>
+
+<p>No exemplo anterior usamos o valor <code>400px</code> para definir o ponto em que nosso layout iria se adaptar `aquela resolução. Esse ponto é chamado <strong>breakpoint</strong> . É possível adicionarmos diversos breakpoints para tornar o site adaptavel não só para desktop e mobile, mas para ipads e outros. Optamos também por usar max-width, mas existe uma outra media feature chamda min-width que costuma ser usada.</p>
+<pre><code>@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+</code></pre>
+
+<h3 id="flex-box"><a name="user-content-flex-box" href="#flex-box" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flex-box</h3>
+<h5 id="o-que-e-para-que-serve-por-que-devo-usar"><a name="user-content-o-que-e-para-que-serve-por-que-devo-usar" href="#o-que-e-para-que-serve-por-que-devo-usar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>O que é? Para que serve? Por que devo usar?</h5>
+<p>Flex-box é um modelo criado no CSS3 que substitui o block-model. Ele disponibiliza uma nova forma para distribuir elementos nas suas páginas. Além disso, o uso do flex-box pode facilitar a responsividade das suas páginas.</p>
+<p>Ele consiste de containers e items. Containers possuem uma main axis que atravessa-os de forma horizontal, e uma cross axis que atravessa-os de forma vertical. Dentro desses containers temos itens que serão posicionados utilizando novas técnicas que aprenderemos aqui.</p>
+<h5 id="primeiros-passos"><a name="user-content-primeiros-passos" href="#primeiros-passos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Primeiros Passos</h5>
+<p>Tudo começa com a propriedade display. Quando atribuimos ao display a propriedade flex ou inline-flix mudamos o modelo de renderização. Aquele elemento que possui a propriedade display pode, também, ser chamado de container. É possível adicionarmos diversos itens àquele elemento/container. É interessante notar que os elementos que não estão no escopo daquele container não serão afetados pelo <code>display: flex</code>, logo, serão renderizados normalmente.</p>
+<h5 id="justify-content"><a name="user-content-justify-content" href="#justify-content" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Justify-content</h5>
+<p>O justify-content posiciona um item relativo ao main axis.</p>
+<ul>
+<li>flex-start: posiciona os itens no inicio da main axis</li>
+<li>flex-end: posiciona os itens ao final da main axis</li>
+<li>center: posiciona os itens no centro</li>
+<li>space-between: posiciona os itens de forma igualmente distribuida tal que o primeiro item corresponda ao start da axis e o ultimo ao end</li>
+<li>space-around: posiciona os itens de forma igualmente distribuida tal que o primeiro item tenha um espaçamento em relação a &ldquo;borda&rdquo;, assim como o ultimo.</li>
+</ul>
+<h5 id="align-items"><a name="user-content-align-items" href="#align-items" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Align-items</h5>
+<p>O align-items posiciona os itens relativos ao cross axis</p>
+<ul>
+<li>flex-start: posiciona os itens no inicio da cross axis</li>
+<li>flex-end: posiciona os itens ao final da cross axis</li>
+<li>center: posiciona os itens no centro da cross axis</li>
+<li>baseline: alinha de forma que seus baselines ficam alinhados</li>
+<li>stretch: estica os itens no cross axis</li>
+</ul>
+<h5 id="flex-direction"><a name="user-content-flex-direction" href="#flex-direction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flex-direction</h5>
+<p>A propriedade flex-direction permite mudar o comportamento das axis. Apesar de, por default, a main axis aparecer horizontal e a cross axis vertical é possível inverte-las quando usamos tal propriedade.</p>
+<ul>
+<li>row: main axis da esquerda para direita</li>
+<li>row-reverse: main axis mostra os items da direita para esquerda</li>
+<li>column: main axis se transforma numa column com ordenação de cima para baixo</li>
+<li>column-reverse: main axis se transforma numa column com ordenação de baixo para cima</li>
+</ul>
+<h5 id="flex"><a name="user-content-flex" href="#flex" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flex</h5>
+<p>Essa propriedade dita o tamanho de cada item dentro do container. O valor é relativo aos demais itens daquele mesmo container, ou seja, se o valor de um item for 2 e dos demais 1 aquele com valor 2 ocupará o dobro do tamanho dos demais.</p>
+<h5 id="flex-wrap"><a name="user-content-flex-wrap" href="#flex-wrap" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flex-wrap</h5>
+<p>A propriedade flex-wrap soluciona o seguinte caso: Algumas vezes não sobra espaço para outros itens em uma certa linha pois a mesma está cheia, daí é necessário que especifiquemos se aqueles itens irão para proxima linha ou se eles irião ultrapassar a barreira do container.<br />
+  nowrap: Por default os itens não serão &ldquo;empilhados&rdquo;<br />
+  wrap: permite que os itens sejam &ldquo;empilhados&rdquo;<br />
+  wrap-reverse: será wrap em order reversa</p>
+<h5 id="ordering"><a name="user-content-ordering" href="#ordering" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ordering</h5>
+<p>Essa propriedade é capaz de mudar a ordem com que os items são renderizados dentro de um certo container. Itens com order superior aparecer por ultimo e itens com order inferior aparecem primeiro.</p>
+<h5 id="margin_1"><a name="user-content-margin_1" href="#margin_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Margin</h5>
+<p>Essa propriedade pode ser usada para posicionar itens em diferentes posições, por exemplo, se atribuirmos margin-right: auto a um item, este irá mostrar um espaço em branco a sua direita. Seguindo a mesma lógica, para centralizar um item, bastaria colocar sua margin como auto.</p>
+<h3 id="oocss"><a name="user-content-oocss" href="#oocss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>OOCSS</h3>
+<p>Object Orientes CSS é uma forma padronizada para organização do seu código CSS criada por Nicole Sullivan. Pense nele como um guia que dita a arquitetura do seu CSS. Assim como o OOCSS existem outras arquiteturas famosas no CSS. Iremos falar delas mais adiante. </p>
+<p>O princípio básico do CSS Orientado a Objetos é a separação de <strong>estrutura</strong> e <strong>skin</strong> e a separação de <strong>container</strong> e <strong>conteúdo</strong>.</p>
+<p>Separar <strong>estrutura</strong> e <strong>skin</strong> consiste em repetir característica visual como skin que pode ser combinada em uma variada gama de objetos por exemplo background e estilos de borda. Separar container de conteúdo segue o princípio de que um objeto deve permanecer igual independente da sua localizacao na página, ou seja, não queremos que as classes pai do css influenciem as classes filho. É bastante comum o uso de classes para nomear objetos e componentes, em vez de confiar somente na semantica HTML. Por exmplo, um objeto de mídia com class=&rdquo;media&rdquo; e seus componentes com class=&rdquo;img&rdquo; (para componentes de imagem e video) e class=&rdquo;bd&rdquo; (para componentes de texto). Ao referenciar essas classes nas folhas de estilo, o HTML ganhavuma flexibilidade maior; ou seja, se um novo elemento de mídia surgir nos próximos anos (como <svg>), ele pode receber a estilização sem que seja preciso mexer em uma linha de CSS.</p>
+<p>Separar <strong>container</strong> e <strong>conteúdo</strong> significa não use estilos que dependam de localização. Um objeto deve parecer-se igual, independentemente de onde estiver na página. Em vez de estilizar um título secundário específico com <code>.myObject h2 {}</code>, crie e aplique uma classe que descreva o elemento em questao, como <code>&lt;h2 class="category-title"&gt;</code>. Isso garante que:</p>
+<ul>
+<li>Todos os <code>h2</code> sem a classe não sejam afetados inadvertidamente.</li>
+<li>Todos os <code>h2</code> com a classe tenham o mesmo estilo.</li>
+<li>Não é preciso criar estilos extras para os casos em que seja preciso que um <code>.myObject</code> se pareca com um <code>h2</code> não estilizado.</li>
+</ul>
+<p>Para deixar bem claro, vamos observar como o CSS Orientado a Objetos pode ajudar o desenvolvedor garantindo maior manutenibilidade e menor repetição de código.</p>
+<p>Imagine o seguinte cenário.</p>
+<pre><code>#weather h3 {
+  font-size: 1.2em;
+}
+#tweets h3 {
+  font-size: 1.1em;
+}
+</code></pre>
+
+<p>Aqui temos um weather <strong>module</strong>. Queremos estilizar esse weather, e para isso adicionamos uma font-size ao id. Vamos pensar no código que acabamos de escrever. Todos os <code>h3</code> dentro de <code>#weather</code> <strong>modules</strong> recebem uma <code>font-size de 1.2em</code>. Mas o que acontece com um <strong>module</strong> diferente? Temos o <strong>module</strong> tweets. O que fazer com ele? Adicionamos font-size com valor 1.2em novamente? E se o font-size desse elemento for diferente? Com essas poucas linhas de código já temos um sério problema: nosso <code>h3</code> possui valores diferentes dependendo do <strong>module</strong> que o contém. Voltamos a dizer que o nosso font-size dentro de tweets seja 1.2em para facilitar o raciocínio.</p>
+<p><pre><code>#weather h3 {
+  font-size: 1.2em;
+}
+#tweets h3 {
+  font-size: 1.2em;
+}
+</code></pre><br />
+Uma forma de facilitar a legibilidade desse código seria fazer o seguinte:</p>
+<pre><code>#weather h3,
+#tweets h3 {
+  font-size: 1.2em;
+}
+</code></pre>
+
+<p>O problema aqui é que cada vez que quiséssemos adicionar h3 com tamanho 1.2em cujo pai não seja weather e tweets, teremos que voltar ao CSS e escrever mais uma linha para satisfazer esse caso.</p>
+<pre><code>#weather h3,
+#tweets h3,
+#comments h3 {
+  font-size: 1.2em;
+}
+</code></pre>
+
+<p>Agora que vimos os problemas de codar dessa forma precisamos pensar em uma solução para deixar nosso código mais modular, manutenível, e legível. A coisa mais óbvia a se fazer seria parar de usar IDs no seu CSS. Já sabemos que essa não é uma boa prática.<br />
+Poderíamos resolver o problema dos ids colocando uma classe no seu lugar. Além disso, podemos mudar o próprio valor default do h1.</p>
+<pre><code>h1, .h1 {
+  font-size: 1.6em;
+}
+h2, .h2 {
+  font-size: 1.4em;
+}
+h3, .h3 {
+  font-size: 1.2em;
+}
+</code></pre>
+
+<p>Muitas pessoas questionam o uso de classes cujo nome é igual a de um identificador. Não tem problema nenhum usarmos <code>.h1</code> para representar o elementos h1, pelo contrário, essa metodologia é bem flexível. Agora podemos modificar o font-size da forma como gostariamos desde o início e essas mudanças não são limitadas ao <strong>module</strong> ou um <strong>id</strong> ou <strong>container</strong>. Vamos analisar o seguinte código:</p>
+<pre><code>HTML
+  &lt;div id=&quot;box&quot;&gt;
+    &lt;h3&gt;Oi&lt;/h3&gt;
+  &lt;/div&gt;
+
+CSS
+  #box h3 {
+
+  }
+</code></pre>
+
+<p>Como vimos, essa não é uma forma muito boa de manter seu código. No exemplo acima estamos codificando em termos de <strong>modules</strong> específicos. Quando adicionarmos uma nova div com id=&rdquo;box2&rdquo; e com h3 dentro teríamos que entrar no arquivo CSS e adicionar mais linhas de código sempre que uma nova div fosse adicionada.</p>
+<p>Usando os conceitos que aprendemos até aqui teríamos o seguinte código:</p>
+<pre><code>HTML
+  &lt;div&gt;
+    &lt;h3&gt;Oi&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;tweets&quot;&gt;
+    &lt;h3 class=&quot;h4&quot;&gt;Oi&lt;/h3&gt;
+  &lt;/div&gt;
+CSS
+  h1, .h1 {
+    font-size: 1.6em;
+  }
+  h2, .h2 {
+    font-size: 1.4em;
+  }
+  h3, .h3 {
+    font-size: 1.2em;
+  }
+  h4, .h4 {
+    font-size: 1.1em;
+  }
+</code></pre>
+
+<p>No caso acima ambos os h3 herdam a mesma estilização, mas como adicionamos a classe h4 ao segundo h3 ele se comporta de forma visualmente diferente. O legal aqui é que a tag h3 era a tag semanticamente correta, mas ela precisava de uma estilização diferente da estilização da anterior.</p>
+<p>Por estarmos usando essa metodologia orientada a objetos, podemos usar base styling, mas quando realmente precisamos de visuais especificos podemos aplicar essas classes adicionais, assim conquistamos a manutenibilidade que desejavamos. Observe esse outro exemplo:</p>
+<pre><code>HTML
+  &lt;div class=&quot;notice&quot;&gt;Here is a notice.&lt;/div&gt;
+CSS
+  .notice {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+  }
+</code></pre>
+
+<p>Digamos que queremos adicionar uma imagem ao <code>.notice</code>, fariamos o seguinte:</p>
+<pre><code>HTML
+  &lt;div class=&quot;notice&quot;&gt;Here is a notice.&lt;/div&gt;
+CSS
+  .notice {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+    background: url(icon.png) no-repeat 0 50%;
+  }
+</code></pre>
+
+<p>Agora queremos outra notificação, só que agora ela possui uma aparência de warning.</p>
+<pre><code>HTML
+  &lt;div class=&quot;notice&quot;&gt;Here is a notice.&lt;/div&gt;
+  &lt;div class=&quot;warning&quot;&gt;Here is a warning.&lt;/div&gt;
+CSS
+  .notice {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+    background: url(icon-notice.png) no-repeat 0 50%;
+  }
+  .warning {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+    background: url(icon-warning.png) no-repeat 0 50%;
+  }
+</code></pre>
+
+<p>Repetimos muito código desnecessário no exemplo acima. Como resolver esse problema? Acompanhe a solução:</p>
+<pre><code>HTML
+  &lt;div class=&quot;message notice&quot;&gt;Here is a notice.&lt;/div&gt;
+  &lt;div class=&quot;message warning&quot;&gt;Here is a warning.&lt;/div&gt;
+CSS
+  .message {
+    border: 1px dotted #666;
+    padding: 1em;
+    color: #101010;
+  }
+  .notice {
+    background: url(icon-notice.png) no-repeat 0 50%;
+  }
+  .warning {
+    background: url(icon-warning.png) no-repeat 0 50%;
+  }
+</code></pre>
+
+<p>Resolvemos o problema de repetição de código, e agora, quando quisermos mudar uma propriedade para todos os diferentes tipos de messagem, basta mudarmos a classe <code>.message</code>.</p>
+<h6 id="resumo"><a name="user-content-resumo" href="#resumo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a># Resumo</h6>
+<p>O OOCSS prega que devemos criar componentes reutilizáveis. Pense como se você tivesse uma coleção de legos. Misture componentes para construir seus sites.</p>
+<h5 id="links-complementares_3"><a name="user-content-links-complementares_3" href="#links-complementares_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="https://www.casadocodigo.com.br/products/livro-css-eficiente">Livro que explica CSS Orientado a Objetos</a></p>
+<p><a href="https://www.youtube.com/watch?v=8FLWwZw5wQg">Video que explica CSS Orientado a Objetos</a></p>
+<h3 id="smacss"><a name="user-content-smacss" href="#smacss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SMACSS</h3>
+<p>Dois anos depois do surgimento do OOCSS surgiu o SMACSS. Assim como o OOCSS ele busca diminuir o acoplamento, aumentar flexibilidade, e reúso do código CSS. O SMACSS funciona como um guia de estilo que te ajuda a organizar a estrutura do seu projeto CSS independente do tamanho do mesmo. SMACSS vem de Scalable and Modular Architecture for CSS (Arquitetura Escalável e Modular para CSS).</p>
+<p>Segundo o SMACSS devemos identificar padrões no código que devem ser combinados em código mais modular. A arquitetura das pastas é a seguinte:</p>
+<pre><code>css
+-- base
+-- layout
+-- modules
+-- states
+-- themes
+</code></pre>
+
+<h5 id="base"><a name="user-content-base" href="#base" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Base</h5>
+<p>As regras da pasta base definem como os elementos serão mostrados ao usuário se nenhum outros arquivo sobrescrever aquele, ou seja, aqui colocamos a forma como o elemento aparenta por default.</p>
+<h5 id="layout"><a name="user-content-layout" href="#layout" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Layout</h5>
+<p>Regas Layout definem como será o layout para partes grandes da página, por exemplo, como será meu <code>header</code>, <code>footer</code>, <code>sidebar</code>, ou <code>grid</code>.</p>
+<h5 id="modules"><a name="user-content-modules" href="#modules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modules</h5>
+<p>Regras Module serão usadas na maior parte do projeto.</p>
+<h5 id="states"><a name="user-content-states" href="#states" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>States</h5>
+<p>As regras da pasta state definem como elementos serão mostrados caso seus estados sejam modificados, ou seja, se o elemento estiver active, hover, hidden, collapsed e outras sua estilização estará definida nessa pasta.</p>
+<h5 id="theme"><a name="user-content-theme" href="#theme" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Theme</h5>
+<p>Define as partes do seu site que serão customizadas com skins diferenciadas dependendo da ocasião, por exemplo, se estivermos no natal é possível que alguma imagem do seu HTML seja substituida por outra imagem sazonal.</p>
+<h6 id="exemplo-completo-da-estrutura-de-pastas"><a name="user-content-exemplo-completo-da-estrutura-de-pastas" href="#exemplo-completo-da-estrutura-de-pastas" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exemplo Completo da Estrutura de Pastas</h6>
+<p><pre><code>scss
+  application.scss    -&gt; importa todos arquivos _index.scss para todas as pastas
+  base
+    _base.scss        -&gt; estilização para todos os seletores base (ex: h1, h2, body, *, ...)
+    _index.scss       -&gt; importa todos os outros arquivos dentro da pasta base
+    _normalize.scss   -&gt; reseta os estilos
+  layout
+    _container.scss   -&gt; 
+    _extends.scss     -&gt; 
+    _index.scss       -&gt; importa todos os outros arquivos dentro da pasta layout
+    _panel.scss       -&gt; 
+  modules
+    _buttons.scss     -&gt; 
+    _extends.scss     -&gt; 
+    _forms.scss       -&gt; 
+    _headlines.scss   -&gt; 
+    _icons.scss       -&gt; 
+    _img.scss         -&gt; 
+    _index.scss       -&gt; importa todos os outros arquivos dentro da pasta modules
+    _nav.scss         -&gt; 
+    _navbar.scss      -&gt; 
+  states
+    _index.scss       -&gt; importa todos os outros arquivos dentro da pasta states
+  theme
+    _index.scss       -&gt; importa todos os outros arquivos dentro da pasta theme
+    _halloween.scss
+    _christmas.scss   -&gt; 
+  utilities
+    _config.scss      -&gt; arquivo de configuração
+    _functions.scss   -&gt; 
+    _helpers.scss     -&gt; helpers
+    _index.scss       -&gt; importa todos os outros arquivos dentro da pasta utilities
+    _mixins.scss      -&gt; mixins
+</code></pre><br />
+<pre><code>application.scss
+
+  @import utilities
+  @import base
+  @import layout
+  @import module
+  @import state
+  @import theme
+</code></pre></p>
+<h5 id="links-complementares_4"><a name="user-content-links-complementares_4" href="#links-complementares_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="https://smacss.com/">Livro Oficial sobre Arquitetura Escalável e Modular para CSS</a></p>
+<p><a href="https://www.casadocodigo.com.br/products/livro-css-eficiente">Livro que fala sobre Arquitetura Escalável e Modular para CSS</a></p>
+<h3 id="bem"><a name="user-content-bem" href="#bem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>BEM</h3>
+<p>Block Element Modifier</p>
+<p>.bloq__element&ndash;modifier</p>
+<p>Block Classes<br />
+  Root<br />
+  Highest level of abstraction<br />
+  Contain child elements that help form a block</p>
+<p>Element Classes<br />
+  Form a Block</p>
+<p>Modifier Classes<br />
+  Variation of the existing classes</p>
+<p>.list__item {<br />
+  padding: 5px;<br />
+  border-bottom: 1px solid;<br />
+}</p>
+<p>.list__item&ndash;end {<br />
+  border-bottom: nome;<br />
+}</p>
+<p>.list__item&ndash;highlight {<br />
+  color: white;<br />
+  background: yellow;<br />
+}</p>
+<ul class="list">
+  <li class="list__item">Item 1</li>
+  <li class="list__item list__item--highlight">Item 2</li>
+  <li class="list__item list__item--end">Item 3</li>
+</ul>
+
+<p>Obs: O problema de usar o bem é que ele é subjetivo. Sua definição de um Modulo pode ser diferente da definicao de outros. O importante é pensar que o bloco é o maior nivel de abstracao. Qualquer bloco definido pode ser usado livremente em diversas paginas ou ate mesmo projetos sem dependencias extras. </p>
+<p>Devemos dividir as partes em bloco apenas se aquela parte puder ser reutilizada entre projetos.</p>
+<p>Um dos pontos negativos do BEM é aumentar consideravelmente o tamanho das suas classes usadas no html tornando o codigo um pouco mais &ldquo;sujo&rdquo;, podem garantindo maior manutenibilidade.</p>
+<p>One of the big advantages of using the BEM convention is: We communicate what a block of HTML does just front its naming convention, and selectors are easier to understand because we provide the context directly into the selector</p>
+<h3 id="itcss"><a name="user-content-itcss" href="#itcss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ITCSS</h3>
+<p>Iverted Triangle CSS</p>
+<p>Harry Roberts</p>
+<p>Esse triângulo possui camadas que, conforme avançam, tornam0se mais específicas e focadas em realizar tarefas.</p>
+<p>Foi criado pensando em grandes projetos.</p>
+<p>O triângulo inverso possui 7 camadas<br />
+  Configurações (Settings): variáveis e configurações globais;<br />
+  Ferramentas (Tools): funções e mixins;<br />
+  Genérico (Generic): estilos genéricos (resets, normalizes);<br />
+  Elementos(Elements): estilização de elementos HTML diretamente;<br />
+  Objetos(Objects): padrões não cosméticos;<br />
+  Componentes (Components): peças de UI isoladas<br />
+  Trumps: utilitários, helpers</p>
+<p>Ele segue algumas regras<br />
+  Sem uso de IDs, somente classes<br />
+  Criação modular de componentes, em vez de páginas<br />
+  Uso e abuso de classes no HTML</p>
+<p>Geral para explicito: comeca-se pelos estilos mais gerais e genericos possiveis e, a partir dai, vao-se colocando camadas de estilo adicionais</p>
+<p>Baixa especificade para alta especificidade: regras com especificidade menos aparecem em camadas mais genericas; regras de maior, em camadas mais especificas/focadas</p>
+<p>Muito alcance para pouco alcance: as regras presentes em camadas mais genericas afetam grande parte do DOM e, a medida que vao se afunilando, alcancam cada vez menos porcoes.</p>
+<p>Configurações</p>
+<p>Ferramentas</p>
+<p>Genérico</p>
+<p>Elementos</p>
+<p>Objetos</p>
+<p>Componentes</p>
+<p>Trumps</p>
+<h3 id="rscss"><a name="user-content-rscss" href="#rscss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RSCSS</h3>
+<h5 id="links-complementares_5"><a name="user-content-links-complementares_5" href="#links-complementares_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="https://github.com/rstacruz/rscss">Reasonable System for CSS Stylesheet Structure.</a></p>
+<h3 id="docssa"><a name="user-content-docssa" href="#docssa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>DoCSSa</h3>
+<h5 id="links-complementares_6"><a name="user-content-links-complementares_6" href="#links-complementares_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="http://docssa.info/#">Sass based CSS architecture and methodology.</a></p>
+<h3 id="mvcss"><a name="user-content-mvcss" href="#mvcss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MVCSS</h3>
+<h5 id="links-complementares_7"><a name="user-content-links-complementares_7" href="#links-complementares_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Complementares</h5>
+<p><a href="http://mvcss.io/">Modular View CSS</a></p>
+<h3 id="dicas"><a name="user-content-dicas" href="#dicas" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dicas</h3>
+<h5 id="links-compomentares"><a name="user-content-links-compomentares" href="#links-compomentares" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links Compomentares</h5>
+<p><a href="https://css-tricks.com/box-sizing/">Problemas do CSS</a></p>
+<p><a href="">Guidelines</a></p></article></body></html>
