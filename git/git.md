@@ -104,6 +104,7 @@ Quando estiver trabalhando no seu projeto, as vezes você desejará deixar algun
 ### Bibliografia e sites úteis
 
 [Introdução ao Git](http://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/) | Esse guia é muito didático e muito bom! O autor deste artigo recomenda esse link. <br/>
+[Vídeos Tutoriais do GitHub](https://www.youtube.com/playlist?list=PLg7s6cbtAD15G8lNyoaYDuKZSKyJrgwB-) | Canal do GitHub de tutorias das principais funções do Git. Tem legendas em português! <br/>
 [GitHub Guides](https://guides.github.com/) | Guias do próprio GitHub sobre o GitHub!<br/>
 [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/) | Guias básicos e avançados de Git.<br/>
 [Git Ignore](https://help.github.com/articles/ignoring-files/) | Saiba mais sobre o Git Ignore.<br/>
