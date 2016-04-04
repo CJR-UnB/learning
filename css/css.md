@@ -1091,6 +1091,7 @@ application.scss
 ### BEM
 
 Block Element Modifier
+Bloco Elemento Modificador
 
 .bloq__element--modifier
 
@@ -1098,12 +1099,16 @@ Block Classes
   Root
   Highest level of abstraction
   Contain child elements that help form a block
+  Entidade independente com seu próprio significado; é a abstração mais geral de um componente/módulo
+
 
 Element Classes
   Form a Block
+  Descendente (e parte) de um Bloco; ajuda a formá-lo como um todo
 
 Modifier Classes
   Variation of the existing classes
+  Um estado ou "versão" diferente de um Bloco ou Elemento
 
 .list__item {
   padding: 5px;
@@ -1132,6 +1137,29 @@ Devemos dividir as partes em bloco apenas se aquela parte puder ser reutilizada 
 Um dos pontos negativos do BEM é aumentar consideravelmente o tamanho das suas classes usadas no html tornando o codigo um pouco mais "sujo", podem garantindo maior manutenibilidade.
 
 One of the big advantages of using the BEM convention is: We communicate what a block of HTML does just front its naming convention, and selectors are easier to understand because we provide the context directly into the selector
+
+
+Quando pensamos num navigation podemos dividir nossa estrutura CSS da seguinte forma
+  Em Block colocamos a estilização da barra de navegação
+  Em Element colocamos a estilização dos itens que estão dentro da barra de navegação
+  Em Modifier colocamos a estilização dos itens quando estes estão selecionados
+
+Obs: Nada impede que tenhamos um block dentro de outro block.
+
+Nomeclatura
+  .block {}             /* Block */
+  .block__element {}    /* Element */
+  .block--modifier {}   /* Modifier */
+
+Essa convenção garante que todos os desenvolvedores que conhçam BEM identifiquem a estrutura em que o estilo atuará instantaneamente. O oposto também vale: ao se olhar o HTML, pelo nome das classes, já se sabe o que esperar do CSS que estiliza aquele pedaço de código.
+
+Idealmente, cada Bloco deve ser absolutamente independentel ou seja, deve ser possível mudá-lo de posição na página ou de página, sem que nenhuma alteração de CSS precise ser feita.
+
+.media {
+  .media__img { }
+    .media__img--rev { }
+  .media__bd { }
+}
 
 ### ITCSS
 
@@ -1165,8 +1193,6 @@ Muito alcance para pouco alcance: as regras presentes em camadas mais genericas 
 
 
 Quando usar ITCSS é recomendado o uso de pré-processadores
-
-
 
 Configurações
   Se você usa algum pré-processador, você coloca seus estilos globais aqui
