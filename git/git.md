@@ -20,7 +20,7 @@ Uma das funcionalidades mais importantes do Git são as **branches**. Em portugu
 
 ![Mail](/images/mail.gif)
 
-Quando você cria um repositório, automaticamente é criado uma branch padrão chamada **master**. Seguindo nosso exemplo, a master é o papel especial. Você não ~~quer~~ deve trabalhar diretamente na master. Para isso você cria um rascunho, uma nova branch, normalmente chamada de **develop**. Essa branch é seu rascunho principal e quando você estiver satisfeito com o trabalho que fez nele, você poderá passar o texto (arquivos) para o papel especial (master). Como a carta será enviada à pessoa amada, cada parágrafo tem que ser trabalhado antes de ser colocado no rascunho principal (develop). Neste caso, o parágrafo está para o texto assim como uma funcionalidade do projeto está para o projeto inteiro. Assim, temos as branches chamadas de **features**. Digamos que você queira fazer uma página de introdução do projeto. Terá, então, que criar uma feature para isso. Um nome apropriado para ela seria `feature_intro`. O comando para criar para isso é o `checkout`.
+Quando você cria um repositório, automaticamente é criado uma branch padrão chamada **master**. Seguindo nosso exemplo, a master é o papel especial. Você não ~~quer~~ deve trabalhar diretamente na master. Para isso você cria um rascunho, uma nova branch, normalmente chamada de **develop**. Essa branch é seu rascunho principal e quando você estiver satisfeito com o trabalho que fez nele, você poderá passar o texto (arquivos) para o papel especial (master). Como a carta será enviada à pessoa amada, cada parágrafo tem que ser trabalhado antes de ser colocado no rascunho principal (develop). Neste caso, o parágrafo está para o texto assim como uma funcionalidade do projeto está para o projeto inteiro. Assim, temos as branches chamadas de **features**. Digamos que você queira fazer uma página de introdução do projeto. Terá, então, que criar uma feature para isso. Um nome apropriado para ela seria `feature_intro`. O comando para manipular branches é o `checkout`.
 
 ```shell
 
@@ -97,19 +97,13 @@ $ git branch
 
 Pronto! Agora você sabe como usar o `merge`!
 
-
 ## Git Ignore
 
 Quando estiver trabalhando no seu projeto, as vezes você desejará deixar alguns arquivos fora do escopo do Git para que ele não os atualize toda hora que for fazer uma alteração no projeto. Mas que arquivos seriam esses? Arquivos referentes à base de dados que está no seu computador são um exemplo disso. Como o projeto ainda não tem um servidor próprio, cada desenvolvedor tem seu banco de dados. Não há necessidade de ficar enviando esse arquivo e alterando-o toda vez que for trabalhar na sua máquina.
 
-
-
-
-
 ### Bibliografia e sites úteis
 
-[Introduction to Git](https://www.drupal.org/node/991716) <br/>
-[Introdução ao Git](http://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/) Esse guia é muito didático e muito bom! O autor deste artigo recomenda esse link. <br/>
-[GitHub Guides](https://guides.github.com/) <br/>
-[Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/) <br/>
-[Git Ignore](https://help.github.com/articles/ignoring-files/) <br/>
+[Introdução ao Git](http://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/) | Esse guia é muito didático e muito bom! O autor deste artigo recomenda esse link. <br/>
+[GitHub Guides](https://guides.github.com/) | Guias do próprio GitHub sobre o GitHub!<br/>
+[Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/) | Guias básicos e avançados de Git.<br/>
+[Git Ignore](https://help.github.com/articles/ignoring-files/) | Saiba mais sobre o Git Ignore.<br/>
