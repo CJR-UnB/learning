@@ -1090,186 +1090,184 @@ application.scss
 
 ### BEM
 
-Block Element Modifier
-Bloco Elemento Modificador
+O BEM (Block Element Modifier) é uma arquitetura CSS que busca resolver os mesmos problemas do OOCSS e do SMACSS. Ele prega que o usuário escreve seu CSS dividido em 3 pastas. Segue a estrutura:
 
+```
+css
+-- block
+-- element
+-- modifier
+``` 
+Além das estruturas de pasta, você deve tomar cuidado com a nomeclatura de suas classes. É aconselhado que você utilize a seguinte sintaxe:
+
+```
 .bloq__element--modifier
+```
 
-Block Classes
-  Root
-  Highest level of abstraction
-  Contain child elements that help form a block
-  Entidade independente com seu próprio significado; é a abstração mais geral de um componente/módulo
+####### Block
 
+Nessa pasta colocamos os blocos do nosso site. O que são blocos? São partes grandes do seu site, aqui temos um alto nível de abstração. Os blocos possuem elementos que, quando juntos, formam um bloco. Ela é a abstração mais geral de um componente.
 
-Element Classes
-  Form a Block
-  Descendente (e parte) de um Bloco; ajuda a formá-lo como um todo
+####### Element
 
-Modifier Classes
-  Variation of the existing classes
-  Um estado ou "versão" diferente de um Bloco ou Elemento
+Elementos são, como o próprio nome diz, elementos que compões um bloco maior. Pense numa navbar. Os elements dessa navbar seriam seus itens, e a navbar seria um block.
 
-.list__item {
-  padding: 5px;
-  border-bottom: 1px solid;
-}
+####### Modifier
 
-.list__item--end {
-  border-bottom: nome;
-}
+Modifiers são modificadores que indicam o estilo de um elemento quando aquele elemento é algo de algum evento disparado. Pense neles como uma versão diferente do seu elemento, por exemplo, quando passamos o mouse sobre um botão e ele muda de estilização ele foi alvo do evento onhover, logo, ele é uma "versão" diferente do botão original.
 
-.list__item--highlight {
-  color: white;
-  background: yellow;
-}
+###### Problemas do BEM
 
-<ul class="list">
-  <li class="list__item">Item 1</li>
-  <li class="list__item list__item--highlight">Item 2</li>
-  <li class="list__item list__item--end">Item 3</li>
-</ul>
+O problema de usar o BEM é que ele é subjetivo. Sua definição de um Modulo pode ser diferente da definição de outros. O importante é pensar que o bloco é o maior nivel de abstração. Qualquer bloco definido pode ser usado livremente em diversas páginas ou até mesmo projetos sem dependências extras. 
 
-Obs: O problema de usar o bem é que ele é subjetivo. Sua definição de um Modulo pode ser diferente da definicao de outros. O importante é pensar que o bloco é o maior nivel de abstracao. Qualquer bloco definido pode ser usado livremente em diversas paginas ou ate mesmo projetos sem dependencias extras. 
+Outro ponto negativo do BEM é o aumento considerável do tamanho das suas classes usadas no html tornando o código um pouco mais "sujo".
 
-Devemos dividir as partes em bloco apenas se aquela parte puder ser reutilizada entre projetos.
+####### Soluções do BEM
 
-Um dos pontos negativos do BEM é aumentar consideravelmente o tamanho das suas classes usadas no html tornando o codigo um pouco mais "sujo", podem garantindo maior manutenibilidade.
+Uma das vantages do BEM é que nós comunicamos exatamente o que um bloco do HTML faz só de seguir a convenção de nomeclatura. Dessa forma os seletores são simples e entendíveis.
 
-One of the big advantages of using the BEM convention is: We communicate what a block of HTML does just front its naming convention, and selectors are easier to understand because we provide the context directly into the selector
+####### Exemplos
 
-
-Quando pensamos num navigation podemos dividir nossa estrutura CSS da seguinte forma
-  Em Block colocamos a estilização da barra de navegação
-  Em Element colocamos a estilização dos itens que estão dentro da barra de navegação
-  Em Modifier colocamos a estilização dos itens quando estes estão selecionados
-
-Obs: Nada impede que tenhamos um block dentro de outro block.
-
-Nomeclatura
+```
   .block {}             /* Block */
   .block__element {}    /* Element */
   .block--modifier {}   /* Modifier */
+```
 
-Essa convenção garante que todos os desenvolvedores que conhçam BEM identifiquem a estrutura em que o estilo atuará instantaneamente. O oposto também vale: ao se olhar o HTML, pelo nome das classes, já se sabe o que esperar do CSS que estiliza aquele pedaço de código.
+```
+CSS
+  .list__item {
+    padding: 5px;
+    border-bottom: 1px solid;
+  }
 
-Idealmente, cada Bloco deve ser absolutamente independentel ou seja, deve ser possível mudá-lo de posição na página ou de página, sem que nenhuma alteração de CSS precise ser feita.
+  .list__item--end {
+    border-bottom: nome;
+  }
 
+  .list__item--highlight {
+    color: white;
+    background: yellow;
+  }
+
+HTML
+  <ul class="list">
+    <li class="list__item">Item 1</li>
+    <li class="list__item list__item--highlight">Item 2</li>
+    <li class="list__item list__item--end">Item 3</li>
+  </ul>
+```
+
+```
 .media {
   .media__img { }
     .media__img--rev { }
   .media__bd { }
 }
+```
+
+Obs: Nada impede que tenhamos um block dentro de outro block.
+
+Essa convenção garante que todos os desenvolvedores que conhçam BEM identifiquem a estrutura em que o estilo atuará instantaneamente. O oposto também vale: ao se olhar o HTML, pelo nome das classes, já se sabe o que esperar do CSS que estiliza aquele pedaço de código.
+
+Por fim, cada Bloco deve ser absolutamente independente, ou seja, deve ser possível mudá-lo de posição na página ou de página, sem que nenhuma alteração de CSS precise ser feita.
 
 ### ITCSS
 
-Iverted Triangle CSS
+O ITCSS (Iverted Triangle CSS) foi criado por Harry Roberts para facilitar a manutenibilidade de estilos CSS em projetos grandes. Como o próprio nome diz, ele se parece com um triângulo invertido. Esse triângulo possui camadas que, conforme avançam, tornam-se mais específicas.
 
-Harry Roberts
+O triângulo inverso possui 7 camadas:
 
-Esse triângulo possui camadas que, conforme avançam, tornam-se mais específicas e focadas em realizar tarefas.
++ Configurações (Settings): Nessa camada colocamos configurações globais e variáveis (caso esteja usando sass ou outro pré-processador)
++ Ferramentas (Tools): Aqui colocamos funções e mixins (caso esteja usando sass ou outro pré-processador)
++ Genérico (Generic): Esse nível abgrange estilos genéricos como por exemplo resets, normalizes
++ Elementos(Elements): Definimos a estilização de elementos HTML 
++ Objetos(Objects): Padrões não cosméticos
++ Componentes (Components): Aqui temos peças da interface isoladas
++ Trumps: Essa camada é camada helper, nela definimos hacks que solucionam problemas no nosso CSS
 
-Foi criado pensando em grandes projetos.
+##### Características
 
-O triângulo inverso possui 7 camadas
-  Configurações (Settings): variáveis e configurações globais;
-  Ferramentas (Tools): funções e mixins;
-  Genérico (Generic): estilos genéricos (resets, normalizes);
-  Elementos(Elements): estilização de elementos HTML diretamente;
-  Objetos(Objects): padrões não cosméticos;
-  Componentes (Components): peças de UI isoladas
-  Trumps: utilitários, helpers
+O ITCSS abusa no uso de classes no HTML. Isso torna o código muito verboso, o que pode ser ruim dependendo do seu projeto. Além disso, não constumamos usar IDs como seletor num projeto que usa o ITCSS. Quando programamos usando essa arquitetura começamos escrevendo o código mais geral / genérico. Aos poucos vamos aumentando a especificidade e adicionando conteúdo CSS em nosso arquivos mais específicos. Quando paramos para pensar, ao alterar uma propriedade genérica nosso CSS irá afetar grande parte da interface, e quando mudamos CSS menos genéricos o alcance dessa mudança será menor. É recomendado que, ao utilizar esse padrão, também utilize pré-processadores. Justamente por isso que existem as camadas Settings e Tools, sem pré-processadores suas existências não fazem sentido.
 
-Ele segue algumas regras
-  Sem uso de IDs, somente classes
-  Criação modular de componentes, em vez de páginas
-  Uso e abuso de classes no HTML
-
-Geral para explicito: comeca-se pelos estilos mais gerais e genericos possiveis e, a partir dai, vao-se colocando camadas de estilo adicionais
-
-Baixa especificade para alta especificidade: regras com especificidade menos aparecem em camadas mais genericas; regras de maior, em camadas mais especificas/focadas
-
-Muito alcance para pouco alcance: as regras presentes em camadas mais genericas afetam grande parte do DOM e, a medida que vao se afunilando, alcancam cada vez menos porcoes.
-
-
-Quando usar ITCSS é recomendado o uso de pré-processadores
-
-Configurações
-  Se você usa algum pré-processador, você coloca seus estilos globais aqui
-
-  $main-color: #bla
-  $main-text-color: #bla
-  $main-background-color: #ble
-  #module-size: bla
-
-Ferramentas
-  Se você usa algum pré-processador, deve conter funções e mixins. Essa camada vem depois de configurações pois é provavel que dentro dessas funções ou mixins você faça uso de uma configuração global.
-
-  @function convert-to-rem($value, $base-value: $rem-base) {
-  ...
-  }
-
-Genérico
-  Definimos eventuais resets para o CSS.
-
-  Normalize.css
+##### Configurações
   
-  * {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
+``` 
+$main-color: #bla
+$main-text-color: #bla
+$main-background-color: #ble
+$module-size: bla
+```
 
-Elementos
-  Estilização dos elementos
-  comporta estilizações de elementos HTML
+##### Ferramentas
+  
+Essa camada vem depois de configurações pois é provavel que dentro dessas funções ou mixins você faça uso de uma configuração que foi definida inicialmente. Segue o e
 
-  img {
-    ...
-  }
+```
+@function convert-to-rem($value, $base-value: $rem-base) {
+...
+}
+```
 
-  video {
-    ...
-  }
+##### Genérico
 
-Objetos
-  Comporta estilos não cosméticas
-  grids
-  containers
+Definimos eventuais resets para o CSS, por exemplo, normalize. Outro exemplo:
+  
+```  
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+```
 
-  .media {
-    ...
-  }
+##### Elementos
 
-  .img {
-    ...
-  }
+Comporta estilizações de elementos HTML.
 
-Componentes
-  Comporta o maior numero de estilos
-  Devem constar os codigos dos elementos de UI
+```
+img {
+  ...
+}
 
-  menu 
-  carousel
-  slider
+video {
+  ...
+}
+```
 
-  Alto nivel de especificidade
+##### Objetos
 
-Trumps
-  Camada que cuida de eventuais problemas
-  especificidade adicional
-  !important
-  helpers sobrescritas e hacks
+Comporta estilos não cosméticos como grids e containers.
 
+```
+.media {
+  ...
+}
 
-ORGANIZACAO DO CODIGO COM ITCSS
+.img {
+  ...
+}
+```
 
-o proprio criados recomenda a seguinte convencao de nomeclatura e o uso de partials
+##### Componentes
+ 
+Devem constar os códigos dos elementos da interface como menus, carousels, sliders, e outros. Esse elementos possuem alto nível de especificidade.
 
+##### Trumps
+
+Essa camada cuida de eventuais problemas que não foram corrigidos até então. Eles garentem aquele especificidade adicional que resolve vários problemas. Esse seria o arquivo ideal para resolver possíveis conflitos usando o famoso !important. É nesse arquivo que agrupamos os hacks e sobrescritas.
+
+##### Oganizando o código
+
+É recomendado, por convenção, o uso da seguinte nomeclatura e o uso de partials.
+
+```
 _<camada>.<partial>.scss
+```
 
-a order dos imports eh a seguinte
+Outro fator que ainda não comentamos é a ordem com que os arquivos devem ser importados para que a ordem de sobrescrita faça sentido. Ela deve ser feita usando a seguinte ordem:
 
+```
 settings
 tools
 generic
@@ -1277,6 +1275,7 @@ elementos
 objects
 components
 trumps
+```
 
 ##### Links Complementares
 
