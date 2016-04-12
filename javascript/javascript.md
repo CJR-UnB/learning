@@ -1,3 +1,4 @@
+![javascript](https://aspblogs.blob.core.windows.net/media/dwahlin/Media/JavaScript-logo.png)
 # JavaScript  
 
 ### O que é JavaScript?
@@ -18,111 +19,122 @@ exemplos
 + JavaScript externo  
 
 	Caso seu código JavaScript se repita muito entre as páginas é recomendado que torne ele um código externo. Para isso usa-se:
-	`<script src="myScript.JavaScript"></script>. ` 
+	```<script src="myScript.JavaScript"></script>. ```   
 
 ### Sintaxe
 
 + Constante
 
 	Assim como a linguagem C, JavaScript tem contantes e são criadas pela palavra "const". É muito recomendado seu uso para dados que você absolutamente não quer que ele mude de valor.  Ex:
-`const piBilly = 3,141592;`
+```const piBilly = 3,141592;```  
 
 + Variável
 
 	JavaScript é uma linguagem fracamente tipificada, muito diferente de C. As o tipo das variáveis não são determinadas quando se cria elas, e sim quando se atribui um valor a elas.  
 	Para se declarar uma variavel é preciso de "var" antes do nome da variável.  
 	Essas variáveis podem assumir três tipos: string (tem que estar entre aspas ou aspas simples), número (real ou não) ou um valor booleano. Ex:
-	`var caboBilly = 20;`
-	`var caboBilly = "ah não vei";`
-	Na hora de criar uma variável é possivel defini-lá. Nada de mais, mas a mágica acontece quando usa-se disso em strings. Ex:  
-    `var caboBilly = "feedback" + "é" + adjetivoLegal;`
+	```var caboBilly = 20;```  
+	```var caboBilly = "ah não vei";```  
+	Na hora de criar uma variável é possível defini-la. Nada de mais, mas a mágica acontece quando usa-se disso em strings. Ex:  
+    ```var caboBilly = "feedback" + "é" + adjetivoLegal;```
 	**Obs:** operações entre números gera número e entre qualquer outra gera string. Ex: 
-	`var caboBilly = "feedback" + 5;      ->       feedback5`
+	```var caboBilly = "feedback" + 5;      ->       feedback5```
 
 
 + Operadores
 
 	Os operadores do JavaScript são identicos aos da linguagem C. Isso incluindo os operadores de comparação.    
-	`+`	-> soma  
-	`-`	-> subtração  
-	`/`	-> divisão  
-	`*`	-> multiplicação  
-	`%`-> módulo (extrai o resto de uma divisão)  
-	`==`	-> verifica se são iguais  
-	`===`	-> verifica se são iguais  e se são do mesmo tipo
-	`!=`	-> verifica se são diferentes  
-	`!==`	-> verifica se são diferentes e se não são do mesmo tipo  
-	`?`	-> operador ternário
+	```+```	-> soma  
+	```-```	-> subtração  
+	```/```	-> divisão  
+	```*```	-> multiplicação  
+	```%```-> módulo (extrai o resto de uma divisão)  
+	```==```	-> verifica se são iguais  
+	```===```	-> verifica se são iguais  e se são do mesmo tipo
+	```!=```	-> verifica se são diferentes  
+	```!==```	-> verifica se são diferentes e se não são do mesmo tipo  
+	```?```	-> operador ternário
 
 + Aritimética
 
-	`++	` ->	acrescimo de 1
-	`--`	->	decrescimo de 1
-	`x=`	-> sendo x: `+`, `-`, `*`, `/` ou `%`, realiza a operação escolhida dele mesmo com um outro termo e guardando o resultado nele mesmo.
+	```++	``` ->	acrescimo de 1
+	```--```	->	decrescimo de 1
+	```x=```	-> sendo x: ```+```, ```-```, ```*```, ```/``` ou ```%```, realiza a operação escolhida dele mesmo com um outro termo e guardando o resultado nele mesmo.
 
 
 + Comentarios
 	
-	São feitos usando de dupla barra `//` ou entre `/* */` como em C. Existe uma divergência em relação ao uso de comentários, alguns acham essencial e outros não. Mas por via das duvidas, comente. Ajuda a não se perder no próprio código. 
+	São feitos usando de dupla barra ```//``` ou entre ```/* */``` como em C. Existe uma divergência em relação ao uso de comentários, alguns acham essencial e outros não. Mas por via das duvidas, comente. Ajuda a não se perder no próprio código. 
 
 + Identificadores
 	
-	O nome das variáveis (identificadores) tem que começar com letras, cifrão (`$`) ou underscore (`_`). Normalmente se coloca o underscore no começo de variáveis mais importantes para destaca-las e cifrão no começo de nome de objetos (confirmar isso com o Luis).  
+	O nome das variáveis (identificadores) tem que começar com letras, cifrão (```$```) ou underscore (```_```). Normalmente se coloca o underscore no começo de variáveis mais importantes para destaca-las e cifrão no começo de nome de objetos (confirmar isso com o Luis).  
 	Assim como em C, eles são sensíveis a letras minúsculas e maiúsculas (Case Sensitive), logo cAboBilly é diferente de caboBilly.  
-	Hifén (`-`) é uma letra reservada. Então nada de cabo-billy.
+	Hifén (```-```) é uma letra reservada. Então nada de cabo-billy.
 
 + Camel Case
 
 	Uma espécie de padrão informal adotado no JavaScript é que quando o nome da variável é composto, adotamos o seguinte método: primeiro nome todo minúsculo e as outras palavras com a inicial em maiúsculo. Ex:
-	`var camelCase;`
+	```var camelCase;```
 
 + Array
 
 	Primeiramente arrays em JavaScript são Objetos, mas Objetos não são arrays (Arrays são indexados por número e objeto é indexado por nomes). Podem carregar diferentes tipos (string, numero, booleano, outros arrays e até mesmo funções) em um mesmo array. Esses arrays são dinâmicos, logo não é necessário dizer o tamanho deles. Declara-se um array:
-`var billyEnemies = [];`
-`var billyNetworking = ["Deus", "Buda", "JC"];`
+```var billyEnemies = [];```
+```var billyNetworking = ["Deus", "Buda", "JC"];```
 Por serem objetos, arrays tem métodos como:
-`.length` (descobre o tamanho do array) .
-`.push` (adiciona um elemento no fim do array) 
-`.pop` (retira o elemento do final do array) 
-`.unshift` (adiciona o primeiro elemento do array)
-`.shift` (retira o primeiro elemento do array)
-`.sort` (ordena em ordem alfabética).
-Com uma indexação parecida com a do C, começa em 0 a contagem de itens de um array, ou seja, o acesso ao primeiro item seria `billyNetworking[0]`.
+```.length``` (descobre o tamanho do array) .
+```.push``` (adiciona um elemento no fim do array) 
+```.pop``` (retira o elemento do final do array) 
+```.unshift``` (adiciona o primeiro elemento do array)
+```.shift``` (retira o primeiro elemento do array)
+```.sort``` (ordena em ordem alfabética).
+Com uma indexação parecida com a do C, começa em 0 a contagem de itens de um array, ou seja, o acesso ao primeiro item seria ```billyNetworking[0]```.
 Existem 3 meios de adicionar um elemento a um array:
-`billyLines.push("This is Sparta"); `
-`billyLove[billyLove.length] = "CJR";`
-`billyNotes[10] = "Querido Diário, ...";`
+```billyLines.push("This is Sparta"); ```
+```billyLove[billyLove.length] = "CJR";```
+```billyNotes[10] = "Querido Diário, ...";```
 	
 + Condição && Switch && Loops
 
 Identico à C. 
+
 Ex1: 
-`if(billy == "Amor de pessoa"){
+```
+if(billy == "Amor de pessoa"){
 	abraça(billy);
 }
 else{
 	ficadeboas();
-}`
+}
+```
 Ex2:
-`switch(Aique){
+```
+switch(Aique){
 	case 0:
 	default:
 		Aique += "delicia";
 		break;
-}`
+}
+```
 Ex3:
-`for (i = 0; i < infinito; i++) {
+```
+for (i = 0; i < infinito; i++) {
     billyAwesome++;
-}`
+}
+```
 Ex4:
-`while (zuera) {
+```
+while (zuera) {
 	billyZuera *= zuera;
-}`
-Ex5:
-`do {
+}
+```
+Ex5: 
+```
+do {
     pressF5();
-}while (!matriculaWeb);`
+}while (!matriculaWeb); 
+```
 
 + Funções
 
