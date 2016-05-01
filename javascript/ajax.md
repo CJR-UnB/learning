@@ -2,7 +2,7 @@
 AJAX (Asynchronous JavaScript And XML) é basicamente uma tecnologia criada para permitir carregamento em segundo plano de certas partes do script, assim não tendo que esperar que uma parte do script ocorra para iniciar a próxima. A maior implicação disso é um dinamismo muito maior em sites. 
 Falando em termos mais "computacionais", digamos assim, seu código JavaScript continua normal, com o servidor respondendo cada solicitação  exatamente como fazia antes de usar AJAX. Porém a resposta do servidor agora retornará apenas os dados que a página precisa sem qualquer marcação ou apresentação. Aos olhos de quem está acessando a página, vai apenas perceber que grande parte da página não foi alterada quando algo foi solicitado, mas sim partes que necessitaram de atualização. Antigamente a página inteira era carregada, porém AJAX muda esse paradigma.
 Para aprender, só precisará de duas coisas:  
-> HTML
+> HTML  
 > JavaScript
 
 ## Let's Start
