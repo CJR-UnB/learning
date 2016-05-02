@@ -3,12 +3,8 @@
 
 ### O que é JavaScript?
 
-client side
-exemplos
-
-### Histórico
-
-### Domínio de Aplicação
+JavaScript é uma Linguagem de Programação, criada por Brendan Eich, a pedido da empresa Netscape, em meados de 1995. No início, o JavaScript foi batizado com outro nome: LiveScript. No entanto, a Netscape não ficou sozinha com o desenvolvimento do JavaScript. A empresa SUN Microsystems interessou-se por ela e entrou de cabeça no desenvolvimento desta nova linguagem, uma vez que acreditava na ideia inovadora que era o JavaScript.
+Com o sucesso inicial do JavaScript, a mudança do nome de LiveScript para JavaScript foi inevitável, e, com certeza, veio por influência da própria SUN, que mantém uma Linguagem de Programação chamada JAVA. É claro que as Linguagens de Programação JAVA e JavaScript são parecidas somente no nome, já que se diferem no conceito e no uso. [Caso queira saber mais](http://www.cpt.com.br/cursos-informatica-desenvolvimentodesoftwares/artigos/linguagem-de-programacao-javascript-um-breve-historico#ixzz47RSb1uaO).
 
 ### Adicionando JavaScript às páginas
 
@@ -151,21 +147,174 @@ do {
 + onload
 + onchange
 
-### Orientação de Objetos
-
-literais de objetos
-prototipo
-
-+ Objetos Nativos
-
-+ Objetos de Host
-
-### JSON
-
 ### Manipulação do DOM
 
-innerHtml
-getElementById
+####DOM 
+É um padrão de acesso a documentos criado pela W3C e possui 3 diferentes partes:
++ Core DOM (Todos os tipos de documentos)
++ XML DOM (Documentos XML)
++ HTML DOM (Documentos HTML)
+
+---
+#### Interface de programação DOM
+
+HTML DOM pode ser acessado pelo JavaScript e algumas outras linguagens, onde todos os elementos são definidos como objetos. 
+A interface de programação são as propriedades (valores que podem ser definidos e alterados) e métodos (ações que podem ser realizadas) de cada objeto.
+
+Quando uma página web é carregada, o navegador cria um HTML DOM (Document Object Model) da página. JavaScript permite manipular esse objeto, ou seja, dá ao senhor o poder de criar HTML dinâmico. 
+![](http://tableless.com.br/wp-content/uploads/2011/07/dom_tree.gif)
+O senhor poderá, na página:
++ Mudar, retirar e adicionar todos os elementos e atributos HTML.
++ Mudar todos os estilos CSS.
++ Reagir e criar eventos HTML.
+
+---
+O exemplo abaixo transforma o conteúdo de uma parte do site (innerHTML), mais especificamente o ```<p>``` com o "id" especificado pelo _getElementById_.
+```HTML
+<html>
+  <body>
+    <p id="billy"></p>
+    <script>
+      document.getElementById("billy").innerHTML = "Welcome to Billy World!";
+    </script>
+  </body>
+</html>
+```  
+---
+#### Métodos
+
+Aqui vão alguns dos métodos mais usados.
+
+##### Achar Elementos
+
++ _getElementById_ 
+	+ Procura elementos a partir de id's.
+```javascript
+	var myElement = document.getElementById("intro");
+```
++ _getElementByTagName_ 
+	+ Procura elementos a partir de suas tags.
+```javascript
+	var x = document.getElementsByTagName("p");
+```
++ _getElementByClassName_ 
+	+ Procura elementos a partir de nome de Classes.
+```javascript
+	var x = document.getElementsByClassName("intro");
+```
++ _querySelectorAll_  
+	+ Procura elementos que tem a mesmo estilo CSS (concatenação com "."). No exemplo abaixo ele procura todos os ```<p>``` com ```class="intro"```
+```javascript
+	var x = document.querySelectorAll("p.intro");
+```
+
+
+Obs: getElementById é o método mais comum de acesso a elementos HTML.
+Obs2:  Concatenação de métodos é bastante útil.
+```javascript
+var x = document.getElementById("main");
+var y = x.getElementsByTagName("p");
+```
+
+---
+##### Mudar Elementos 
+
++ _element.innerHTML_
+	+ Permite atribuir um novo conteúdo ao elemento HTML.
++ _element.attribute_
+	+ Permite atribuir um novo valor ao elemento HTML.
++ _element.setAttribute(attribute, value)_
+	+ Muda o atributo de um elemento HTML para o dado valor. 
++ _element.style.property_
+	+ Permite atribuir um estilo para um elemento HTML.
+ 
+Obs: innerHTML é uma propriedade e o jeito mais fácil de se conseguir o conteúdo de um elemento.
+
+---
+##### Adicionar e Deletar Elementos
+
++ _document.createElement(element)_
+	+ Cria um elemento HTML
++ _document.removeChild(element)_
+	+ Remove um elemento HTML
++ _document.appendChild(element)_
+	+ Adiciona um elemento HTML
++ _document.replaceChild(element)_
+	+ Substitui um elemento HTML.
++ _document.write(text)_
+	+ Simplesmente escreve no HTML Output Stream
+
+---
+##### Adicionar Manipuladores de Eventos
+
++ _document.getElementById(id).onclick = function(){code}_
+	+ 	Adiciona um código de manipulação de evento para o evento onclick().
+
+##### Achar Objetos HTML
+
+DOM levels são como as versões das especificações da definição de como o DOM deveria funcionar. 
+
++ document.anchors (Level 1)
+  + Returns all ```<a>``` elements that have a name attribute 
++ document.applets (Level 1)
+  + Returns all ```<applet>``` elements (Deprecated in HTML5) 
++ document.baseURI (Level 3)
+  + Returns the absolute base URI of the document
++ document.body (Level 1)
+  + Returns the ```<body>``` element 
++ document.cookie (Level 1)
+  + Returns the document's cookie
++ document.doctype (Level 3)
+  + Returns the document's doctype 
++ document.documentElement (Level 3)
+  + Returns the ```<html>``` element 
++ document.documentMode (Level 3)
+  + Returns the mode used by the browser 
++ document.documentURI (Level 3)
+  + Returns the URI of the document 
++ document.domain (Level 1)
+  + Returns the domain name of the document server 
++ document.domConfig (Level 3)
+  + Obsolete. Returns the DOM configuration 
++ document.embeds(Level 3)
+  + Returns all ```<embed>``` elements 
++ document.forms (Level 1)
+  + Returns all ```<form>``` elements
++ document.head(Level 3)
+  + Returns the ```<head>``` element 
++ document.images (Level 1)
+  + Returns all ```<img>``` elements 
++ document.implementation (Level 3)
+  + Returns the DOM implementation 
++ document.inputEncoding (Level 3)
+  + Returns the document's encoding (character set)
++ document.lastModified (Level 3)
+  + Returns the date and time the document was updated 
++ document.links (Level 1)
+  + Returns all ```<area>``` and ```<a>``` elements that have a href attribute 
++ document.readyState (Level 3)
+  + Returns the (loading) status of the document 
++ document.referrer (Level 1)
+  + Returns the URI of the referrer (the linking document) 
++ document.scripts (Level 3)
+  + Returns all ```<script>``` elements 
++ document.strictErrorChecking (Level 3)
+  + Returns if error checking is enforced 
++ document.title (Level 1)
+  + Returns the ```<title>``` element 
++ document.URL (Level 1)
+  + Returns the complete URL of the document 
+
+Obs: Pegar elementos do form é fácil
+```javascript
+var x = document.forms["frm1"];
+var text = "";
+var i;
+for (i = 0; i < x.length; i++) {
+    text += x.elements[i].value + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+```
 
 
 ### Expressões Regulares
