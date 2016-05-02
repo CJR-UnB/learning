@@ -221,14 +221,23 @@ var y = x.getElementsByTagName("p");
 
 + _element.innerHTML_
 	+ Permite atribuir um novo conteúdo ao elemento HTML.
+	+ Conhecido por ser o jeito mais fácil de se conseguir o conteúdo de um elemento.
 + _element.attribute_
 	+ Permite atribuir um novo valor ao elemento HTML.
+	+ Possível usar para alterar imagens.
+```javascript
+document.getElementById("myImage").src = "landscape.jpg";
+```
 + _element.setAttribute(attribute, value)_
 	+ Muda o atributo de um elemento HTML para o dado valor. 
 + _element.style.property_
 	+ Permite atribuir um estilo para um elemento HTML.
- 
-Obs: innerHTML é uma propriedade e o jeito mais fácil de se conseguir o conteúdo de um elemento.
+```javascript
+<p id="p2">Hello World!</p>
+<script>
+  document.getElementById("p2").style.color = "blue";
+</script>
+```
 
 ---
 ##### Adicionar e Deletar Elementos
@@ -243,12 +252,29 @@ Obs: innerHTML é uma propriedade e o jeito mais fácil de se conseguir o conte�
 	+ Substitui um elemento HTML.
 + _document.write(text)_
 	+ Simplesmente escreve no HTML Output Stream
+	+ Não usar depois que o documento foi carregado, pois irá sobrescrever o documento.
+```javascript
+<!DOCTYPE html>
+  <html>
+    <body>
+      <script>
+        document.write(Date());
+      </script>
+    </body>
+</html>
+```
 
 ---
 ##### Adicionar Manipuladores de Eventos
 
 + _document.getElementById(id).onclick = function(){code}_
 	+ 	Adiciona um código de manipulação de evento para o evento onclick().
+```javascript
+<h1 id="id1">My Heading 1</h1>
+<button type="button" 
+onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button>
+```  
 
 ##### Achar Objetos HTML
 
@@ -305,7 +331,7 @@ DOM levels são como as versões das especificações da definição de como o D
 + document.URL (Level 1)
   + Returns the complete URL of the document 
 
-Obs: Pegar elementos do form é fácil
+Obs: Pegar elementos do form se torna relativamente fácil.
 ```javascript
 var x = document.forms["frm1"];
 var text = "";
@@ -316,6 +342,59 @@ for (i = 0; i < x.length; i++) {
 document.getElementById("demo").innerHTML = text;
 ```
 
+#### DOM Animation
+
+Uma animação em DOM é realizada quando o efeito (estilo)  de algo muda quando um evento acontece. Então basicamente se trata de usar de eventos para mandar o DOM mudar o estilo de elementos HTML.
+
+```HTML
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button>
+</p> 
+
+<div id ="container">
+<div id ="animate"></div>
+</div>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
+```
+Esse código cria um botão que modifica o estilo (CSS) e sua posição ao longo de um espaço de tempo de um certo elemento. Para verificar o código funcionando, basta acessar [aqui](http://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_animate_3).
 
 ### Expressões Regulares
 

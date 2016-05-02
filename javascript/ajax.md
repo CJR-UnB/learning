@@ -209,6 +209,10 @@ Caso queira saber como é dentro de um arquivo XML aqui está um [exemplo](http:
 
 **Para mais exemplos, [clique aqui](http://www.w3schools.com/ajax/ajax_examples.asp).**
 
+## AJAX no Ruby on Rails
+
+[Melhor link que achei para integração de rails com ajax](https://launchschool.com/blog/the-detailed-guide-on-how-ajax-works-with-ruby-on-rails)
+
 ##Referências
 
 [w3schools.com](http://www.w3schools.com/ajax/default.asp)
