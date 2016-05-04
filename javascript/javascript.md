@@ -142,10 +142,32 @@ do {
 
 ### Eventos
 
-+ onclick
-+ onblur
-+ onload
-+ onchange
+Eventos são procedimentos executados em consequência a uma ação. Quando um botão muda por colocar o mouse em cima dele, um evento foi ativado que executou um código JavaScript. A lista de eventos é gigantesca, então selecionei alguns mais importantes:
+
++ ```onclick```
+	+ Ativa quando o usuário clica em um elemento HTML específico.
++ ```onmouseover```
+	+ Ativa quando o mouse está em cima de um elemento HTML específico.
++ ```onmouseout```
+	+ Ativa quando o mouse sai de cima de um elemento HTML específico.
++ ```onkeydown```
+	+ Ativa quando algo é digitado do teclado.
++ ```onload```
+	+ Ativa quando o carregamento da página terminou.
++ ```onchange```
+	+ Ativa quando o usuário muda a opção de seleção do elemento ```<select>```
++ ```onselect```
+	+ Ativa quando o usuário seleciona um texto.
++ ```onsubmit```
+	+ Ativa quando um formulário é enviado.
+
+Abaixo temos um exemplo de como se usa normalmente os eventos e caso queira saber de mais eventos, clique [aqui](http://www.w3schools.com/jsref/dom_obj_event.asp).
+```javascript
+<button onclick="fsubmit()">SUBMIT</button>
+
+```
+
+	
 
 ### Manipulação do DOM
 
@@ -610,3 +632,7 @@ function validadeRegEx(regex, inputStr, helpText, helpMessage) {
 ### Debug
 
 ### JavaScript Design Patterns
+
+### Referências
+
+[w3schools.com](http://www.w3schools.com/jsref/default.asp)
